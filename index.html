@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>For Liza 🌿</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0B1314;
+      color: #E2E8F0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card-bg {
+      background: #132223;
+      border: 1px solid #1F3536;
+    }
+    .nav-card {
+      background: #0E1A1B;
+      border: 1px solid #192D2E;
+      transition: all 0.2s ease;
+    }
+    .nav-card:hover {
+      border-color: #34D399;
+      background: #122223;
+    }
+    .nav-card:active {
+      transform: scale(0.97);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #0B1314;
+      border-radius: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #1F3536;
+      border-radius: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #34D399;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center px-4 py-8 relative">
+
+  <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <main class="w-full max-w-sm mx-auto z-10 mb-20">
+
+    <!-- Screen 1: Dashboard / Home Hub -->
+    <section id="screen-1" class="card-bg rounded-3xl p-6 shadow-2xl transition-all duration-300">
+      <div class="text-center mb-5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300 mb-3">
+          Hey Sweetheart 🌸
+        </span>
+        <h1 class="text-2xl font-bold text-white leading-tight">Welcome, Princess</h1>
+        <p class="text-slate-300 text-xs leading-relaxed mt-2">
+          A place built just for you. Explore any corner whenever you want.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2.5 mb-5">
+        <button onclick="goToScreen(2); toggleMusic(true);" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">🕊️</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Our Story</p>
+          <p class="text-[10px] text-slate-400">Us & First Photo</p>
+        </button>
+
+        <button onclick="goToScreen(3)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">🤍</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Gratitude</p>
+          <p class="text-[10px] text-slate-400">Letter to Liza</p>
+        </button>
+
+        <button onclick="goToScreen(4)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">✨</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Treasures</p>
+          <p class="text-[10px] text-slate-400">Why You're Rare</p>
+        </button>
+
+        <button onclick="goToScreen(5)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">✈️</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Care Hub</p>
+          <p class="text-[10px] text-slate-400">Clocks & Comfort</p>
+        </button>
+
+        <button onclick="goToScreen(6)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">🙏</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Prayer Wall</p>
+          <p class="text-[10px] text-slate-400">Prayers & Verses</p>
+        </button>
+
+        <button onclick="goToScreen(7)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">🌸</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Moments</p>
+          <p class="text-[10px] text-slate-400">Your Smile</p>
+        </button>
+
+        <button onclick="goToScreen(8)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">💬</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Questions</p>
+          <p class="text-[10px] text-slate-400">Daily Prompts</p>
+        </button>
+
+        <button onclick="goToScreen(9)" class="nav-card p-3.5 rounded-2xl text-left">
+          <span class="text-xl">😄</span>
+          <p class="text-xs font-semibold text-white mt-1.5">Chuckle</p>
+          <p class="text-[10px] text-slate-400">Quick Laughs</p>
+        </button>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(10)" class="w-full py-2.5 rounded-2xl bg-pink-500/10 border border-pink-500/30 text-pink-300 font-medium text-xs flex items-center justify-center gap-2">
+          <span>💖</span> Send A Warm Hug & Surprise
+        </button>
+        <button onclick="goToScreen(2); toggleMusic(true);" class="w-full py-3 px-6 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs transition-transform active:scale-95 shadow-lg shadow-emerald-900/40">
+          Start Tour from Beginning 🌿✨
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 2: Our Story -->
+    <section id="screen-2" class="card-bg rounded-3xl p-6 text-center shadow-2xl hidden transition-all duration-300">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300 mb-4">
+        Our Beautiful Story 🕊️
+      </div>
+      <h2 class="text-xl font-bold text-white mb-4">Mr. Derrick & Princess Liza ❤️</h2>
+      
+      <div class="relative w-48 h-56 mx-auto mb-4 rounded-3xl overflow-hidden border-2 border-emerald-500/30 shadow-lg bg-emerald-950/40">
+        <img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Princess Liza" class="w-full h-full object-cover" />
+      </div>
+      
+      <p class="text-xs text-emerald-400 font-medium mb-2">Princess Liza 🌸</p>
+      <p class="text-slate-300 text-xs leading-relaxed mb-6">
+        Having you as my girlfriend is my greatest blessing. Can't wait for our first photo together side by side.
+      </p>
+
+      <div class="space-y-2.5">
+        <button onclick="goToScreen(3)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs transition-transform active:scale-95">
+          Why You Make Me So Happy 🌿
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 3: Extended Gratitude & Letter to Liza -->
+    <section id="screen-3" class="card-bg rounded-3xl p-5 sm:p-6 shadow-2xl hidden transition-all duration-300">
+      <div class="text-center mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
+          Answered Prayer 🤍
+        </span>
+        <h3 class="text-xl font-bold text-white mt-2">Why I'm Blessed to Call You Mine</h3>
+        <p class="text-[11px] text-emerald-400/90 mt-1">From my whole heart to yours, Princess</p>
+      </div>
+
+      <div class="custom-scroll max-h-[440px] overflow-y-auto pr-2 space-y-4 text-slate-300 text-xs leading-relaxed text-left">
+        
+        <div class="bg-emerald-950/40 border border-emerald-800/40 p-3.5 rounded-2xl">
+          <p class="text-white font-semibold mb-1">To My Dearest Princess Liza,</p>
+          <p>
+            Having you as my girlfriend brings so much genuine peace to my life. You are my biggest supporter, my prayer partner, and without hesitation the sweetest part of my entire day. Seeing how deeply you love God, how humbly you carry yourself, and how sincerely you care for me makes me thank Him every single morning when I wake up. I love us, I love everything we are building together, and I love walking this journey with you side by side in spirit every day.
+          </p>
+        </div>
+
+        <p>
+          I want to take a moment and step past all the rush of daily life to put down in words how much I truly, deeply love you. When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life. My feelings for you are not casual, surface-level emotions that change with time or mood—they are rooted in an intentional commitment to honor, cherish, and stand beside you. No matter how many miles, time zones, or oceans stretch between the United States and the Philippines, my love for you does not waver. Distance is merely physical geography; it will never diminish the loyalty, dedication, and affection I carry for you in my heart.
+        </p>
+
+        <p>
+          Every single day that passes is one step closer to closing that physical gap. You are not simply someone I talk to to pass the hours—you are the woman I see in my future. You are the one I want to stand at the altar with, take vows before God with, and proudly call my wife. When I look toward tomorrow, my future plans and dreams have you right in the center of them. I am overflowing with joy and gratitude simply knowing that you are my girlfriend today, and I hold that honor with great care and respect.
+        </p>
+
+        <div class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl space-y-2">
+          <p class="text-emerald-300 font-semibold text-[11px] uppercase tracking-wider">A Safe Place For Your Heart</p>
+          <p>
+            I want you to know with complete certainty: you never, ever have to be shy or hesitant with me about anything. Whatever is on your mind—whether it is a tiny fleeting worry, a heavy burden from your shift, family stress, or just a silly random thought—you can bring it to me freely. You don't have to put on a brave face, you don't have to hide when you're tired or sad, and you never have to worry that you are bothering me. 
+          </p>
+          <p>
+            If you have a problem, let's talk about it. If you had a frustrating day, vent to me. If you are anxious about something, let's pray over it together. In this relationship, there is no judgment, no impatience, and no walls. You have my full attention and an open ear whenever you need to let things out.
+          </p>
+        </div>
+
+        <p>
+          I admire you so much for the incredible strength, determination, and independence you carry. Watching how hard you push through long, tiring shifts, how disciplined you are, and how you carry your responsibilities with grace leaves me in awe of the woman you are. You have a quiet power and resilience that is nothing short of inspiring. But I want to remind you of something very important: even though you are strong, and even though you know how to stand on your own two feet, you do not have to carry the weight of everything by yourself anymore. 
+        </p>
+
+        <p>
+          You can lean on me. You are allowed to take off the heavy armor, rest your tired spirit, and let me be your rock and your protector. Let me be the shoulder you rest on, the voice that calms your storms, and the prayer that covers you when your own energy is depleted. Independence is admirable, but partnership is a blessing—and I am here to stand firm with you through every challenge life throws our way.
+        </p>
+
+        <div class="bg-emerald-950/20 border border-emerald-900/40 p-3.5 rounded-2xl">
+          <p class="text-emerald-300 font-semibold mb-1">Seeing You Open Up 😄</p>
+          <p>
+            It also brings the biggest smile to my face when I think about how much you have opened your heart to me over time! I remember when we first started talking and you were so sweet, polite, and maybe just a tiny bit shy and cautious—keeping all your defenses up like a castle. But seeing you slowly let down those walls, laugh freely with me, share your thoughts, and welcome me into your world has been the most rewarding thing ever. (I knew my charm would eventually win you over, even if you tried to resist at first! 😉) Seeing your authentic self shine through is the greatest gift you could have ever given me.
+          </p>
+        </div>
+
+        <p>
+          I thank God for your life again and again. Every single good and perfect gift comes from Him, and the day you came into my life was a divine blessing that I will never take for granted. God knew the exact kind of gentle, pure-hearted, faith-filled companion I needed, and He brought your path across mine. I praise Him for protecting you, for giving you life and health, and for guiding our conversations each day.
+        </p>
+
+        <p>
+          I also want to make sure you know this: whenever you want to hop on a video call, or just hear each other on a regular voice call, please never hesitate or feel shy to ask! Just say the word. You never need to wonder if it's okay or if I have time—hearing your soft voice and seeing your beautiful smile completely makes my day. A two-minute voice note or an hour-long call from you instantly brightens up anything going on around me. Your voice brings peace to my spirit, and I always love connecting with you in real time.
+        </p>
+
+        <div class="bg-slate-900/90 border border-emerald-900/50 p-3.5 rounded-2xl">
+          <p class="text-white font-semibold mb-1">My Promise To You 💍</p>
+          <p>
+            Above everything else, Liza, please know in your bones: I am not here to break your heart, play games, or make you doubt yourself. I am here to protect your heart, support your growth, cherish your soul, and love you with real devotion. You have been hurt or cautious in life, but with me, your heart is in gentle, loyal hands. I am here to walk through every chapter with you—the joyful sunny days, the exhausting midnight hours, and every stepping stone on our road toward forever. You are the one God chose for me, and I am choosing you every single day.
+          </p>
+        </div>
+
+        <p class="text-center text-emerald-400 font-medium pt-2">
+          Forever loving you, cheering for you, and holding you close in prayer.<br />
+          — Derrick ❤️
+        </p>
+
+      </div>
+
+      <div class="space-y-2 mt-5">
+        <button onclick="goToScreen(4)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs transition-transform active:scale-95 shadow-lg shadow-emerald-900/40">
+          Little things I adore 🌸
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 4: Treasures -->
+    <section id="screen-4" class="card-bg rounded-3xl p-6 shadow-2xl hidden transition-all duration-300">
+      <div class="text-center mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
+          Treasures in You ✨
+        </span>
+        <h3 class="text-lg font-bold text-white mt-2">Things That Make You Rare</h3>
+      </div>
+
+      <div id="carousel-content" class="bg-slate-900/60 border border-emerald-900/40 rounded-2xl p-5 text-center min-h-[140px] flex flex-col justify-center items-center mb-4"></div>
+      <div class="flex justify-center gap-2 mb-6" id="carousel-dots"></div>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(5)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs">
+          Faith & Care Corner ✈️
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 5: Care Hub -->
+    <section id="screen-5" class="card-bg rounded-3xl p-6 shadow-2xl hidden transition-all duration-300">
+      <div class="text-center mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
+          Across The Miles ✈️
+        </span>
+        <h3 class="text-lg font-bold text-white mt-1">Faith & Care Corner</h3>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-4 text-center">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5">
+          <p class="text-[10px] text-slate-400">My Time (US)</p>
+          <p id="clock-us" class="text-sm font-bold text-emerald-300 mt-0.5">--:--</p>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5">
+          <p class="text-[10px] text-slate-400">Your Time 🇵🇭</p>
+          <p id="clock-ph" class="text-sm font-bold text-emerald-300 mt-0.5">--:--</p>
+        </div>
+      </div>
+      <p class="text-[11px] text-slate-400 text-center mb-4 italic">"Every single day is one step closer to closing the gap"</p>
+
+      <div class="space-y-2 mb-6">
+        <div class="border border-slate-800 rounded-xl overflow-hidden">
+          <button onclick="toggleAccordion('acc1')" class="w-full p-3 text-left text-xs font-semibold flex justify-between items-center bg-slate-900/60">
+            <span>Open when you have a headache / long shift ✨</span>
+            <span id="acc1-icon">+</span>
+          </button>
+          <div id="acc1" class="hidden p-3 text-xs text-slate-300 bg-slate-900/30 border-t border-slate-800/60">
+            Close your eyes, drink some cool water, and take three deep breaths. You worked so hard today. Rest your mind, Sweetheart—I'm proud of you.
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-xl overflow-hidden">
+          <button onclick="toggleAccordion('acc2')" class="w-full p-3 text-left text-xs font-semibold flex justify-between items-center bg-slate-900/60">
+            <span>Open when the distance feels heavy ❤️</span>
+            <span id="acc2-icon">+</span>
+          </button>
+          <div id="acc2" class="hidden p-3 text-xs text-slate-300 bg-slate-900/30 border-t border-slate-800/60">
+            Miles are physical, but our connection isn't bound by geography. God brought us together for a reason. Every sunrise brings us one day closer.
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-xl overflow-hidden">
+          <button onclick="toggleAccordion('acc3')" class="w-full p-3 text-left text-xs font-semibold flex justify-between items-center bg-slate-900/60">
+            <span>Open when you need a quick laugh 😄</span>
+            <span id="acc3-icon">+</span>
+          </button>
+          <div id="acc3" class="hidden p-3 text-xs text-slate-300 bg-slate-900/30 border-t border-slate-800/60">
+            Just remember: every day I get to love you is an answered prayer and a blessing! 😄
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(6)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs">
+          Visit Prayer Wall 🙏
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+        <!-- Screen 6: Prayer Wall -->
+    <section id="screen-6" class="card-bg rounded-3xl p-6 shadow-2xl hidden transition-all duration-300">
+      <div class="text-center mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
+          Anchored in Christ 🙏
+        </span>
+        <h3 class="text-lg font-bold text-white mt-2">Our Prayer Wall</h3>
+        <p class="text-[11px] text-slate-400 mt-1">Prayers I hold over you and scripture for your heart.</p>
+      </div>
+
+      <div class="space-y-3 mb-6">
+        <div class="bg-slate-900/80 border border-emerald-900/40 rounded-2xl p-4 text-left">
+          <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider mb-1">A Prayer For Your Rest & Strength 🕊️</p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            "Lord, place Your supernatural peace over Liza today. When work is heavy and her energy is spent, renew her strength. Guard her heart, refresh her spirit while she sleeps, and let her feel deeply loved, protected, and never alone."
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 border border-emerald-900/40 rounded-2xl p-4 text-left">
+          <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider mb-1">A Prayer For Our Journey & Future 💍</p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            "Heavenly Father, guide every step of our relationship. Bridge every mile between us with Your grace. Prepare our hearts daily so we honor You together and build a strong foundation toward marriage. Amen."
+          </p>
+        </div>
+
+        <div class="bg-emerald-950/40 border border-emerald-800/40 rounded-2xl p-3.5 text-center">
+          <p class="text-xs text-emerald-200 italic leading-relaxed">
+            "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you."
+          </p>
+          <p class="text-[10px] text-emerald-400 font-semibold mt-1">Numbers 6:24-25</p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(7)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs">
+          Photo Moments 🌸
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 7: Photo Moments -->
+    <section id="screen-7" class="card-bg rounded-3xl p-6 shadow-2xl hidden transition-all duration-300 text-center">
+      <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300 mb-3">
+        A Glimpse of You 🌸
+      </span>
+      <h3 class="text-lg font-bold text-white mb-2">Moments I Adore</h3>
+      <p class="text-[11px] text-slate-400 mb-4">Every time I look at you, I smile. You are truly radiant.</p>
+
+      <div class="relative w-full h-64 rounded-2xl overflow-hidden border border-emerald-900/50 mb-3 shadow-lg bg-emerald-950/40">
+        <img src="att.yt9BuScXAu6yyKgCidJZoC8T62OAfeDB73teHMizsTw.jpg.jpeg" alt="Liza with flowers" class="w-full h-full object-cover" />
+      </div>
+      <p class="text-xs text-emerald-300 font-medium italic mb-6">"Pure sunshine and sweetness" 🌼</p>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(8)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs">
+          Questions of the Day 💬
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 8: Questions -->
+    <section id="screen-8" class="card-bg rounded-3xl p-6 shadow-2xl hidden transition-all duration-300">
+      <div class="text-center mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
+          Memories & Milestones 💬
+        </span>
+        <h3 class="text-lg font-bold text-white mt-1">Questions of the Day</h3>
+        <p class="text-[11px] text-slate-400 mt-1">Three daily prompts for us to talk about.</p>
+      </div>
+
+      <div class="space-y-3 mb-6">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] text-emerald-400 font-bold uppercase">Tier 1: Sweet & Easy 🍧</span>
+            <button onclick="copyPrompt(this, 'If we could pick one dessert to bake together from scratch, what are we making?')" class="text-[10px] text-slate-400 hover:text-emerald-300">Tap to copy</button>
+          </div>
+          <p class="text-xs text-slate-200">If we could pick one dessert to bake together from scratch, what are we making?</p>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] text-emerald-400 font-bold uppercase">Tier 2: About Us ❤️</span>
+            <button onclick="copyPrompt(this, 'What was the moment you felt our bond shift from casual talking to something truly special?')" class="text-[10px] text-slate-400 hover:text-emerald-300">Tap to copy</button>
+          </div>
+          <p class="text-xs text-slate-200">What was the moment you felt our bond shift from casual talking to something truly special?</p>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] text-emerald-400 font-bold uppercase">Tier 3: Deep & Real 🌿</span>
+            <button onclick="copyPrompt(this, 'In what ways do you feel God is growing and strengthening your spirit during this season of life?')" class="text-[10px] text-slate-400 hover:text-emerald-300">Tap to copy</button>
+          </div>
+          <p class="text-xs text-slate-200">In what ways do you feel God is growing and strengthening your spirit during this season of life?</p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(9)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs">
+          Reasons to Smile 😄
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 9: Jokes -->
+    <section id="screen-9" class="card-bg rounded-3xl p-6 shadow-2xl hidden transition-all duration-300">
+      <div class="text-center mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
+          For Your Daily Smile 😄
+        </span>
+        <h3 class="text-lg font-bold text-white mt-1">A Little Chuckle For You</h3>
+      </div>
+
+      <div class="bg-slate-900/80 border border-emerald-900/40 rounded-2xl p-5 text-center min-h-[130px] flex items-center justify-center mb-4">
+        <p id="joke-text" class="text-xs text-slate-200 leading-relaxed font-medium">
+          Do you have a map? Because I keep getting lost in our conversations every day. 🥺
+        </p>
+      </div>
+
+      <button onclick="nextJoke()" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-emerald-300 text-xs font-medium border border-emerald-900/50 mb-6">
+        Next joke 🎲
+      </button>
+
+      <div class="space-y-2">
+        <button onclick="goToScreen(10)" class="w-full py-3 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs">
+          Final Surprise ✨
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700">
+          ⌂ Home Menu
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 10: Final Surprise -->
+    <section id="screen-10" class="card-bg rounded-3xl p-6 text-center shadow-2xl hidden transition-all duration-300">
+      <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300 mb-4">
+        Always In Your Corner 🌿
+      </span>
+      <h3 class="text-xl font-bold text-white mb-3">One Last Thing For You</h3>
+      <p class="text-slate-300 text-xs leading-relaxed mb-8">
+        Whenever you are having a rough or tiring day, come back to this page and remember how deeply cared for you are. I am so blessed to call you my girlfriend, and one day my wife! 👰‍♀️💍
+      </p>
+
+      <div class="space-y-3">
+        <button onclick="sendHug()" class="w-full py-3.5 rounded-full bg-pink-500 hover:bg-pink-400 text-white font-bold text-sm shadow-lg shadow-pink-900/40 transition-transform active:scale-95">
+          Send A Warm Hug 🫂💖
+        </button>
+        <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-full bg-slate-800 text-slate-300 text-xs border border-slate-700">
+          ⌂ Back to Home Menu
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Bar: Player + Direct Home Button -->
+  <footer class="fixed bottom-3 left-1/2 -translate-x-1/2 w-11/12 max-w-xs bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-full px-4 py-2 flex items-center justify-between shadow-2xl z-50">
+    <div class="flex items-center gap-2.5">
+      <button id="play-btn" onclick="toggleMusic()" class="w-7 h-7 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-xs font-bold">
+        ▶
+      </button>
+      <div class="text-left">
+        <p class="text-[11px] font-semibold text-white leading-none">Lovely Day 🎵</p>
+        <p class="text-[9px] text-slate-400 leading-none mt-1">Playing for Liza</p>
+      </div>
+    </div>
+    <button onclick="goToScreen(1)" class="text-xs bg-slate-800/80 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-emerald-300 font-medium">
+      ⌂ Home
+    </button>
+  </footer>
+
+  <script>
+    function goToScreen(num) {
+      for (let i = 1; i <= 10; i++) {
+        const screen = document.getElementById(`screen-${i}`);
+        if (screen) screen.classList.add('hidden');
+      }
+      const target = document.getElementById(`screen-${num}`);
+      if (target) {
+        target.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    const cards = [
+      { title: "Your Gentle Spirit 🌿", body: "No matter how hectic things get, talking with you brings instant peace and calm to my heart." },
+      { title: "Your Work Ethic & Strength 💪", body: "Pushing through demanding shifts with patience shows the incredible woman you are." },
+      { title: "Your Heart for God 🙏", body: "The faith we share and the prayers we lift together keep us anchored no matter the miles." },
+      { title: "Your Thoughtfulness 🌸", body: "Even when your energy is drained, you always make time to send warmth and check on me." }
+    ];
+    let currentCard = 0;
+
+    function renderCarousel() {
+      const container = document.getElementById('carousel-content');
+      const dotsContainer = document.getElementById('carousel-dots');
+      container.innerHTML = `
+        <h4 class="text-xs font-bold text-emerald-400 mb-1.5">${cards[currentCard].title}</h4>
+        <p class="text-xs text-slate-300 leading-relaxed">${cards[currentCard].body}</p>
+      `;
+      dotsContainer.innerHTML = cards.map((_, i) => `
+        <button onclick="setCard(${i})" class="w-2 h-2 rounded-full ${i === currentCard ? 'bg-emerald-400 w-4' : 'bg-slate-700'} transition-all"></button>
+      `).join('');
+    }
+
+    function setCard(index) {
+      currentCard = index;
+      renderCarousel();
+    }
+    renderCarousel();
+
+    function updateClocks() {
+      const now = new Date();
+      const usTime = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit' });
+      const phTime = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit' });
+      document.getElementById('clock-us').textContent = usTime;
+      document.getElementById('clock-ph').textContent = phTime;
+    }
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById(`${id}-icon`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.textContent = '−';
+      } else {
+        content.classList.add('hidden');
+        icon.textContent = '+';
+      }
+    }
+
+    function copyPrompt(btn, text) {
+      navigator.clipboard.writeText(text);
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied! ✨';
+      btn.classList.add('text-emerald-400');
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.classList.remove('text-emerald-400');
+      }, 2000);
+    }
+
+    const jokes = [
+      "Do you have a map? Because I keep getting lost in our conversations every day. 🥺",
+      "Why is long distance like a microwave? Because when we finally meet, everything warms up immediately! 🍲",
+      "Rule #1 of our future household: You are always right. Rule #2: See Rule #1! 📖💅",
+      "Best part of being your future husband? Unlimited bragging rights and seeing your smile every morning. ✨"
+    ];
+    let jokeIndex = 0;
+    function nextJoke() {
+      jokeIndex = (jokeIndex + 1) % jokes.length;
+      document.getElementById('joke-text').textContent = jokes[jokeIndex];
+    }
+
+    function sendHug() {
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { y: 0.7 },
+        colors: ['#4ECCA3', '#FAD2E1', '#E11D48']
+      });
+    }
+
+    let isPlaying = false;
+    function toggleMusic(forcePlay = false) {
+      const btn = document.getElementById('play-btn');
+      if (forcePlay) isPlaying = true;
+      else isPlaying = !isPlaying;
+      btn.textContent = isPlaying ? '❚❚' : '▶';
+    }
+  </script>
+</body>
+</html>

@@ -1,178 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Liza 🌸</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Liza 💖</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <style>
-    body {
-      -webkit-tap-highlight-color: transparent;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-image: linear-gradient(rgba(8, 14, 18, 0.88), rgba(8, 14, 18, 0.92)), url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
-  </style>
 </head>
-<body class="text-slate-100 min-h-screen flex justify-center selection:bg-emerald-500 selection:text-white">
-  <div class="w-full max-w-md min-h-screen flex flex-col justify-between p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md border-x border-slate-800/80 shadow-2xl relative">
-
-    <header class="mb-4">
-      <div class="flex items-center justify-between py-2 px-3.5 rounded-2xl bg-slate-900/90 border border-emerald-950/60 text-[11px] font-medium text-slate-300 shadow-sm">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="font-bold text-white tracking-wide">For Liza 🌸</span>
-        </div>
-        <span class="text-[10px] text-rose-300/90 font-mono font-bold">My Heart 💖</span>
-      </div>
-    </header>
-
-    <main class="flex-1 space-y-4 pb-8">
-      <!-- SCREEN 1: HOME MENU -->
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center p-4">
+  <div class="w-full max-w-md space-y-4">
+    <main>
+      <!-- ================= SCREEN 1: HOME MENU ================= -->
       <section id="screen-1" class="space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800/90 shadow-xl text-center">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold tracking-wider mb-2 border border-emerald-500/30">
-            Hey Sweetheart 🌿
-          </span>
-          <h1 class="text-2xl font-black text-white tracking-tight">Welcome, Princess</h1>
-          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
-            Your personal corner built with love. Tap anywhere to explore.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-3xl bg-slate-900/90 border border-emerald-500/30 shadow-lg">
-          <div class="flex items-center justify-between mb-1.5">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-300 flex items-center gap-1.5">
-              <span>✨</span> How are you feeling right now?
-            </h3>
-            <button onclick="goToScreen('mood')" class="text-[10px] text-emerald-400 hover:text-emerald-200 underline">
-              View Notes →
-            </button>
-          </div>
-          <p class="text-[11px] text-slate-400 mb-3">
-            Tap your mood—it lets me know how your heart is doing in this exact moment:
-          </p>
-          <div class="grid grid-cols-4 gap-2 text-center">
-            <button onclick="showMood('Happy')" class="p-2.5 rounded-2xl bg-slate-950/70 hover:bg-emerald-950/50 border border-slate-800 hover:border-emerald-500/50 transition-all active:scale-95">
-              <span class="text-xl block mb-1">😊</span>
-              <span class="text-[10px] font-bold text-slate-200">Happy</span>
-            </button>
-            <button onclick="showMood('Sad')" class="p-2.5 rounded-2xl bg-slate-950/70 hover:bg-sky-950/50 border border-slate-800 hover:border-sky-500/50 transition-all active:scale-95">
-              <span class="text-xl block mb-1">🥺</span>
-              <span class="text-[10px] font-bold text-slate-200">Sad</span>
-            </button>
-            <button onclick="showMood('Mad')" class="p-2.5 rounded-2xl bg-slate-950/70 hover:bg-rose-950/50 border border-slate-800 hover:border-rose-500/50 transition-all active:scale-95">
-              <span class="text-xl block mb-1">😤</span>
-              <span class="text-[10px] font-bold text-slate-200">Mad</span>
-            </button>
-            <button onclick="showMood('Tired')" class="p-2.5 rounded-2xl bg-slate-950/70 hover:bg-purple-950/50 border border-slate-800 hover:border-purple-500/50 transition-all active:scale-95">
-              <span class="text-xl block mb-1">😴</span>
-              <span class="text-[10px] font-bold text-slate-200">Tired</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3 text-center">
-          <button onclick="goToScreen(2)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">📸</span>
-            <p class="text-xs font-bold text-white">Our Story</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Us & First Photos</p>
-          </button>
-          <button onclick="goToScreen(3)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">🤍</span>
-            <p class="text-xs font-bold text-white">Gratitude</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Letter to Liza</p>
-          </button>
-          <button onclick="goToScreen('reasons')" class="p-4 rounded-3xl bg-slate-900/90 border border-rose-500/40 hover:border-rose-400 transition-all">
-            <span class="text-2xl block mb-1">💍</span>
-            <p class="text-xs font-bold text-white">25 Reasons</p>
-            <p class="text-[10px] text-rose-300 mt-0.5">Why I Love You</p>
-          </button>
-          <button onclick="goToScreen(4)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">✨</span>
-            <p class="text-xs font-bold text-white">Treasures</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Why You're Rare</p>
-          </button>
-          <button onclick="goToScreen(5)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">🌱</span>
-            <p class="text-xs font-bold text-white">About Us</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Liza & Derrick</p>
-          </button>
-          <button onclick="goToScreen(6)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">🙏</span>
-            <p class="text-xs font-bold text-white">Prayer Wall</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Prayers & Box</p>
-          </button>
-          <button onclick="goToScreen(7)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">🧰</span>
-            <p class="text-xs font-bold text-white">Comfort Kit</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Care & Vent Box</p>
-          </button>
-          <button onclick="goToScreen(8)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">👑</span>
-            <p class="text-xs font-bold text-white">So Proud</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Why You Shine</p>
-          </button>
-          <button onclick="goToScreen(9)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">📅</span>
-            <p class="text-xs font-bold text-white">Plan A Call</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Schedule Time</p>
-          </button>
-          <button onclick="goToScreen(10)" class="p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">💬</span>
-            <p class="text-xs font-bold text-white">Questions</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Daily Prompts</p>
-          </button>
-          <button onclick="goToScreen(11)" class="col-span-2 p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-emerald-500/50 transition-all">
-            <span class="text-2xl block mb-1">💖</span>
-            <p class="text-xs font-bold text-white">Warm Hug</p>
-            <p class="text-[10px] text-slate-400 mt-0.5">Smiles & Love</p>
-          </button>
-        </div>
-
-        <button onclick="goToScreen(2)" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow-lg transition-all">
-          Start Tour From Beginning 🌿
-        </button>
-      </section>
-            <!-- ================= SCREEN REASONS: 25 REASONS WHY I LOVE YOU ================= -->
-      <section id="screen-reasons" class="hidden space-y-4">
-        <div class="flex items-center justify-between">
-          <button onclick="goToScreen(1)" class="text-xs text-rose-400 hover:text-rose-300 font-bold flex items-center gap-1">
-            ← Back to Home
-          </button>
-          <span class="text-[11px] font-semibold text-slate-400">Why I Love You 💍</span>
-        </div>
-
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-rose-500/30 text-center shadow-xl space-y-4">
+        <div class="p-6 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-3">
           <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-semibold border border-rose-500/30">
-            Written For My Queen 💖
+            Dedicated to My Princess Liza 🌸
+          </span>
+          <h1 class="text-xl font-black text-white">Welcome, Liza 💖</h1>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            A little corner made just for you, to remind you how loved, cherished, and prayed for you are every single day.
+          </p>
+          
+          <div class="pt-2 space-y-2 text-left">
+            <button onclick="goToScreen('reasons')" class="w-full py-3 px-4 rounded-2xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>💍 25 Reasons Why I Love You</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen('mood')" class="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>🌸 Heart Check-In & Moods</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(2)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>🌿 Our Story & Photos</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(3)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>🤍 Answered Prayer (Letter to Liza)</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(4)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>✨ Things That Make You Rare</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(5)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>✈️ About Us (Two Hearts, One Journey)</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(6)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>🙏 Our Prayer Wall & Requests</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(7)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>🧰 Liza's Comfort Kit & Vent Box</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(8)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>👑 Reasons You Make Me Proud</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(9)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>📞 Let's Plan a Call</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(10)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>💬 Questions of the Day</span>
+              <span>→</span>
+            </button>
+            <button onclick="goToScreen(11)" class="w-full py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-between">
+              <span>😂 A Little Chuckle & Hug</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+            <!-- ================= SCREEN REASONS: 25 REASONS ================= -->
+      <section id="screen-reasons" class="hidden space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
+          <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-semibold border border-rose-500/30">
+            From My Heart to Yours 💍
           </span>
           <h2 class="text-lg font-black text-white">25 Reasons Why I Love You</h2>
-          <p class="text-[11px] text-slate-400 -mt-2">Tap through the cards whenever you need a reminder.</p>
+          <p id="reason-counter" class="text-xs font-bold text-rose-400">Reason #1 of 25</p>
 
-          <!-- Current Reason Display Box -->
-          <div class="p-5 rounded-2xl bg-slate-950/85 border border-slate-800 text-left space-y-2.5 min-h-[140px] flex flex-col justify-center">
-            <div class="flex items-center justify-between">
-              <span id="reason-counter" class="text-[11px] font-bold text-rose-400 tracking-wider uppercase">
-                Reason #1 of 25
-              </span>
-              <span class="text-xs">🤍</span>
-            </div>
+          <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 min-h-[160px] flex items-center justify-center">
             <p id="reason-text" class="text-xs text-slate-200 leading-relaxed font-medium">
               I love you because your heart belongs to God first, and that gives me total peace about our foundation.
             </p>
           </div>
 
-          <!-- Controls -->
           <div class="grid grid-cols-2 gap-2 pt-1">
-            <button onclick="prevReason()" class="py-2.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs font-semibold text-slate-300 transition-all">
+            <button onclick="prevReason()" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition-all">
               ← Previous
             </button>
-            <button onclick="nextReason()" class="py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-xs font-bold text-white shadow transition-all">
+            <button onclick="nextReason()" class="py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow transition-all">
               Next Reason →
             </button>
           </div>
@@ -185,169 +105,142 @@
         </div>
       </section>
 
-      <!-- ================= SCREEN MOOD: DEDICATED MOOD VAULT ================= -->
+      <!-- ================= SCREEN MOOD: HEART CHECK-IN ================= -->
       <section id="screen-mood" class="hidden space-y-4">
-        <div class="flex items-center justify-between">
-          <button onclick="goToScreen(1)" class="text-xs text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1">
-            ← Back to Home
-          </button>
-          <span class="text-[11px] font-semibold text-slate-400">Heart Check-In 🌸</span>
-        </div>
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
+            Heart Check-In 🌸
+          </span>
+          <h2 class="text-lg font-black text-white">How Are You Feeling, Princess?</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">Tap an emotion below so I know how to care for you.</p>
 
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-emerald-500/30 text-center shadow-xl">
-          <h2 class="text-base font-black text-white mb-1">Heart Check-In 🌸</h2>
-          <p class="text-xs text-slate-300">
-            Tap a mood below—it lets me know how to love, pray, and care for you right now.
-          </p>
-
-          <div class="grid grid-cols-4 gap-2 my-4">
-            <button onclick="showMood('Happy')" class="p-3 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-emerald-400 transition-all text-center">
-              <span class="text-2xl block mb-1">😊</span>
-              <span class="text-xs font-bold text-slate-200">Happy</span>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button onclick="showMood('Happy')" class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-emerald-500/50 flex items-center gap-2">
+              <span>😊</span> <span class="font-bold text-slate-200">Happy</span>
             </button>
-            <button onclick="showMood('Sad')" class="p-3 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-sky-400 transition-all text-center">
-              <span class="text-2xl block mb-1">🥺</span>
-              <span class="text-xs font-bold text-slate-200">Sad</span>
+            <button onclick="showMood('Tired')" class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-indigo-500/50 flex items-center gap-2">
+              <span>🥱</span> <span class="font-bold text-slate-200">Tired</span>
             </button>
-            <button onclick="showMood('Mad')" class="p-3 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-rose-400 transition-all text-center">
-              <span class="text-2xl block mb-1">😤</span>
-              <span class="text-xs font-bold text-slate-200">Mad</span>
+            <button onclick="showMood('Anxious')" class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-amber-500/50 flex items-center gap-2">
+              <span>🥺</span> <span class="font-bold text-slate-200">Anxious</span>
             </button>
-            <button onclick="showMood('Tired')" class="p-3 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-purple-400 transition-all text-center">
-              <span class="text-2xl block mb-1">😴</span>
-              <span class="text-xs font-bold text-slate-200">Tired</span>
+            <button onclick="showMood('Missing')" class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-rose-500/50 flex items-center gap-2">
+              <span>✈️</span> <span class="font-bold text-slate-200">Missing You</span>
             </button>
           </div>
 
-          <div id="mood-box-Happy" class="mood-card hidden p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-left">
-            <p class="font-bold text-xs text-emerald-300 mb-1">Your Joy Is My Peace! 🌟</p>
-            <p class="text-slate-200 text-[11px] leading-relaxed">
-              Seeing you happy makes my whole day lighter across all these miles. Keep smiling that gorgeous smile, soak up this joy, and lean on God with a thankful heart for every blessing He’s pouring over you. Your happiness matters to me more than you know.
+          <div id="mood-box-placeholder" class="p-4 rounded-2xl bg-slate-950/40 border border-dashed border-slate-800 text-slate-500 text-xs">
+            Select a mood above to unlock words for your heart.
+          </div>
+
+          <div id="mood-box-Happy" class="mood-card hidden p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 text-left space-y-1">
+            <p class="text-xs font-bold text-emerald-300">Hearing your joy makes my day! 🌸</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              Seeing you smile brings so much sunshine into my life. May God continue blessing your spirit today!
             </p>
           </div>
 
-          <div id="mood-box-Sad" class="mood-card hidden p-4 rounded-2xl bg-sky-950/40 border border-sky-500/40 text-left">
-            <p class="font-bold text-xs text-sky-300 mb-1">I'm Right Here In Your Corner 🤍</p>
-            <p class="text-slate-200 text-[11px] leading-relaxed">
-              Whatever is weighing heavy on your heart right now, you do not have to carry it all by yourself. Take a slow, deep breath and let your shoulders drop. Lean on God to be your strength when your spirit feels tender. I am lifting you up in prayer right this second, and you are deeply loved, cherished, and never alone.
+          <div id="mood-box-Tired" class="mood-card hidden p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-left space-y-1">
+            <p class="text-xs font-bold text-indigo-300">You worked so hard today, rest easy. 🤍</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              Long shifts are exhausting. Drink some cool water, get cozy, and let yourself rest. You don't have to carry the whole world tonight.
             </p>
           </div>
 
-          <div id="mood-box-Mad" class="mood-card hidden p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40 text-left">
-            <p class="font-bold text-xs text-rose-300 mb-1">Let It Out — I'm On Your Side 🛡️</p>
-            <p class="text-slate-200 text-[11px] leading-relaxed">
-              If work, people, or just the day itself pushed your buttons, your frustration is completely valid. Don't bottle it up. Vent if you need to, breathe, and lean on God to guard your peace—none of that noise out there can shake what He is building in us. I am right here with you.
+          <div id="mood-box-Anxious" class="mood-card hidden p-4 rounded-2xl bg-amber-950/40 border border-amber-500/30 text-left space-y-1">
+            <p class="text-xs font-bold text-amber-300">Take a deep breath with me. 🕊️</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              "Cast all your anxiety on Him because He cares for you." (1 Peter 5:7). Whatever is heavy, give it to God and let me listen whenever you're ready.
             </p>
           </div>
 
-          <div id="mood-box-Tired" class="mood-card hidden p-4 rounded-2xl bg-purple-950/40 border border-purple-500/40 text-left">
-            <p class="font-bold text-xs text-purple-300 mb-1">Permission To Turn Off The World 🌙</p>
-            <p class="text-slate-200 text-[11px] leading-relaxed">
-              You worked so hard today, my queen. Put the heavy armor down, drink a glass of water, and let yourself rest without guilt. Lean on God to restore your mind and body tonight. I am covering you in prayer, and I will be right here waiting when you wake up. Sleep peacefully.
+          <div id="mood-box-Missing" class="mood-card hidden p-4 rounded-2xl bg-rose-950/40 border border-rose-500/30 text-left space-y-1">
+            <p class="text-xs font-bold text-rose-300">I miss you just as much, Malka. 💍</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              The distance is temporary, but my commitment to you is permanent. Every single day brings us closer to being together for good.
             </p>
           </div>
 
-          <div id="mood-box-placeholder" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 text-center">
-            <p class="text-xs text-slate-500 italic">Select your mood above to reveal my message for you...</p>
+          <div class="p-3 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 text-left">
+            <label class="block text-[11px] font-semibold text-slate-300">Want to tell me why you feel this way?</label>
+            <input type="text" id="mood-custom-note" placeholder="Optional note for Derrick..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-emerald-500">
+            <button onclick="sendMoodAlertWithNote()" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition-all">
+              Send Quick Note to Derrick 💌
+            </button>
+            <p id="mood-sent-confirm" class="text-[10px] text-emerald-400 text-center font-semibold hidden"></p>
           </div>
 
-          <div class="mt-4 pt-4 border-t border-slate-800 text-left">
-            <label class="block text-[11px] font-bold text-slate-400 mb-1.5">Want to add a little note with this? (Optional)</label>
-            <div class="flex gap-2">
-              <input type="text" id="mood-custom-note" placeholder="Tell me what's on your mind..." class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-              <button onclick="sendMoodAlertWithNote()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition-all">
-                Send Note
-              </button>
-            </div>
-            <p id="mood-sent-confirm" class="text-[10px] text-emerald-400 font-semibold mt-1.5 hidden"></p>
+          <div class="pt-2">
+            <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
+              ⌂ Home Menu
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- ================= SCREEN 2: OUR STORY & FIRST PHOTOS ================= -->
+      <!-- ================= SCREEN 2: OUR STORY & PHOTOS ================= -->
       <section id="screen-2" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            Our Beautiful Story 🌿
+            Our Journey 🌿
           </span>
-          <h2 class="text-lg font-black text-white">Princess Liza & Derrick 💖</h2>
+          <h2 class="text-lg font-black text-white">Our Story in Moments</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">Snapshots of the connection God gave us.</p>
 
-          <div class="grid grid-cols-2 gap-3 pt-1">
-            <div class="space-y-1.5">
-              <div class="w-full aspect-square rounded-2xl overflow-hidden border border-slate-700 bg-slate-950">
-                <img src="liza.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'" alt="Princess Liza" class="w-full h-full object-cover">
-              </div>
-              <span class="inline-block text-[11px] font-bold text-slate-300 bg-slate-950/70 px-2 py-0.5 rounded-full border border-slate-800">
-                Princess Liza 🌸
-              </span>
+          <div class="grid grid-cols-2 gap-2 text-left text-xs">
+            <div class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="font-bold text-emerald-400 text-[11px]">The First Spark ✨</p>
+              <p class="text-[11px] text-slate-300">From our very first conversation, I knew you carried a rare, genuine spirit.</p>
             </div>
-            <div class="space-y-1.5">
-              <div class="w-full aspect-square rounded-2xl overflow-hidden border border-slate-700 bg-slate-950">
-                <img src="derrick.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'" alt="Derrick" class="w-full h-full object-cover">
-              </div>
-              <span class="inline-block text-[11px] font-bold text-slate-300 bg-slate-950/70 px-2 py-0.5 rounded-full border border-slate-800">
-                Derrick 🌿
-              </span>
+            <div class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="font-bold text-emerald-400 text-[11px]">Late Calls 🌙</p>
+              <p class="text-[11px] text-slate-300">Hearing your soft laugh late at night, making 8,000 miles disappear completely.</p>
             </div>
           </div>
 
-          <p class="text-xs text-slate-300 leading-relaxed px-2">
-            Having you as my girlfriend is my greatest blessing. No matter the distance, we are walking this path together with God in our center.
-          </p>
+          <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 text-center space-y-2">
+            <p class="text-xs font-bold text-slate-300">A Photo of My Favorite Smile 📸</p>
+            <div class="w-full h-48 rounded-xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center">
+              <img src="20260905_190440.jpg" alt="Liza" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-slate-500 text-xs\'>Photo ready to display 💖</span>'">
+            </div>
+          </div>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(8)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              Why You Make Me So Happy 👑
-            </button>
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-            <!-- ================= SCREEN 3: GRATITUDE (LETTER TO LIZA) ================= -->
+            <!-- ================= SCREEN 3: ANSWERED PRAYER (LETTER) ================= -->
       <section id="screen-3" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            Answered Prayer 🤍
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
+          <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-semibold border border-rose-500/30">
+            A Letter From Derrick 🤍
           </span>
-          <h2 class="text-lg font-black text-white">Why I'm Blessed to Call You Mine</h2>
-          <p class="text-[11px] text-emerald-400 font-medium -mt-2">From my whole heart to yours, Princess</p>
+          <h2 class="text-lg font-black text-white">To My Answered Prayer</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">Words I want you to carry in your heart always.</p>
 
-          <div class="text-left text-xs text-slate-300 space-y-3 leading-relaxed border-t border-slate-800/80 pt-3">
-            <p class="font-bold text-white text-sm">To My Dearest Princess Liza,</p>
+          <div class="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 text-left text-xs space-y-3 leading-relaxed text-slate-300">
             <p>
-              Having you as my girlfriend brings so much genuine peace to my life. You are my biggest supporter, my prayer partner, and without hesitation the sweetest part of my entire day. Seeing how deeply you love God, how humbly you carry yourself, and how sincerely you care for me makes me thank Him every single morning. I love us, I love everything we are building together, and I love walking this journey with you side by side in spirit every day.
+              My dearest Liza,
             </p>
             <p>
-              I want to take a moment and step past all the rush of daily life to put down in words how much I truly, deeply love you. When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life. My feelings for you are not casual, surface-level emotions that change with time or mood—they are rooted in an intentional commitment to honor, cherish, and stand beside you. No matter how many miles, time zones, or oceans stretch between the United States and the Philippines, you are my home.
+              Long before we met, I prayed for a woman of quiet strength, genuine faith, and a sweet, humble spirit. When God brought you into my life, He gave me more than I could have ever asked for.
             </p>
             <p>
-              I admire you so much for the incredible strength, determination, and independence you carry. Watching how hard you push through long, tiring shifts, how disciplined you are, and how you carry your responsibilities with grace leaves me in awe of the woman you are. You have a quiet power and resilience that is nothing short of inspiring. But I want to remind you of something very important: even though you are strong, and even though you know how to stand on your own two feet, you do not have to carry the weight of everything by yourself anymore.
+              I watch how hard you work, how selflessly you love, and how gracefully you handle every challenge that comes your way. Distance may test us physically, but it has only strengthened my respect, love, and protective care for you.
             </p>
             <p>
-              You are allowed to have days where you feel sad, and you never have to worry that you are bothering me. If you have a problem, let's talk about it. If you had a frustrating day, vent to me. If you are anxious about something, let's pray over it together. In this relationship, there is no judgment, no impatience, and no walls. You have my full attention and an open ear whenever you need to let things out.
+              Thank you for trusting me with your heart, for giving me your soft laughter, and for being my partner in prayer. I am so proud to stand by your side.
             </p>
-            <p>
-              Your voice brings peace to my spirit, and I always love connecting with you in real time.
+            <p class="pt-1 font-bold text-rose-300">
+              Forever your biggest supporter,<br>
+              Derrick 💍
             </p>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2">
-              <p class="text-xs font-bold text-emerald-300">My Promise to You 💍</p>
-              <p class="text-[11px] text-slate-300 leading-relaxed">
-                Above everything else, Liza, please know in your bones: I am not here to break your heart, play games, or make you doubt yourself. I am here to protect your heart, support your growth, cherish your soul, and love you with real devotion. You have been hurt or cautious in life, but with me, your heart is in gentle, loyal hands. I am here to walk through every chapter with you—the joyful sunny days, the exhausting midnight hours, and every stepping stone on our road toward forever. You are the one God chose for me, and I am choosing you every single day.
-              </p>
-              <p class="text-[11px] text-slate-400 pt-1 font-semibold">
-                Forever loving you, cheering for you, and holding you close in prayer,<br>
-                <span class="text-white font-bold">— Derrick 🌿</span>
-              </p>
-            </div>
           </div>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(4)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              Little things I adore ✨
-            </button>
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
@@ -355,45 +248,45 @@
         </div>
       </section>
 
-      <!-- ================= SCREEN 4: TREASURES (WHY YOU'RE RARE) ================= -->
+      <!-- ================= SCREEN 4: THINGS THAT MAKE YOU RARE ================= -->
       <section id="screen-4" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            Treasures in You ✨
+            Treasures ✨
           </span>
           <h2 class="text-lg font-black text-white">Things That Make You Rare</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">The quiet qualities I cherish most about you.</p>
 
-          <div id="treasure-carousel" class="min-h-[140px] flex items-center justify-center">
-            <div id="treasure-card-0" class="treasure-item p-5 rounded-2xl bg-slate-950/80 border border-slate-800 w-full space-y-2">
-              <p class="text-xs font-bold text-emerald-300">Your Gentle Spirit 🌿</p>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                No matter how hectic things get, talking with you brings instant peace and calm to my heart.
+          <div class="space-y-2.5 text-left text-xs">
+            <div id="treasure-card-0" class="treasure-item p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="font-bold text-emerald-400 text-[11px]">1. YOUR GENTLE PURITY</p>
+              <p class="text-slate-300 text-[11px] leading-relaxed">
+                In a harsh, cynical world, you keep your heart pure, sweet, and anchored in kindness. That softness is true strength.
               </p>
             </div>
-            <div id="treasure-card-1" class="treasure-item hidden p-5 rounded-2xl bg-slate-950/80 border border-slate-800 w-full space-y-2">
-              <p class="text-xs font-bold text-emerald-300">Your Work Ethic & Strength 💪</p>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                Pushing through demanding shifts with patience shows the incredible woman you are.
+
+            <div id="treasure-card-1" class="treasure-item hidden p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="font-bold text-emerald-400 text-[11px]">2. UNWAVERING DEVOTION</p>
+              <p class="text-slate-300 text-[11px] leading-relaxed">
+                You never waver in your prayers, your responsibilities, or the people you love. Your loyalty is steady and true.
               </p>
             </div>
-            <div id="treasure-card-2" class="treasure-item hidden p-5 rounded-2xl bg-slate-950/80 border border-slate-800 w-full space-y-2">
-              <p class="text-xs font-bold text-emerald-300">Your Thoughtfulness 🌸</p>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                Even when your energy is drained, you always make time to send warmth and check on me.
+
+            <div id="treasure-card-2" class="treasure-item hidden p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="font-bold text-emerald-400 text-[11px]">3. HUMBLE RADIANCE</p>
+              <p class="text-slate-300 text-[11px] leading-relaxed">
+                You don't seek applause or praise, yet your light shines effortlessly wherever you step foot.
               </p>
+            </div>
+
+            <div class="flex justify-center gap-2 pt-2">
+              <button onclick="setTreasureCard(0)" id="t-dot-0" class="w-2.5 h-2.5 rounded-full bg-emerald-400"></button>
+              <button onclick="setTreasureCard(1)" id="t-dot-1" class="w-2.5 h-2.5 rounded-full bg-slate-700"></button>
+              <button onclick="setTreasureCard(2)" id="t-dot-2" class="w-2.5 h-2.5 rounded-full bg-slate-700"></button>
             </div>
           </div>
 
-          <div class="flex justify-center gap-1.5 py-1">
-            <button onclick="setTreasureCard(0)" id="t-dot-0" class="w-2.5 h-2.5 rounded-full bg-emerald-400"></button>
-            <button onclick="setTreasureCard(1)" id="t-dot-1" class="w-2.5 h-2.5 rounded-full bg-slate-700"></button>
-            <button onclick="setTreasureCard(2)" id="t-dot-2" class="w-2.5 h-2.5 rounded-full bg-slate-700"></button>
-          </div>
-
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(5)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              About Us: Liza & Derrick 🌱
-            </button>
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
@@ -401,125 +294,77 @@
         </div>
       </section>
 
-      <!-- ================= SCREEN 5: ABOUT US (TWO HEARTS, ONE JOURNEY) ================= -->
+      <!-- ================= SCREEN 5: ABOUT US ================= -->
       <section id="screen-5" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
             Two Hearts, One Journey ✈️
           </span>
-          <h2 class="text-lg font-black text-white">About Liza & Derrick</h2>
-          <p class="text-[11px] text-slate-400 -mt-2">What defines us across the miles.</p>
+          <h2 class="text-lg font-black text-white">Our Shared Horizon</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">Connected across time zones and distance.</p>
 
-          <div class="grid grid-cols-2 gap-2 text-center">
-            <div class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800">
-              <p class="text-[10px] text-slate-400 font-medium">My Time (US)</p>
-              <p id="about-us-clock" class="text-sm font-black text-white font-mono mt-0.5">--:-- --</p>
+          <div class="grid grid-cols-2 gap-2 text-center text-xs">
+            <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Louisiana (Derrick)</p>
+              <p id="about-us-clock" class="text-sm font-black text-rose-400">--:-- --</p>
+              <p class="text-[10px] text-slate-500">US Central</p>
             </div>
-            <div class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800">
-              <p class="text-[10px] text-slate-400 font-medium">Your Time (PH)</p>
-              <p id="about-ph-clock" class="text-sm font-black text-emerald-400 font-mono mt-0.5">--:-- --</p>
-            </div>
-          </div>
-
-          <div class="space-y-2.5 text-left text-xs">
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-rose-400 flex items-center gap-1.5">
-                <span>🌸</span> Princess Liza
-              </p>
-              <p class="text-slate-300 leading-relaxed text-[11px]">
-                Resilient, hardworking, and deeply caring. You face long shifts with patience, keep God at the center of your heart, and radiate genuine warmth.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-400 flex items-center gap-1.5">
-                <span>🌿</span> Derrick
-              </p>
-              <p class="text-slate-300 leading-relaxed text-[11px]">
-                Loyal, protective, and patient. Ready to listen without judgment, cover you in prayer, and be the steady rock you can always lean on.
-              </p>
+            <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+              <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Philippines (Liza)</p>
+              <p id="about-ph-clock" class="text-sm font-black text-emerald-400">--:-- --</p>
+              <p class="text-[10px] text-slate-500">Asia / Manila</p>
             </div>
           </div>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(6)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              Visit Prayer Wall & Request Box 🙏
-            </button>
+          <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 text-left text-xs space-y-2 text-slate-300">
+            <p class="font-bold text-slate-200">The Road Ahead 💍</p>
+            <p class="text-[11px] leading-relaxed">
+              Every flight, every countdown, and every phone call is a bridge bringing us closer to closing the distance once and for all. God has written our story, and the best chapters are just beginning.
+            </p>
+          </div>
+
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-            <!-- ================= SCREEN 6: PRAYER WALL & REQUEST BOX ================= -->
+            <!-- ================= SCREEN 6: OUR PRAYER WALL ================= -->
       <section id="screen-6" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            Anchored in Christ 🙏
+            Rooted in Faith 🕊️
           </span>
           <h2 class="text-lg font-black text-white">Our Prayer Wall</h2>
-          <p class="text-[11px] text-slate-400 -mt-2">Lifting you up daily in Jesus' name.</p>
+          <p class="text-[11px] text-slate-400 -mt-2">What God has united, distance cannot break.</p>
 
-          <div class="space-y-2.5 text-left text-xs">
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-300 text-[11px]">1. REST & RENEWED STRENGTH</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                "Lord, wrap Liza in Your supernatural peace after her long shifts. Calm her thoughts, replenish her physical energy while she sleeps, and let her wake up refreshed and reminded of how deeply loved she is."
+          <div class="space-y-3 text-left">
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1.5">
+              <p class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                <span>📖</span> Scripture for Us
+              </p>
+              <p class="text-[11px] text-slate-300 italic leading-relaxed">
+                "Above all, keep fervent in your love for one another, because love covers a multitude of sins." — 1 Peter 4:8
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-300 text-[11px]">2. MORNING PEACE & SAFE TRAVEL</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                "Heavenly Father, place Your angels around Liza during her commute and throughout her working hours. Grant her clarity of mind, patient coworkers, and guard her steps wherever she goes today."
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
+              <p class="text-xs font-bold text-rose-300 flex items-center gap-1.5">
+                <span>🙏</span> Send Derrick a Prayer Request
               </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-300 text-[11px]">3. COMFORT ACROSS THE DISTANCE</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                "Father, when the distance feels heavy, reassure her heart. Remind her she is never alone. Turn our longing into gratitude and give us patience as You prepare our path toward closing the gap."
+              <p class="text-[11px] text-slate-400">
+                Tell me what's on your heart or what you need prayer for today. It goes straight to my personal inbox so I can lift you up.
               </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-300 text-[11px]">4. SPIRITUAL GROWTH & WISDOM</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                "God, draw Liza ever closer to Your heart. Fill her with wisdom, anchor her spirit in Your Word, and let her feel Your gentle presence assuring her through every season of life."
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-300 text-[11px]">5. OUR FUTURE HOME & MARRIAGE</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                "Lord, guide our steps toward marriage. Shape our character, bless our communication, and build our relationship upon the rock of Christ so our future home brings honor to Your name. Amen."
-              </p>
-            </div>
-
-            <div class="p-3.5 rounded-2xl bg-slate-950/90 border border-slate-800 text-center space-y-1">
-              <p class="text-[11px] italic text-slate-300 leading-relaxed">
-                "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you."
-              </p>
-              <p class="text-[10px] font-bold text-emerald-400 tracking-wider uppercase">Numbers 6:24-25</p>
+              <textarea id="prayer-req-text" rows="3" placeholder="Type your prayer request here..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-rose-400"></textarea>
+              <button onclick="sendPrayerRequest()" class="w-full py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl shadow transition-all">
+                Send Prayer Request 💌
+              </button>
+              <p id="prayer-confirm" class="text-[10px] text-emerald-400 text-center font-semibold hidden"></p>
             </div>
           </div>
 
-          <div class="p-4 rounded-2xl bg-slate-950/90 border border-emerald-500/30 text-left space-y-2">
-            <p class="text-xs font-bold text-emerald-300">Have a prayer request? 🕊️</p>
-            <p class="text-[11px] text-slate-400">
-              Type whatever is heavy on your heart. It goes straight to my email so I can pray over you.
-            </p>
-            <textarea id="prayer-req-text" rows="3" placeholder="Lord, please help me with..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
-            <button onclick="sendPrayerRequest()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition-all">
-              Send Prayer Request to Derrick
-            </button>
-            <p id="prayer-confirm" class="text-[10px] text-emerald-400 text-center font-semibold hidden"></p>
-          </div>
-
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(7)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              Liza's Comfort Kit & Vent Box 🧰
-            </button>
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
@@ -529,7 +374,7 @@
 
       <!-- ================= SCREEN 7: COMFORT KIT & VENT BOX ================= -->
       <section id="screen-7" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
             Safe Haven 🌿
           </span>
@@ -570,20 +415,16 @@
             </div>
           </div>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(8)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              Reasons You Make Me Proud 👑
-            </button>
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-
-      <!-- ================= SCREEN 8: SO PROUD (WHY YOU SHINE) ================= -->
+            <!-- ================= SCREEN 8: SO PROUD (WHY YOU SHINE) ================= -->
       <section id="screen-8" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
             Recognizing You 👑
           </span>
@@ -620,434 +461,164 @@
             </div>
           </div>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(9)" class="w-full py-3 rounded-2xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow transition-all flex items-center justify-center gap-1.5">
-              <span>Plan A Call Or Chat</span> 💬
-            </button>
+          <div class="pt-2">
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-            <!-- ================= SCREEN 9: PLAN A CALL ================= -->
+            <!-- ================= SCREEN 9: LET'S PLAN A CALL ================= -->
       <section id="screen-9" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-semibold border border-rose-500/30">
-            Direct Line to My Heart 📞
+            Quality Time 📞
           </span>
-          <h2 class="text-lg font-black text-white">Let's Plan a Call</h2>
-          <p class="text-[11px] text-slate-400 -mt-2 leading-relaxed">
-            Pick a date and tell me what you want to do. Hearing your voice is always the highlight of my day!
-          </p>
+          <h2 class="text-lg font-black text-white">Let's Plan A Call</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">Pick a time that works best for your schedule.</p>
 
-          <form id="call-planner-form" onsubmit="handleCallSubmit(event)" class="text-left text-xs space-y-3 pt-1">
+          <form id="call-planner-form" onsubmit="handleCallSubmit(event)" class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3 text-left">
             <div>
-              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Select a Date</label>
-              <input type="date" id="call-date" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Select Date</label>
+              <input type="date" id="call-date" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
             </div>
 
             <div>
-              <label class="block text-[11px] font-semibold text-slate-300 mb-1">What Time Works For You?</label>
-              <input type="text" id="call-time" placeholder="e.g. 9:00 PM your time / after my shift" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Target Time</label>
+              <input type="time" id="call-time" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
             </div>
 
             <div>
-              <label class="block text-[11px] font-semibold text-slate-300 mb-1">What Kind of Call or Chat?</label>
-              <input type="text" id="call-type" placeholder="e.g. FaceTime video call, regular phone call, voice notes" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Call Format</label>
+              <select id="call-type" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
+                <option value="Video Call (Face-to-Face)">Video Call (Face-to-Face)</option>
+                <option value="Voice Only (Cozy Audio)">Voice Only (Cozy Audio)</option>
+                <option value="Quick Check-In">Quick Check-In</option>
+              </select>
             </div>
 
             <div>
-              <label class="block text-[11px] font-semibold text-slate-300 mb-1">What Would You Like to Do?</label>
-              <input type="text" id="call-activity" placeholder="e.g. Talk about our day, late-night prayer, just relax..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">What should we do?</label>
+              <select id="call-activity" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400">
+                <option value="Just talk about our days">Just talk about our days</option>
+                <option value="Pray together">Pray together</option>
+                <option value="Quiet company / wind down">Quiet company / wind down</option>
+                <option value="Plan future visits">Plan future visits</option>
+              </select>
             </div>
 
             <div>
-              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Anything Else On Your Mind?</label>
-              <textarea id="call-notes" rows="2" placeholder="Write whatever you want here..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400"></textarea>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Any extra notes or requests?</label>
+              <textarea id="call-notes" rows="2" placeholder="Tell me anything else..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-rose-400"></textarea>
             </div>
 
-            <button type="submit" class="w-full py-3 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl shadow transition-all">
+            <button type="submit" class="w-full py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl shadow transition-all">
               Send Call Request to Derrick 💌
             </button>
             <p id="call-confirm" class="text-[10px] text-emerald-400 text-center font-semibold hidden"></p>
           </form>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(10)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
-              Questions of the Day 💬
-            </button>
-            <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
+          <div class="pt-2">
+            <button type="button" onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-
-      <!-- ================= SCREEN 10: QUESTIONS OF THE DAY ================= -->
+            <!-- ================= SCREEN 10: QUESTIONS OF THE DAY ================= -->
       <section id="screen-10" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            Memories & Milestones 💬
+            Let's Talk 💬
           </span>
           <h2 class="text-lg font-black text-white">Questions of the Day</h2>
-          <p class="text-[11px] text-slate-400 -mt-2">10 prompts per tier — tap Next to shuffle!</p>
+          <p class="text-[11px] text-slate-400 -mt-2">Pick a vibe and let's explore each other's minds.</p>
 
           <div class="space-y-3 text-left">
             <!-- Tier 1 -->
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2">
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Tier 1: Sweet & Easy ✨</span>
-                <button onclick="shufflePrompt(1)" class="text-[10px] font-semibold text-slate-400 hover:text-white px-2 py-0.5 rounded bg-slate-900 border border-slate-700">Next 🎲</button>
+                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Tier 1: Sweet & Easy</span>
+                <button type="button" onclick="shufflePrompt(1)" class="text-[11px] text-slate-400 hover:text-white font-semibold">Shuffle 🔀</button>
               </div>
-              <p id="prompt-tier-1" class="text-xs text-slate-200 leading-relaxed min-h-[36px] flex items-center">
+              <p id="prompt-tier-1" class="text-xs text-slate-200 leading-relaxed font-medium">
                 If we could pick one dessert to bake together from scratch, what are we making?
               </p>
             </div>
 
             <!-- Tier 2 -->
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2">
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Tier 2: About Us 💌</span>
-                <button onclick="shufflePrompt(2)" class="text-[10px] font-semibold text-slate-400 hover:text-white px-2 py-0.5 rounded bg-slate-900 border border-slate-700">Next 🎲</button>
+                <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">Tier 2: About Us</span>
+                <button type="button" onclick="shufflePrompt(2)" class="text-[11px] text-slate-400 hover:text-white font-semibold">Shuffle 🔀</button>
               </div>
-              <p id="prompt-tier-2" class="text-xs text-slate-200 leading-relaxed min-h-[36px] flex items-center">
+              <p id="prompt-tier-2" class="text-xs text-slate-200 leading-relaxed font-medium">
                 Do you love me, and what is your favorite reason why? 💍
               </p>
             </div>
 
             <!-- Tier 3 -->
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2">
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">Tier 3: Deep & Real 🕊️</span>
-                <button onclick="shufflePrompt(3)" class="text-[10px] font-semibold text-slate-400 hover:text-white px-2 py-0.5 rounded bg-slate-900 border border-slate-700">Next 🎲</button>
+                <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Tier 3: Deep & Real</span>
+                <button type="button" onclick="shufflePrompt(3)" class="text-[11px] text-slate-400 hover:text-white font-semibold">Shuffle 🔀</button>
               </div>
-              <p id="prompt-tier-3" class="text-xs text-slate-200 leading-relaxed min-h-[36px] flex items-center">
+              <p id="prompt-tier-3" class="text-xs text-slate-200 leading-relaxed font-medium">
                 When do you feel you would want to get married? 💍
               </p>
             </div>
           </div>
 
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(11)" class="w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition-all">
-              Reasons to Smile & Surprise ✨
-            </button>
-            <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
+          <div class="pt-2">
+            <button type="button" onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-
-      <!-- ================= SCREEN 11: WARM HUG & CHUCKLE ================= -->
+            <!-- ================= SCREEN 11: A LITTLE CHUCKLE & HUG ================= -->
       <section id="screen-11" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            For Your Daily Smile 😂
+        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800 text-center shadow-xl space-y-4">
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+            A Little Sunshine 😂
           </span>
-          <h2 class="text-lg font-black text-white">A Little Chuckle</h2>
+          <h2 class="text-lg font-black text-white">A Quick Smile For Liza</h2>
+          <p class="text-[11px] text-slate-400 -mt-2">Cheesy, true, and just for you.</p>
 
-          <!-- Joke Box -->
-          <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-3">
-            <p id="joke-text" class="text-xs text-slate-200 min-h-[40px] flex items-center justify-center italic">
+          <div class="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 text-center space-y-3">
+            <p id="joke-text" class="text-xs text-slate-200 leading-relaxed font-medium">
               "Do you have a map? Because I keep getting lost in our conversations every day. 🥰"
             </p>
-            <button onclick="nextJoke()" class="px-4 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] font-semibold text-slate-300">
-              Next chuckle 🔄
+            <button type="button" onclick="nextJoke()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl transition-all">
+              Give Me Another Smile 🔄
             </button>
           </div>
 
-          <!-- Always In Your Corner Card -->
-          <div class="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
-            <p class="text-[11px] font-bold text-rose-400 uppercase tracking-wider">Always in Your Corner 💖</p>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Whenever you are having a rough or tiring day, come back to this page and remember how deeply cared for you are. I am so blessed to call you my girlfriend, and one day my wife! 💍
+          <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 text-left">
+            <p class="text-xs font-bold text-rose-300 flex items-center gap-1.5">
+              <span>🤍</span> Always in Your Corner
             </p>
-            <button onclick="triggerHugConfetti()" class="w-full py-3 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 hover:opacity-95 text-white font-bold text-xs rounded-xl shadow-lg transition-all active:scale-95">
-              Send A Warm Hug 💖
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              No matter what kind of day it was—rough, chaotic, or smooth—you did your best. I am so proud of you, and I am sending you the warmest hug across the miles tonight.
+            </p>
+            <button type="button" onclick="triggerHugConfetti()" class="w-full py-2.5 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-xs rounded-xl shadow transition-all">
+              Tap for a Virtual Hug 🎉
             </button>
           </div>
 
           <div class="pt-2">
-            <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
-              ⌂ Back to Home Menu
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- JavaScript Functionality -->
-  <script>
-    // 1. Dual Clocks: US Central (Derrick) & Asia/Manila (Liza)
-    function updateClocks() {
-      const now = new Date();
-      const usTime = new Intl.DateTimeFormat("en-US", {
-        timeZone: "America/Chicago",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true
-      }).format(now);
-      const phTime = new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Manila",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true
-      }).format(now);
-      const usElem = document.getElementById("about-us-clock");
-      const phElem = document.getElementById("about-ph-clock");
-      if (usElem) usElem.innerText = usTime;
-      if (phElem) phElem.innerText = phTime;
-    }
-    setInterval(updateClocks, 1000);
-    updateClocks();
-
-    // 2. Screen Router
-    function goToScreen(screen) {
-      document.querySelectorAll("main > section").forEach(sec => sec.classList.add("hidden"));
-      const targetId = typeof screen === 'number' ? `screen-${screen}` : `screen-${screen}`;
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.classList.remove("hidden");
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    // 3. Treasures Carousel Dots
-    function setTreasureCard(index) {
-      document.querySelectorAll('.treasure-item').forEach(el => el.classList.add('hidden'));
-      const active = document.getElementById(`treasure-card-${index}`);
-      if (active) active.classList.remove('hidden');
-      for (let i = 0; i <= 2; i++) {
-        const dot = document.getElementById(`t-dot-${i}`);
-        if (dot) {
-          dot.className = (i === index) ? "w-2.5 h-2.5 rounded-full bg-emerald-400" : "w-2.5 h-2.5 rounded-full bg-slate-700";
-        }
-      }
-    }
-
-    // 4. 25 Reasons Why I Love You Logic
-    const reasonsList = [
-      "I love you because your heart belongs to God first, and that gives me total peace about our foundation.",
-      "I love how your voice instantly washes away the stress of a long day, no matter how many miles stand between us.",
-      "I love your gentle spirit—even when the world around you is loud and chaotic, you stay soft and kind.",
-      "I love how hard you work and how faithfully you show up for your responsibilities without complaining.",
-      "I love how safe you make me feel to open up and be completely honest about my thoughts.",
-      "I love the way your eyes light up when you laugh, even through a screen.",
-      "I love how deeply you care for the people in your life and how naturally selfless you are.",
-      "I love that you are my biggest supporter and my most trusted prayer partner.",
-      "I love how disciplined and strong you are, even on the days when you feel exhausted.",
-      "I love that when you are tired, you still take a moment to make sure I am doing okay.",
-      "I love how humble you are, never seeking attention or boasting about how exceptional you are.",
-      "I love how we lift each other up in prayer and keep God at the center, despite living half a world apart.",
-      "I love your patience with the distance and how intentionally you protect our connection across the time zones.",
-      "I love the way you listen—not just waiting to speak, but truly hearing my heart.",
-      "I love how your faith never wavers, even when life puts heavy pressure on your shoulders.",
-      "I love your sweet laugh and how easily you can turn an ordinary conversation into the highlight of my day.",
-      "I love that you don't play games with love; you give your heart with pure sincerity.",
-      "I love how proud I feel every single time I tell myself, 'That is my girlfriend.'",
-      "I love how you encourage me to grow closer to God and become a better man every day.",
-      "I love the little quirks and habits you share only with me.",
-      "I love that you allow me to protect your peace and carry your burdens when you need rest.",
-      "I love that you are my answered prayer in every sense of the word.",
-      "I love knowing that our connection is built on real commitment, not temporary feelings.",
-      "I love the future I see when I look at you—a home filled with prayer, laughter, and lasting peace.",
-      "I love you simply because you are you, and I choose to love and cherish you every single day for the rest of my life."
-    ];
-
-    let currentReasonIndex = 0;
-    function updateReasonCard() {
-      const counterElem = document.getElementById("reason-counter");
-      const textElem = document.getElementById("reason-text");
-      if (counterElem) counterElem.innerText = `Reason #${currentReasonIndex + 1} of ${reasonsList.length}`;
-      if (textElem) textElem.innerText = reasonsList[currentReasonIndex];
-    }
-
-    function nextReason() {
-      if (currentReasonIndex < reasonsList.length - 1) {
-        currentReasonIndex++;
-        updateReasonCard();
-        if (currentReasonIndex === reasonsList.length - 1) triggerHugConfetti();
-      } else {
-        currentReasonIndex = 0;
-        updateReasonCard();
-      }
-    }
-
-    function prevReason() {
-      if (currentReasonIndex > 0) {
-        currentReasonIndex--;
-        updateReasonCard();
-      } else {
-        currentReasonIndex = reasonsList.length - 1;
-        updateReasonCard();
-      }
-    }
-
-    // 5. Mood System
-    let currentSelectedMood = "Happy";
-    function showMood(mood) {
-      currentSelectedMood = mood;
-      const placeholder = document.getElementById("mood-box-placeholder");
-      if (placeholder) placeholder.classList.add("hidden");
-      document.querySelectorAll('.mood-card').forEach(el => el.classList.add('hidden'));
-      const activeCard = document.getElementById(`mood-box-${mood}`);
-      if (activeCard) activeCard.classList.remove('hidden');
-
-      goToScreen('mood');
-
-      fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          _subject: `Liza's Mood Alert: ${mood} 🌸`,
-          Mood: mood,
-          Timestamp: new Date().toLocaleString()
-        })
-      }).catch(err => console.log(err));
-    }
-
-    function sendMoodAlertWithNote() {
-      const input = document.getElementById("mood-custom-note");
-      const note = input ? input.value : "";
-      fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          _subject: `Liza added a note to her ${currentSelectedMood} mood 💌`,
-          Mood: currentSelectedMood,
-          Note: note || "No note",
-          Timestamp: new Date().toLocaleString()
-        })
-      }).then(() => {
-        const confirm = document.getElementById("mood-sent-confirm");
-        if (confirm) {
-          confirm.innerText = "Sent note directly to Derrick! 💌";
-          confirm.classList.remove("hidden");
-          if (input) input.value = "";
-          setTimeout(() => confirm.classList.add("hidden"), 3000);
-        }
-      }).catch(err => console.log(err));
-    }
-
-    // 6. Prayer Wall & Vent Box
-    function sendPrayerRequest() {
-      const text = document.getElementById("prayer-req-text").value;
-      if (!text.trim()) return;
-      fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          _subject: `Liza's Prayer Request 🕊️`,
-          PrayerRequest: text,
-          Timestamp: new Date().toLocaleString()
-        })
-      }).then(() => {
-        const confirm = document.getElementById("prayer-confirm");
-        confirm.innerText = "Prayer request sent to Derrick! Lifting you up! 🙏";
-        confirm.classList.remove("hidden");
-        document.getElementById("prayer-req-text").value = "";
-        setTimeout(() => confirm.classList.add("hidden"), 4000);
-      }).catch(err => console.log(err));
-    }
-
-    function sendComfortVent() {
-      const text = document.getElementById("comfort-vent-text").value;
-      if (!text.trim()) return;
-      fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          _subject: `Liza's Comfort Vent 📦`,
-          VentContent: text,
-          Timestamp: new Date().toLocaleString()
-        })
-      }).then(() => {
-        const confirm = document.getElementById("comfort-vent-confirm");
-        confirm.innerText = "Message sent to Derrick's inbox. Breathe easy. 🤍";
-        confirm.classList.remove("hidden");
-        document.getElementById("comfort-vent-text").value = "";
-        setTimeout(() => confirm.classList.add("hidden"), 4000);
-      }).catch(err => console.log(err));
-    }
-
-    // 7. Plan A Call Form
-    function handleCallSubmit(e) {
-      e.preventDefault();
-      fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          _subject: `Call Request from Liza 📞`,
-          Date: document.getElementById("call-date").value,
-          Time: document.getElementById("call-time").value,
-          Type: document.getElementById("call-type").value,
-          Activity: document.getElementById("call-activity").value,
-          Notes: document.getElementById("call-notes").value || "None",
-          Timestamp: new Date().toLocaleString()
-        })
-      }).then(() => {
-        const confirm = document.getElementById("call-confirm");
-        confirm.innerText = "Call request sent to Derrick! Can't wait! 💖";
-        confirm.classList.remove("hidden");
-        document.getElementById("call-planner-form").reset();
-        setTimeout(() => confirm.classList.add("hidden"), 4500);
-      }).catch(err => console.log(err));
-    }
-
-          <!-- ================= SCREEN 8: SO PROUD (WHY YOU SHINE) ================= -->
-      <section id="screen-8" class="hidden space-y-4">
-        <div class="p-5 rounded-3xl bg-slate-900/95 border border-slate-800/90 text-center shadow-xl space-y-4">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
-            Recognizing You 👑
-          </span>
-          <h2 class="text-lg font-black text-white">Reasons You Make Me Proud</h2>
-          <p class="text-[11px] text-slate-400 -mt-2">In case you ever forget how exceptional you are.</p>
-
-          <div class="space-y-2.5 text-left text-xs">
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-400 text-[11px]">1. YOUR FIERCE WORK ETHIC</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                Even when shifts are brutal and exhausting, you show up, handle business, and give your best without complaining.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-400 text-[11px]">2. YOUR GENTLE RESILIENCE</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                You have faced hard things in life, but you haven't let the world make you bitter or cold. You stay sweet and pure-hearted.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-400 text-[11px]">3. YOUR FAITH UNDER PRESSURE</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                The way you look to God and trust Him with your steps inspires me to be a better man and spiritual leader for us.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1">
-              <p class="font-bold text-emerald-400 text-[11px]">4. THE WAY YOU LOVE ME</p>
-              <p class="text-slate-300 text-[11px] leading-relaxed">
-                Taking time to check on me, opening your heart more each day, and making me laugh across thousands of miles.
-              </p>
-            </div>
-          </div>
-
-          <div class="pt-2 space-y-2">
-            <button onclick="goToScreen(9)" class="w-full py-3 rounded-2xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow transition-all flex items-center justify-center gap-1.5">
-              <span>Plan A Call Or Chat</span> 💬
-            </button>
-            <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
+            <button type="button" onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 text-slate-300 text-xs font-semibold">
               ⌂ Home Menu
             </button>
           </div>
         </div>
       </section>
-      <!-- JavaScript Functionality -->
+          </main>
+  </div>
+
+  <!-- JavaScript Functionality -->
   <script>
-    // 1. Dual Clocks: US Central & Asia/Manila (Liza)
+    // 1. Dual Clocks
     function updateClocks() {
       const now = new Date();
       const usTime = new Intl.DateTimeFormat("en-US", {

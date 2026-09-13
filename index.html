@@ -10,6 +10,7 @@
     body.page-home { background: radial-gradient(circle at center, #112614 0%, #0b1311 100%); }
     body.page-story { background: radial-gradient(circle at center, #261219 0%, #0b1311 100%); }
     body.page-comfort { background: radial-gradient(circle at center, #121c26 0%, #0b1311 100%); }
+    body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0b1311 100%); }
 
     #heart-canvas {
       position: fixed;
@@ -41,9 +42,21 @@
     }
   </style>
 </head>
-<body class="bg-[#0b1311] text-slate-100 min-h-screen flex flex-col items-center p-4 page-home relative">
+<body class="bg-[#0b1311] text-slate-100 min-h-screen flex flex-col items-center p-4 page-home relative pb-16">
 
   <canvas id="heart-canvas"></canvas>
+
+  <!-- BACKGROUND MUSIC PLAYER -->
+  <audio id="bg-audio" loop src="Bill Withers - Lovely Day (Official Audio).mp3"></audio>
+  <div class="w-full max-w-sm flex items-center justify-between bg-[#11211c]/90 border border-emerald-900/60 px-4 py-2.5 rounded-2xl mb-4 shadow-lg relative z-20 backdrop-blur-sm">
+    <div class="flex items-center gap-2">
+      <span class="animate-pulse text-rose-400">🎶</span>
+      <span class="text-xs font-medium text-slate-200">Lovely Day - Bill Withers</span>
+    </div>
+    <button onclick="toggleAudio()" id="audio-btn" class="px-3 py-1 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-[11px] font-bold text-emerald-300 transition-all">
+      ▶ Play Music
+    </button>
+  </div>
 
   <!-- MOOD CHECKER GATE -->
   <div id="mood-gate" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
@@ -109,30 +122,31 @@
         </div>
       </section>
 
-      <!-- SCREEN 2 (ONE BIG HEART) -->
+      <!-- SCREEN 2 -->
       <section id="screen-2" class="hidden space-y-4">
         <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Our Beautiful Story 🌿</span>
-          <h2 class="text-lg font-bold text-white">Princess Liza & Derrick 💖</h2>
+          <h2 class="text-lg font-bold text-white">Mr. Derrick & Princess Liza 💖</h2>
 
           <div class="big-heart-container">
             <img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Princess Liza">
             <img src="20260715_084246.jpg" alt="Derrick">
           </div>
 
-          <p class="text-xs text-slate-300 leading-relaxed px-1">Having you as my girlfriend is my greatest blessing. No matter the distance, we are walking this path together with God in our center.</p>
+          <p class="text-xs text-slate-300 leading-relaxed px-1">Having you as my girlfriend is my greatest blessing. Can't wait for our first photo together side by side.</p>
 
           <div class="space-y-2 pt-2">
+            <button onclick="goToScreen(12)" class="w-full py-3 rounded-2xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>🌸 View Photo Gallery</span></button>
             <button onclick="goToScreen(3)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Why You Make Me So Happy</span> 👑</button>
             <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
           </div>
         </div>
       </section>
-      <!-- SCREEN 3 (SECTIONED LETTER) -->
+            <!-- SCREEN 3 -->
       <section id="screen-3" class="hidden space-y-4">
         <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-3">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Answered Prayer 🤍</span>
-          <h2 class="text-lg font-bold text-white">Why I'm Blessed to Call You Mine</h2>
+          <h2 class="text-lg font-bold text-white">Why I's Blessed to Call You Mine</h2>
           <p class="text-[11px] text-emerald-400/90 -mt-1 font-medium">From my whole heart to yours, Princess</p>
 
           <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-left text-xs space-y-3 leading-relaxed text-slate-300">
@@ -422,21 +436,30 @@
             <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Tier 1: Sweet & Easy</span>
-                <button type="button" onclick="nextPrompt(1)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="copyPrompt('prompt-t1')" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-md border border-emerald-500/20 hover:bg-emerald-900">Tap to copy 📋</button>
+                  <button type="button" onclick="nextPrompt(1)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+                </div>
               </div>
               <p id="prompt-t1" class="text-xs text-slate-200 leading-relaxed font-medium">If we could pick one dessert to bake together from scratch, what are we making?</p>
             </div>
             <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">Tier 2: About Us</span>
-                <button type="button" onclick="nextPrompt(2)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="copyPrompt('prompt-t2')" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-md border border-emerald-500/20 hover:bg-emerald-900">Tap to copy 📋</button>
+                  <button type="button" onclick="nextPrompt(2)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+                </div>
               </div>
               <p id="prompt-t2" class="text-xs text-slate-200 leading-relaxed font-medium">Do you love me, and what is your favorite reason why? 💍</p>
             </div>
             <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Tier 3: Deep & Real</span>
-                <button type="button" onclick="nextPrompt(3)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="copyPrompt('prompt-t3')" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-md border border-emerald-500/20 hover:bg-emerald-900">Tap to copy 📋</button>
+                  <button type="button" onclick="nextPrompt(3)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+                </div>
               </div>
               <p id="prompt-t3" class="text-xs text-slate-200 leading-relaxed font-medium">When do you feel you would want to get married? 💍</p>
             </div>
@@ -452,7 +475,10 @@
       <!-- SCREEN 11 -->
       <section id="screen-11" class="hidden space-y-4">
         <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">For Your Daily Smile 😂</span>
+          <div class="flex justify-center gap-2 flex-wrap">
+            <span class="px-2.5 py-0.5 rounded-full bg-rose-950/80 text-rose-300 text-[10px] border border-rose-500/20">Sweet & Flirty 🌸</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-indigo-950/80 text-indigo-300 text-[10px] border border-indigo-500/20">Future Wife Rules 💍</span>
+          </div>
           <h2 class="text-lg font-bold text-white">A Little Chuckle</h2>
 
           <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3">
@@ -471,10 +497,87 @@
           </div>
         </div>
       </section>
+
+      <!-- SCREEN 12 -->
+      <section id="screen-12" class="hidden space-y-4">
+        <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
+          <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/20">A Glimpse of Us 🌸</span>
+          <h2 class="text-lg font-bold text-white">Moments I Adore</h2>
+          <p class="text-[11px] text-slate-300 -mt-2">Every picture of you brings the biggest smile to my face. Here are some of our favorite photos, princess.</p>
+
+          <div class="space-y-4 text-left max-h-[380px] overflow-y-auto pr-1">
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.46ztYa_T7FulnAIxlT5fV4GzwDWIrgcqkQhj7Wm58yg.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">My sweetest blessing 🤍</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.5CfMA6JbZnPaiVPbxgSXOiiIWmqaDT0eTZXi4UCWc0o.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">Princess Liza 💖</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.6ARzmyJRVnPwWTHeQaZTkmibytTxKCDOMMd8WfvPRC8.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">My favorite sight every single day ✨</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.FfsVJbDAresCNaIvnj6GzLKih3pqF6WLARHKyWoJW4o.png.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">That pure, gorgeous smile 🌸</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.P30-KzD9eF-dHV2C6OoKMfPbf8naLAVIRQDAslTdkgo.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">Glowing with grace ✨</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.QxY0as-J4jP2R8hun-XnrQ69ya9X86L_69PX3Ywxg-g.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">Thinking of you across the miles 🤍</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.W-ZnUOsKqA1a558bRKQwYw7Tzsa6eYjDx569eb1erGs.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">My gorgeous Asawa 🌸</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.gKJwb-q3q0d5wbzXaX-us7cdYEzC6vsWjjd-lRO2gMo.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">Such a radiant heart 💖</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.ngu5G3ecbbTrCuqIW_v2xJNfm0usjTjPHBKWz3McpTo.png.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">Always in my heart ✨</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+              <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.yt9BuScXAu6yyKgCidJZoC8T62OAfeDB73teHMizsTw.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+              <p class="text-xs text-rose-300 font-semibold">My love, my princess 🤍</p>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <button onclick="goToScreen(2)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all">← Back to Story</button>
+            <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
     <!-- JavaScript Engine -->
   <script>
+    function toggleAudio() {
+      const audio = document.getElementById('bg-audio');
+      const btn = document.getElementById('audio-btn');
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.innerText = "⏸ Pause Music";
+        }).catch(err => console.log("Audio play blocked"));
+      } else {
+        audio.pause();
+        btn.innerText = "▶ Play Music";
+      }
+    }
+
+    function copyPrompt(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied question to clipboard! 📋");
+      });
+    }
+
     function goToScreen(num) {
       document.querySelectorAll("main > section").forEach(sec => sec.classList.add("hidden"));
       const target = document.getElementById(`screen-${num}`);
@@ -483,11 +586,13 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      document.body.className = "bg-[#0b1311] text-slate-100 min-h-screen flex flex-col items-center p-4 relative";
+      document.body.className = "bg-[#0b1311] text-slate-100 min-h-screen flex flex-col items-center p-4 relative pb-16";
       if (num === 2) {
         document.body.classList.add("page-story");
       } else if (num === 7) {
         document.body.classList.add("page-comfort");
+      } else if (num === 12) {
+        document.body.classList.add("page-gallery");
       } else {
         document.body.classList.add("page-home");
       }

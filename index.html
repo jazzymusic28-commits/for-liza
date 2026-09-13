@@ -51,7 +51,7 @@
 
   <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-900/20 rounded-full blur-3xl pointer-events-none"></div>
 
-  <main class="w-full max-w-sm mx-auto z-10 mb-24">
+  <main class="w-full max-w-sm mx-auto z-10 mb-28">
 
     <!-- Screen 1: Dashboard / Home Hub -->
     <section id="screen-1" class="card-bg rounded-3xl p-6 shadow-2xl transition-all duration-300">
@@ -66,7 +66,7 @@
       </div>
 
       <div class="grid grid-cols-2 gap-2.5 mb-5">
-        <button onclick="goToScreen(2); toggleMusic(true);" class="nav-card p-3 rounded-2xl text-left">
+        <button onclick="goToScreen(2); toggleMusic(null, true);" class="nav-card p-3 rounded-2xl text-left">
           <span class="text-xl">🕊️</span>
           <p class="text-xs font-semibold text-white mt-1">Our Story</p>
           <p class="text-[10px] text-slate-400">Us & First Photos</p>
@@ -131,7 +131,7 @@
         <button onclick="goToScreen(12)" class="w-full py-2.5 rounded-2xl bg-pink-500/10 border border-pink-500/30 text-pink-300 font-medium text-xs flex items-center justify-center gap-2">
           <span>💖</span> Send A Warm Hug & Smiles
         </button>
-        <button onclick="goToScreen(2); toggleMusic(true);" class="w-full py-3 px-6 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs transition-transform active:scale-95 shadow-lg shadow-emerald-900/40">
+        <button onclick="goToScreen(2); toggleMusic(null, true);" class="w-full py-3 px-6 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold text-xs transition-transform active:scale-95 shadow-lg shadow-emerald-900/40">
           Start Tour from Beginning 🌿✨
         </button>
       </div>
@@ -320,8 +320,8 @@
           ⌂ Home Menu
         </button>
       </div>
-    </section>
-        <!-- Screen 6: Prayer Wall & Request Box -->
+          </section>
+            <!-- Screen 6: Prayer Wall & Request Box -->
     <section id="screen-6" class="card-bg rounded-3xl p-5 sm:p-6 shadow-2xl hidden transition-all duration-300">
       <div class="text-center mb-4">
         <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
@@ -367,7 +367,7 @@
       <div class="bg-slate-900/90 border border-emerald-800/40 rounded-2xl p-4 mb-5 text-left">
         <p class="text-xs font-bold text-white mb-1">Have a prayer request? 🕊️</p>
         <p class="text-[10px] text-slate-400 mb-3">Type whatever is heavy on your heart. It goes straight to my email so I can pray over you.</p>
-        <form action="https://formsubmit.co/derrickford704@gmail.com" method="POST" class="space-y-2">
+        <form action="https://formsubmit.co/jazzymusic28@gmail.com" method="POST" class="space-y-2">
           <input type="hidden" name="_subject" value="New Prayer Request from Liza! 🕊️" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://jazzymusic28-commits.github.io/for-liza/" />
@@ -454,7 +454,7 @@
           <p class="text-[10px] text-slate-400 mb-2.5 leading-relaxed">
             No advice, no lectures, just an open ear. Type whatever made you mad, tired, or overwhelmed today. It goes right to my email so you can let it go.
           </p>
-          <form action="https://formsubmit.co/derrickford704@gmail.com" method="POST" class="space-y-2">
+          <form action="https://formsubmit.co/jazzymusic28@gmail.com" method="POST" class="space-y-2">
             <input type="hidden" name="_subject" value="Liza Vent Box Entry 💬" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://jazzymusic28-commits.github.io/for-liza/" />
@@ -535,7 +535,7 @@
         <p class="text-[10px] text-slate-400 mt-0.5">Pick a date and tell me what you want to do. Hearing your voice is always the highlight of my day!</p>
       </div>
 
-      <form action="https://formsubmit.co/derrickford704@gmail.com" method="POST" class="space-y-3 mb-5 text-left">
+      <form action="https://formsubmit.co/jazzymusic28@gmail.com" method="POST" class="space-y-3 mb-5 text-left">
         <input type="hidden" name="_subject" value="New Call Request from Liza! 📅" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://jazzymusic28-commits.github.io/for-liza/" />
@@ -661,27 +661,27 @@
   </main>
 
   <!-- Sticky Bottom Audio Bar -->
-  <div class="fixed bottom-4 w-full max-w-sm px-4 z-40">
+  <div class="fixed bottom-4 inset-x-0 mx-auto w-full max-w-sm px-4 z-50 pointer-events-auto">
     <div class="bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-full py-2.5 px-4 shadow-2xl flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <button id="play-pause-btn" onclick="toggleMusic()" class="w-9 h-9 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 flex items-center justify-center font-bold text-sm shadow-md transition-transform active:scale-90">
+        <button id="play-pause-btn" type="button" onclick="toggleMusic(event)" class="w-10 h-10 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 flex items-center justify-center font-bold text-base shadow-md transition-transform active:scale-90 cursor-pointer">
           ▶
         </button>
         <div>
           <p class="text-xs font-semibold text-white flex items-center gap-1">
             Lovely Day <span class="text-[10px] text-emerald-400">♬</span>
           </p>
-          <p id="music-subtext" class="text-[9px] text-slate-400">Playing for Liza</p>
+          <p id="music-subtext" class="text-[9px] text-slate-400">Tap to play</p>
         </div>
       </div>
 
-      <button onclick="goToScreen(1)" class="px-3 py-1.5 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-medium">
+      <button onclick="goToScreen(1)" type="button" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-medium cursor-pointer">
         ⌂ Home
       </button>
     </div>
   </div>
 
-  <audio id="bg-audio" loop preload="auto">
+  <audio id="bg-audio" preload="auto">
     <source src="lovely-day.mp3" type="audio/mpeg" />
   </audio>
 
@@ -701,21 +701,26 @@
     const playBtn = document.getElementById('play-pause-btn');
     const musicSub = document.getElementById('music-subtext');
 
-    function toggleMusic(forcePlay = false) {
+    function toggleMusic(e, forcePlay = false) {
+      if (e && e.stopPropagation) e.stopPropagation();
       if (!audio) return;
+
       if (forcePlay || audio.paused) {
         audio.play().then(() => {
           playBtn.innerText = '❚❚';
           musicSub.innerText = 'Now Playing 🌿';
+          musicSub.classList.remove('text-pink-400');
           musicSub.classList.add('text-emerald-400');
-        }).catch(e => {
-          console.log('Audio playback pending file or user gesture');
+        }).catch(err => {
+          console.warn('Playback notice:', err);
+          musicSub.innerText = 'Upload lovely-day.mp3 to repo';
+          musicSub.classList.add('text-pink-400');
         });
       } else {
         audio.pause();
         playBtn.innerText = '▶';
         musicSub.innerText = 'Paused';
-        musicSub.classList.remove('text-emerald-400');
+        musicSub.classList.remove('text-emerald-400', 'text-pink-400');
       }
     }
 
@@ -774,20 +779,20 @@
     }
     renderTreasure();
 
-    // Screen 7: Photo Gallery (Exact filenames with lowercase att.)
+    // Screen 7: Photo Gallery (Exact filenames matching repo)
     const galleryPhotos = [
       { src: "att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.46ztYa_T7FulnAlxIT5fV4c9rD1r2XG5XQyF4P0hP_4.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.5CfMA6JbZnPaiVPbxgSHc8v4G7N4l9rE_mQ4yq8k9gA.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.6ARzmyJRVnPwWTHeQ5Z8F2e1mP7N4r0sV6L9y1t3v8g.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.FfsVJbDAresCNalvnj6GSzW-b2iE_M9rQ3u1t5x7p6A.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.P30-KzD9eF-dHV2C6OoOqB3_8nU5m7r1t9v4w2x6y5A.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.QxY0as-J4jP2R8hun-Xnr9zP7V3L5t1q0w4e2r6y8iA.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.W-ZnUOsKqA1a558bRKwS9Z1_u3m7r5t9v4w2x6y8iA.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.bew2vEldukLQGn6f6Pk7N4r0sV6L9y1t3v8g2x6y5A.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.gKJwb-q3q0d5wbzXaX-mQ4yq8k9gA1a558bRKwS9Z1.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.ngu5G3ecbbTrCuqlW_v2e1mP7N4r0sV6L9y1t3v8g.jpg.jpeg", caption: "Princess Liza 🌸" },
-      { src: "att.yt9BuScXAu6yyKgCIdJZ8F2e1mP7N4r0sV6L9y1t3v8.jpg.jpeg", caption: "Princess Liza 🌸" },
+      { src: "att.46ztYa_T7FulnAlxIT5fV4c9rD1r2XG5XQyF4P0hP_4.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.5CfMA6JbZnPaiVPbxgSHc8v4G7N4l9rE_mQ4yq8k9gA.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.6ARzmyJRVnPwWTHeQ5Z8F2e1mP7N4r0sV6L9y1t3v8g.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.FfsVJbDAresCNalvnj6GSzW-b2iE_M9rQ3u1t5x7p6A.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.P30-KzD9eF-dHV2C6OoOqB3_8nU5m7r1t9v4w2x6y5A.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.QxY0as-J4jP2R8hun-Xnr9zP7V3L5t1q0w4e2r6y8iA.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.W-ZnUOsKqA1a558bRKwS9Z1_u3m7r5t9v4w2x6y8iA.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.bew2vEldukLQGn6f6Pk7N4r0sV6L9y1t3v8g2x6y5A.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.gKJwb-q3q0d5wbzXaX-mQ4yq8k9gA1a558bRKwS9Z1.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.ngu5G3ecbbTrCuqlW_v2e1mP7N4r0sV6L9y1t3v8g.jpg", caption: "Princess Liza 🌸" },
+      { src: "att.yt9BuScXAu6yyKgCIdJZ8F2e1mP7N4r0sV6L9y1t3v8.jpg", caption: "Princess Liza 🌸" },
       { src: "20260624_191906.jpg", caption: "Derrick 🌿" },
       { src: "20260704_163114.jpg", caption: "Derrick 🌿" },
       { src: "20260707_185622.jpg", caption: "Derrick 🌿" },

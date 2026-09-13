@@ -142,7 +142,7 @@
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300 mb-3">
         Our Beautiful Story 🕊️
       </div>
-      <h2 class="text-lg font-bold text-white mb-3">My woman Liza & Derrick ❤️</h2>
+      <h2 class="text-lg font-bold text-white mb-3">Princess Liza & Derrick ❤️</h2>
       
       <div class="grid grid-cols-2 gap-2.5 mb-3">
         <div class="rounded-2xl overflow-hidden border border-emerald-500/40 shadow-md bg-emerald-950/40 h-44">
@@ -320,8 +320,8 @@
           ⌂ Home Menu
         </button>
       </div>
-          </section>
-            <!-- Screen 6: Prayer Wall & Request Box -->
+    </section>
+        <!-- Screen 6: Prayer Wall & Request Box -->
     <section id="screen-6" class="card-bg rounded-3xl p-5 sm:p-6 shadow-2xl hidden transition-all duration-300">
       <div class="text-center mb-4">
         <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-xs font-medium text-emerald-300">
@@ -587,32 +587,41 @@
           Memories & Milestones 💬
         </span>
         <h3 class="text-lg font-bold text-white mt-1">Questions of the Day</h3>
-        <p class="text-[10px] text-slate-400 mt-0.5">Three daily prompts for us to talk about.</p>
+        <p class="text-[10px] text-slate-400 mt-0.5">10 prompts per tier — tap Next to shuffle!</p>
       </div>
 
       <div class="space-y-3 mb-5 text-left text-xs">
-        <div onclick="copyPrompt(this)" class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl cursor-pointer active:scale-98 transition-all hover:border-emerald-500/40">
-          <div class="flex justify-between items-center mb-1">
+        <!-- Tier 1 -->
+        <div class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl">
+          <div class="flex justify-between items-center mb-1.5">
             <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Tier 1: Sweet & Easy 🌱</span>
-            <span class="text-[9px] text-slate-500">Tap to copy</span>
+            <button onclick="nextTierQuestion(1)" class="text-[9px] px-2.5 py-1 rounded-full bg-slate-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-400">Next 🎲</button>
           </div>
-          <p class="text-slate-200 text-[11px] leading-relaxed">If we could pick one dessert to bake together from scratch, what are we making?</p>
+          <p id="tier-1-text" onclick="copyPrompt(this)" class="text-slate-200 text-[11px] leading-relaxed cursor-pointer hover:text-emerald-300 transition-colors">
+            If we could pick one dessert to bake together from scratch, what are we making?
+          </p>
         </div>
 
-        <div onclick="copyPrompt(this)" class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl cursor-pointer active:scale-98 transition-all hover:border-emerald-500/40">
-          <div class="flex justify-between items-center mb-1">
+        <!-- Tier 2 -->
+        <div class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl">
+          <div class="flex justify-between items-center mb-1.5">
             <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Tier 2: About Us 🤍</span>
-            <span class="text-[9px] text-slate-500">Tap to copy</span>
+            <button onclick="nextTierQuestion(2)" class="text-[9px] px-2.5 py-1 rounded-full bg-slate-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-400">Next 🎲</button>
           </div>
-          <p class="text-slate-200 text-[11px] leading-relaxed">What was the moment you felt our bond shift from casual talking to something truly special?</p>
+          <p id="tier-2-text" onclick="copyPrompt(this)" class="text-slate-200 text-[11px] leading-relaxed cursor-pointer hover:text-emerald-300 transition-colors">
+            Do you love me, and what is your favorite reason why? 🥰
+          </p>
         </div>
 
-        <div onclick="copyPrompt(this)" class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl cursor-pointer active:scale-98 transition-all hover:border-emerald-500/40">
-          <div class="flex justify-between items-center mb-1">
+        <!-- Tier 3 -->
+        <div class="bg-slate-900/80 border border-slate-800 p-3.5 rounded-2xl">
+          <div class="flex justify-between items-center mb-1.5">
             <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Tier 3: Deep & Real 🕊️</span>
-            <span class="text-[9px] text-slate-500">Tap to copy</span>
+            <button onclick="nextTierQuestion(3)" class="text-[9px] px-2.5 py-1 rounded-full bg-slate-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-400">Next 🎲</button>
           </div>
-          <p class="text-slate-200 text-[11px] leading-relaxed">In what ways do you feel God is growing and strengthening your spirit during this season of life?</p>
+          <p id="tier-3-text" onclick="copyPrompt(this)" class="text-slate-200 text-[11px] leading-relaxed cursor-pointer hover:text-emerald-300 transition-colors">
+            When do you feel you would want to get married? 💍
+          </p>
         </div>
       </div>
 
@@ -682,11 +691,11 @@
   </div>
 
   <audio id="bg-audio" preload="auto">
-    <source src="Bill Withers - Lovely Day.mp3" type="audio/mpeg" />
+    <source src="Bill%20Withers%20-%20Lovely%20Day.mp3" type="audio/mpeg" />
   </audio>
 
   <script>
-    // Screen Navigation
+    // Navigation
     function goToScreen(screenNumber) {
       document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
       const target = document.getElementById(`screen-${screenNumber}`);
@@ -696,7 +705,7 @@
       }
     }
 
-    // Audio Player Control
+    // Audio Controller
     const audio = document.getElementById('bg-audio');
     const playBtn = document.getElementById('play-pause-btn');
     const musicSub = document.getElementById('music-subtext');
@@ -712,9 +721,8 @@
           musicSub.classList.remove('text-pink-400');
           musicSub.classList.add('text-emerald-400');
         }).catch(err => {
-          console.warn('Playback notice:', err);
-          musicSub.innerText = 'Upload Bill Withers - Lovely Day.mp3 to repo';
-          musicSub.classList.add('text-pink-400');
+          console.warn('Playback error:', err);
+          musicSub.innerText = 'Tap play button';
         });
       } else {
         audio.pause();
@@ -724,7 +732,7 @@
       }
     }
 
-    // Clocks for US and Philippines
+    // Clocks
     function updateClocks() {
       const now = new Date();
       const usTime = new Intl.DateTimeFormat('en-US', {
@@ -749,7 +757,7 @@
     setInterval(updateClocks, 1000);
     updateClocks();
 
-    // Screen 4: Treasures Carousel
+    // Screen 4: Treasures
     const treasures = [
       { title: "Your Gentle Spirit 🌿", desc: "No matter how hectic things get, talking with you brings instant peace and calm to my heart." },
       { title: "Your Work Ethic & Strength 💪", desc: "Pushing through demanding shifts with patience shows the incredible woman you are." },
@@ -779,7 +787,7 @@
     }
     renderTreasure();
 
-    // Screen 7: Photo Gallery (Exact filenames matching repo)
+    // Screen 7: Photo Gallery (Exact repo filenames)
     const galleryPhotos = [
       { src: "att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg", caption: "Princess Liza 🌸" },
       { src: "att.46ztYa_T7FulnAlxIT5fV4c9rD1r2XG5XQyF4P0hP_4.jpg", caption: "Princess Liza 🌸" },
@@ -831,21 +839,68 @@
       updatePhoto();
     }
 
-    // Screen 11: Copy Prompt helper
-    function copyPrompt(card) {
-      const text = card.querySelector('p').innerText;
-      navigator.clipboard.writeText(text);
-      const span = card.querySelector('span:last-child');
-      const original = span.innerText;
-      span.innerText = "Copied! ✨";
-      span.classList.add('text-emerald-400');
-      setTimeout(() => {
-        span.innerText = original;
-        span.classList.remove('text-emerald-400');
-      }, 1500);
+    // Screen 11: 10 Questions Per Tier
+    const tier1Questions = [
+      "If we could pick one dessert to bake together from scratch, what are we making?",
+      "What is your ultimate rainy-day comfort food?",
+      "Would you rather a cozy cabin in the mountains or a quiet beach cottage?",
+      "What is one silly habit you have that most people don't know about?",
+      "If we had a whole lazy Saturday with no alarms, how are we spending it?",
+      "What is your favorite childhood memory that still makes you smile?",
+      "What song instantly puts you in a good mood no matter what?",
+      "If we could teleport to any restaurant right now, where are we eating?",
+      "What is one cute outfit or style you'd love to see me wear?",
+      "Are you more of a sunrise coffee person or a late-night tea person?"
+    ];
+
+    const tier2Questions = [
+      "Do you love me, and what is your favorite reason why? 🥰",
+      "Would you like a promise ring? 💍",
+      "What was the moment you felt our bond shift from casual talking to something truly special?",
+      "What is your favorite nickname or phrase I use with you?",
+      "What is one thing about our dynamic that brings you the most peace?",
+      "What is the first thing you want to do the exact moment we meet in person?",
+      "What little thing do I do that makes your heart flutter or smile the biggest?",
+      "How do you describe me when you talk about me to your closest family or friends?",
+      "What is your favorite memory of us talking or laughing late into the night?",
+      "What song makes you think of me whenever you hear it?"
+    ];
+
+    const tier3Questions = [
+      "When do you feel you would want to get married? 💍",
+      "In what ways do you feel God is growing and strengthening your spirit during this season of life?",
+      "What is one prayer you've held quietly in your heart that you haven't shared out loud yet?",
+      "How can I best support and protect your peace when work or family feels overwhelming?",
+      "What are three values you want to define the atmosphere of our future home?",
+      "When the distance feels heaviest, what truth keeps your spirit anchored?",
+      "What does being an answered prayer mean to you personally?",
+      "How do you hope to see our faith grow together once we are married?",
+      "What is a lesson from your past that made you the strong woman you are today?",
+      "What is your biggest dream for us 5 years from now?"
+    ];
+
+    let t1Idx = 0, t2Idx = 0, t3Idx = 0;
+
+    function nextTierQuestion(tier) {
+      if (tier === 1) {
+        t1Idx = (t1Idx + 1) % tier1Questions.length;
+        document.getElementById('tier-1-text').innerText = tier1Questions[t1Idx];
+      } else if (tier === 2) {
+        t2Idx = (t2Idx + 1) % tier2Questions.length;
+        document.getElementById('tier-2-text').innerText = tier2Questions[t2Idx];
+      } else if (tier === 3) {
+        t3Idx = (t3Idx + 1) % tier3Questions.length;
+        document.getElementById('tier-3-text').innerText = tier3Questions[t3Idx];
+      }
     }
 
-    // Screen 12: Chuckles & Confetti
+    function copyPrompt(el) {
+      navigator.clipboard.writeText(el.innerText);
+      const original = el.innerText;
+      el.innerText = "Copied to clipboard! ✨";
+      setTimeout(() => { el.innerText = original; }, 1200);
+    }
+// Screen 12: Chuckles & Confetti
     const jokes = [
       "Do you have a map? Because I keep getting lost in our conversations every day. 🗺️",
       "Rule #1 of our future household: You are always right. Rule #2: See Rule #1! 🫡💍",

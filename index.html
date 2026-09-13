@@ -8,21 +8,36 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     body.page-home { background: radial-gradient(circle at center, #112614 0%, #0b1311 100%); }
-    body.page-story { background: radial-gradient(circle at center, #20121a 0%, #0b1311 100%); }
-    body.page-comfort { background: radial-gradient(circle at center, #121c20 0%, #0b1311 100%); }
+    body.page-story { background: radial-gradient(circle at center, #261219 0%, #0b1311 100%); }
+    body.page-comfort { background: radial-gradient(circle at center, #121c26 0%, #0b1311 100%); }
 
     #heart-canvas {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       pointer-events: none;
-      z-index: 50;
+      z-index: 1;
     }
 
-    .heart-frame {
+    .w-full.max-w-sm {
+      position: relative;
+      z-index: 10;
+    }
+
+    .big-heart-container {
+      width: 220px;
+      height: 190px;
+      margin: 0 auto;
       clip-path: polygon(50% 15%, 80% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%, 20% 0%);
-      border: 3px solid #ffb6c1;
-      box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+      border: 4px solid #ffb6c1;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+      display: flex;
+      background: #000;
+    }
+    .big-heart-container img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -66,7 +81,7 @@
     </div>
   </div>
 
-  <div class="w-full max-w-sm space-y-4 relative z-10">
+  <div class="w-full max-w-sm space-y-4">
     <main>
       <!-- SCREEN 1 -->
       <section id="screen-1" class="space-y-4">
@@ -94,25 +109,15 @@
         </div>
       </section>
 
-      <!-- SCREEN 2 -->
+      <!-- SCREEN 2 (ONE BIG HEART) -->
       <section id="screen-2" class="hidden space-y-4">
         <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Our Beautiful Story 🌿</span>
           <h2 class="text-lg font-bold text-white">Princess Liza & Derrick 💖</h2>
 
-          <div class="grid grid-cols-2 gap-3 pt-1">
-            <div class="space-y-1.5 flex flex-col items-center">
-              <div class="w-32 h-32 rounded-full overflow-hidden bg-black/40 flex items-center justify-center">
-                <img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Princess Liza" class="w-full h-full object-cover heart-frame">
-              </div>
-              <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 text-[10px] border border-emerald-500/20">Princess Liza 🌸</span>
-            </div>
-            <div class="space-y-1.5 flex flex-col items-center">
-              <div class="w-32 h-32 rounded-full overflow-hidden bg-black/40 flex items-center justify-center">
-                <img src="20260715_084246.jpg" alt="Derrick" class="w-full h-full object-cover heart-frame">
-              </div>
-              <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 text-[10px] border border-emerald-500/20">Derrick 🌿</span>
-            </div>
+          <div class="big-heart-container">
+            <img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Princess Liza">
+            <img src="20260715_084246.jpg" alt="Derrick">
           </div>
 
           <p class="text-xs text-slate-300 leading-relaxed px-1">Having you as my girlfriend is my greatest blessing. No matter the distance, we are walking this path together with God in our center.</p>
@@ -123,25 +128,47 @@
           </div>
         </div>
       </section>
-            <!-- SCREEN 3 -->
+      <!-- SCREEN 3 (SECTIONED LETTER) -->
       <section id="screen-3" class="hidden space-y-4">
         <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-3">
           <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Answered Prayer 🤍</span>
           <h2 class="text-lg font-bold text-white">Why I'm Blessed to Call You Mine</h2>
           <p class="text-[11px] text-emerald-400/90 -mt-1 font-medium">From my whole heart to yours, Princess</p>
 
-          <div class="p-5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-left text-xs space-y-3.5 leading-relaxed text-slate-300">
-            <p class="font-bold text-emerald-300">To My Dearest Princess Liza,</p>
-            <p>Having you as my girlfriend brings so much genuine peace to my life. You are my biggest supporter, my prayer partner, and without hesitation the sweetest part of my entire day.</p>
-            <p>Seeing how deeply you love God, how humbly you carry yourself, and how sincerely you care for me makes me thank Him every single morning when I wake up. I love us, I love everything we are building together, and I love walking this journey with you side by side in spirit every day.</p>
-            <p>I want to take a moment and step past all the rush of daily life to put down in words how much I truly, deeply love you. When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life.</p>
-            <p>My feelings for you are not casual, surface-level emotions that change with time or mood—they are rooted in an intentional commitment to honor, cherish, and stand beside you. No matter how many miles, time zones, or oceans stretch between the United States and the Philippines, you have completely captivated my heart.</p>
-            <p>One of the things I treasure most about you is the emotional safety we share. You never have to put on a mask with me, Liza. You never have to act strong when you are tired, pretend everything is fine when you are sad, and you never have to worry that you are bothering me.</p>
-            <p>If you have a problem, let's talk about it. If you had a frustrating day, vent to me. If you are anxious about something, let's pray over it together. In this relationship, there is no judging, no impatience, and no walls. You have my full attention and an open ear whenever you need to let things out.</p>
-            <p>I admire you so much for the incredible strength, determination, and independence you carry. Watching how hard you push through long, tiring shifts, how disciplined you are, and how you carry your responsibilities with grace leaves me in awe of the woman you are.</p>
-            <p>You have a quiet power and resilience that is nothing short of inspiring. But I want to remind you of something very important: even though you are strong, and even though you know how to stand on your own two feet, you do not have to carry the weight of everything by yourself anymore.</p>
-            <p>You can lean on me. You are allowed to take off the heavy armor when you talk to me. You don't always have to be the tough one, the dependable one, or the one who has all the answers. Let me be the person you can collapse into emotionally at the end of a hard day. Let me be your safe harbor, your peace, and your soft place to land.</p>
-            <p>Your smile is one of my favorite things in this world. The sound of your laugh, especially when you are being silly or playful, completely changes the energy of my day. It brightens up anything going on around me. Your voice brings peace to my spirit, and I always love connecting with you in real time.</p>
+          <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-left text-xs space-y-3 leading-relaxed text-slate-300">
+            <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+              <p class="font-bold text-emerald-300 mb-1">To My Dearest Princess Liza,</p>
+              <p>Having you as my girlfriend brings so much genuine peace to my life. You are my biggest supporter, my prayer partner, and without hesitation the sweetest part of my entire day.</p>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+              <p class="font-bold text-emerald-300 mb-1">Our Journey in Spirit</p>
+              <p>Seeing how deeply you love God, how humbly you carry yourself, and how sincerely you care for me makes me thank Him every single morning when I wake up. I love us, I love everything we are building together, and I love walking this journey with you side by side in spirit every day.</p>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+              <p class="font-bold text-emerald-300 mb-1">An Answered Prayer</p>
+              <p>I want to take a moment and step past all the rush of daily life to put down in words how much I truly, deeply love you. When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life.</p>
+              <p class="mt-2">My feelings for you are not casual, surface-level emotions that change with time or mood—they are rooted in an intentional commitment to honor, cherish, and stand beside you. No matter how many miles, time zones, or oceans stretch between the United States and the Philippines, you have completely captivated my heart.</p>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+              <p class="font-bold text-emerald-300 mb-1">Emotional Safety & Venting</p>
+              <p>One of the things I treasure most about you is the emotional safety we share. You never have to put on a mask with me, Liza. You never have to act strong when you are tired, pretend everything is fine when you are sad, and you never have to worry that you are bothering me.</p>
+              <p class="mt-2">If you have a problem, let's talk about it. If you had a frustrating day, vent to me. If you are anxious about something, let's pray over it together. In this relationship, there is no judging, no impatience, and no walls. You have my full attention and an open ear whenever you need to let things out.</p>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+              <p class="font-bold text-emerald-300 mb-1">Your Strength & Rest</p>
+              <p>I admire you so much for the incredible strength, determination, and independence you carry. Watching how hard you push through long, tiring shifts, how disciplined you are, and how you carry your responsibilities with grace leaves me in awe of the woman you are.</p>
+              <p class="mt-2">You have a quiet power and resilience that is nothing short of inspiring. But I want to remind you of something very important: even though you are strong, and even though you know how to stand on your own two feet, you do not have to carry the weight of everything by yourself anymore.</p>
+              <p class="mt-2">You can lean on me. You are allowed to take off the heavy armor when you talk to me. You don't always have to be the tough one, the dependable one, or the one who has all the answers. Let me be the person you can collapse into emotionally at the end of a hard day. Let me be your safe harbor, your peace, and your soft place to land.</p>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+              <p class="font-bold text-emerald-300 mb-1">Your Smile & Joy</p>
+              <p>Your smile is one of my favorite things in this world. The sound of your laugh, especially when you are being silly or playful, completely changes the energy of my day. It brightens up anything going on around me. Your voice brings peace to my spirit, and I always love connecting with you in real time.</p>
+            </div>
 
             <div class="p-4 rounded-xl bg-[#142620] border border-emerald-700/30 space-y-2 mt-2">
               <p class="font-bold text-emerald-300">My Promise to You 💍</p>
@@ -446,7 +473,7 @@
       </section>
     </main>
   </div>
-    <!-- JavaScript Functionality -->
+    <!-- JavaScript Engine -->
   <script>
     function goToScreen(num) {
       document.querySelectorAll("main > section").forEach(sec => sec.classList.add("hidden"));
@@ -510,7 +537,7 @@
         y: Math.random() * canvas.height,
         size: Math.random() * 8 + 6,
         speed: Math.random() * 0.7 + 0.3,
-        opacity: Math.random() * 0.6 + 0.3,
+        opacity: Math.random() * 0.5 + 0.2,
         emoji: romanceEmojis[Math.floor(Math.random() * romanceEmojis.length)]
       });
     }

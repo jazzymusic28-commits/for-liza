@@ -508,6 +508,7 @@ Above everything else, Liza, please know in your bones: I am not here to break y
 <p class="text-xs font-bold text-rose-300 flex items-center gap-1.5"><span>ALWAYS IN YOUR CORNER 💖</span></p>
 <p class="text-[11px] text-slate-300 leading-relaxed">Whenever you are having a rough or tiring day, come back to this page and remember how deeply cared for you are. Derrick is so blessed to call you his girlfriend, and one day his wife! 💍</p>
 <button onclick="triggerConfetti()" class="w-full py-3 rounded-xl bg-gradient-to-r from-rose-700 to-pink-700 hover:from-rose-600 hover:to-pink-600 text-white font-bold text-xs shadow transition-all">Send a Warm Hug 🎉</button>
+<button onclick="goToScreen(13)" class="w-full py-2.5 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/40 text-xs font-bold text-emerald-300 transition-all mt-2">✨ Go to Daily Scratch-Off 🎰</button>
 </div>
 
 <div class="pt-2">
@@ -575,7 +576,7 @@ Above everything else, Liza, please know in your bones: I am not here to break y
 <!-- SCREEN 13 -->
 <section id="screen-13" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
-<span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-emerald-500/25">Daily Games 🎰</span>
+<span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/25">Daily Games 🎰</span>
 <h2 class="text-lg font-bold text-white">Daily Scratch-Off</h2>
 <div class="flex justify-between items-center text-xs px-2 text-slate-300">
 <span>Plays Remaining:</span>
@@ -926,21 +927,23 @@ document.getElementById("joke-text").innerText = jokes[jIdx];
 }
 
 const PRIZE_POOL = [
-  { id: 'loss', name: 'Blank Card (7 plays a day!) 🌿', weight: 550, secret: false },
-  { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 90, secret: false },
-  { id: 'love_note_liza', name: 'Love Note from Liza 💌', weight: 90, secret: false },
-  { id: 'photo_req_liza', name: 'Photo Request: Derrick sends a pic! 📸', weight: 60, secret: false },
-  { id: 'photo_req_derrick', name: 'Photo Request: Liza sends a pic! 📸', weight: 60, secret: false },
-  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 20, secret: false },
-  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 20, secret: false },
-  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 10, secret: false },
-  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 10, secret: false },
-  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 7.5, secret: false },
-  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 7.5, secret: false },
-  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 5, secret: false },
-  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 5, secret: false },
-  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 12.5, secret: false },
-  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 12.5, secret: false },
+  { id: 'loss', name: 'Blank Card (7 plays a day!) 🌿', weight: 530, secret: false },
+  { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 85, secret: false },
+  { id: 'love_note_liza', name: 'Love Note from Liza 💌', weight: 85, secret: false },
+  { id: 'photo_req_liza', name: 'Photo Request: Derrick sends a pic! 📸', weight: 55, secret: false },
+  { id: 'photo_req_derrick', name: 'Photo Request: Liza sends a pic! 📸', weight: 55, secret: false },
+  { id: 'homescreen_derrick', name: '📱 Dare: Derrick changes his homescreen to a picture of Liza!', weight: 35, secret: false },
+  { id: 'homescreen_liza', name: '📱 Dare: Liza puts Derrick on her homescreen!', weight: 35, secret: false },
+  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 18, secret: false },
+  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 18, secret: false },
+  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 9, secret: false },
+  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 9, secret: false },
+  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 6, secret: false },
+  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 6, secret: false },
+  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 4, secret: false },
+  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 4, secret: false },
+  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 10, secret: false },
+  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 10, secret: false },
   { id: 'cash_20', name: '💵 Derrick sends $20 / ₱1,256', weight: 0.4, secret: true },
   { id: 'promise_ring', name: '🏆 LEGENDARY: Derrick sends $50 / ₱3,140 for a promise ring', weight: 0.1, secret: true }
 ];
@@ -1153,7 +1156,7 @@ function showTestScorecard() {
     const statusText = item.passed ? "Correct! 🟢" : `Incorrect! 🔴 (Correct was ${item.correct})`;
     listHTML += `<div class="p-2.5 rounded-xl border ${badge} text-left space-y-0.5"><p class="font-bold text-[11px]">Q${idx + 1}: ${item.question}</p><p class="text-[10px]">Chose: <strong>${item.chosen}</strong> | ${statusText}</p></div>`;
   });
-  document.getElementById("score-summary-text").innerText = `Score: ${testScore} / ${savedQuizQuestions.length}`;
+  document.getElementById("score-summary-text").innerText = `Test Complete! Score: ${testScore} / ${savedQuizQuestions.length}`;
   document.getElementById("scorecard-list").innerHTML = listHTML;
 
   fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {

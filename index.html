@@ -429,7 +429,7 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/20">A Glimpse of Us 🌸</span>
 <h2 class="text-lg font-bold text-white">Moments I Adore</h2>
 <p class="text-[11px] text-slate-300 -mt-2">Every picture of you brings the biggest smile to Derrick's face. Here are some of our favorite photos, princess.</p>
-<div class="space-y-4 text-left max-h-[360px] overflow-y-auto pr-1">
+<div class="space-y-4 text-left max-h-[380px] overflow-y-auto pr-1">
 <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
 <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.46ztYa_T7FulnAIxlT5fV4GzwDWIrgcqkQhj7Wm58yg.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
 <p class="text-xs text-rose-300 font-semibold">My sweetest blessing 🤍</p>
@@ -470,19 +470,6 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 <div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.yt9BuScXAu6yyKgCidJZoC8T62OAfeDB73teHMizsTw.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
 <p class="text-xs text-rose-300 font-semibold">My love, my princess 🤍</p>
 </div>
-<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-xs space-y-1.5">
-<p class="font-bold text-emerald-300">A Love Note to Derrick 💌</p>
-<p class="text-slate-300 italic">"Thank you for always loving me, covering me in prayers, and making me feel like the luckiest woman in the world even across oceans. I love you endlessly, my Asawa."</p>
-<p class="text-right text-[10px] font-semibold text-emerald-400">— Liza</p>
-</div>
-<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-xs space-y-2">
-<p class="font-bold text-emerald-300">Photo Requests 📸</p>
-<div class="flex gap-2">
-<button onclick="requestPhoto('Liza')" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-[11px] font-bold text-emerald-300">Request Pic From Liza</button>
-<button onclick="requestPhoto('Derrick')" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-[11px] font-bold text-emerald-300">Send Pic To Liza</button>
-</div>
-<p id="photo-req-msg" class="text-[10px] text-emerald-400 text-center hidden font-semibold">Photo request sent to Derrick's inbox! 📸</p>
-</div>
 </div>
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(2)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all">← Back to Story</button>
@@ -509,6 +496,7 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
   <button onclick="initNewCard()" class="w-full py-2.5 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all">New Card ✨</button>
   <button onclick="openOddsModal()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all">📊 View Odds & Prizes</button>
 </div>
+<button onclick="goToScreen(14)" class="w-full py-2.5 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/40 text-xs font-bold text-emerald-300 transition-all">🧩 Go to Mini-Quiz</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </section>
@@ -533,7 +521,13 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
   <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
     <label class="block text-xs font-bold text-emerald-400">Question <span id="q-counter">1</span> (Up to 20):</label>
     <input type="text" id="builder-q-text" placeholder="Type your question here..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-xs text-white">
-    <button onclick="addCustomQuestion()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all">+ Add Question</button>
+    <div class="space-y-1.5 pt-1">
+      <input type="text" id="ans-a" placeholder="Option A" class="w-full bg-[#11211c] border border-emerald-900/30 rounded-lg p-2 text-xs text-white">
+      <input type="text" id="ans-b" placeholder="Option B" class="w-full bg-[#11211c] border border-emerald-900/30 rounded-lg p-2 text-xs text-white">
+      <input type="text" id="ans-c" placeholder="Option C" class="w-full bg-[#11211c] border border-emerald-900/30 rounded-lg p-2 text-xs text-white">
+      <input type="text" id="ans-d" placeholder="Option D" class="w-full bg-[#11211c] border border-emerald-900/30 rounded-lg p-2 text-xs text-white">
+    </div>
+    <button onclick="addCustomQuestion()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all mt-2">+ Add Answer & Question</button>
   </div>
   <div id="builder-preview" class="text-xs text-slate-400 italic">No questions added yet.</div>
   <button onclick="showSavePrompt()" id="save-quiz-btn" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all hidden">Save Quiz 💾</button>
@@ -559,8 +553,7 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
   <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3">
     <p id="derrick-q-num" class="text-[10px] text-emerald-400 font-bold">Question 1</p>
     <p id="derrick-q-text" class="text-xs font-medium text-white"></p>
-    <input type="text" id="derrick-answer-input" placeholder="Type your answer..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-xs text-white">
-    <button onclick="submitDerrickQuizAnswer()" class="w-full py-2.5 rounded-xl bg-rose-700 text-white font-bold text-xs transition-all">Next Answer ✍️</button>
+    <div id="derrick-options-container" class="space-y-2 pt-1"></div>
   </div>
 </div>
 <div id="quiz-final-scorecard" class="hidden space-y-3 text-left">
@@ -702,12 +695,6 @@ fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", { method: "POST", hea
 const msg = document.getElementById("call-sent-msg"); if (msg) msg.classList.remove("hidden"); document.getElementById("call-date").value = ""; document.getElementById("call-time").value = ""; document.getElementById("call-type").value = ""; document.getElementById("call-activity").value = ""; document.getElementById("call-notes").value = ""; setTimeout(() => msg.classList.add("hidden"), 4000);
 }).catch(err => console.log(err));
 }
-
-function requestPhoto(sender) {
-  fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: `Photo Request from ${sender} 📸`, Request: `${sender} requested a photo update across the miles.`, Timestamp: new Date().toLocaleString() }) }).then(() => {
-    const msg = document.getElementById("photo-req-msg"); if (msg) { msg.classList.remove("hidden"); setTimeout(() => msg.classList.add("hidden"), 4000); }
-  });
-}
   const t1Prompts = [
 "If Derrick and Liza could pick one dessert to bake together from scratch, what are we making?",
 "What is your absolute favorite comfort food after a long, exhausting shift?",
@@ -761,20 +748,22 @@ let jIdx = 0;
 function nextJoke() { jIdx = (jIdx + 1) % jokes.length; document.getElementById("joke-text").innerText = jokes[jIdx]; }
 
 const PRIZE_POOL = [
-  { id: 'loss', name: 'Blank Card (3 plays a day!) 🌿', weight: 580, secret: false },
-  { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 170, secret: false },
-  { id: 'photo_req', name: 'Photo Request 📸 (Send your view!)', weight: 77, secret: false },
-  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 29, secret: false },
-  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 29, secret: false },
-  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 19, secret: false },
-  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 19, secret: false },
-  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 15.5, secret: false },
-  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 15.5, secret: false },
-  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 9.5, secret: false },
-  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 9.5, secret: false },
-  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 7.5, secret: false },
-  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 7.5, secret: false },
-  { id: 'cash_jackpot', name: '💵 Cash Jackpot ($20 / ₱1,256)', weight: 4, secret: true },
+  { id: 'loss', name: 'Blank Card (3 plays a day!) 🌿', weight: 560, secret: false },
+  { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 150, secret: false },
+  { id: 'photo_req', name: 'Photo Request 📸 (Send your view!)', weight: 70, secret: false },
+  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 28, secret: false },
+  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 28, secret: false },
+  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 18, secret: false },
+  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 18, secret: false },
+  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 15, secret: false },
+  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 15, secret: false },
+  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 9, secret: false },
+  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 9, secret: false },
+  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 7, secret: false },
+  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 7, secret: false },
+  { id: 'cash_20', name: '💵 Derrick sends $20 / ₱1,256', weight: 5, secret: true },
+  { id: 'cash_jackpot', name: '💵 Cash Jackpot ($20 / ₱1,256)', weight: 3, secret: true },
+  { id: 'ring_50', name: '💍 Derrick sends $50 for a ring / ₱3,140', weight: 2, secret: true },
   { id: 'promise_ring', name: '🏆 LEGENDARY: Promise Ring ($50 / ₱3,140)', weight: 1, secret: true }
 ];
 
@@ -839,11 +828,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function addCustomQuestion() {
   const text = document.getElementById("builder-q-text").value.trim();
+  const optA = document.getElementById("ans-a").value.trim();
+  const optB = document.getElementById("ans-b").value.trim();
+  const optC = document.getElementById("ans-c").value.trim();
+  const optD = document.getElementById("ans-d").value.trim();
+
   if (!text) { alert("Please type a question!"); return; }
+  if (!optA || !optB || !optC || !optD) { alert("Please provide all 4 options (A, B, C, D)!"); return; }
   if (savedQuizQuestions.length >= 20) { alert("Maximum limit of 20 questions reached!"); return; }
-  savedQuizQuestions.push(text); document.getElementById("builder-q-text").value = "";
+
+  savedQuizQuestions.push({ question: text, options: [optA, optB, optC, optD] });
+  
+  document.getElementById("builder-q-text").value = "";
+  document.getElementById("ans-a").value = "";
+  document.getElementById("ans-b").value = "";
+  document.getElementById("ans-c").value = "";
+  document.getElementById("ans-d").value = "";
+
   document.getElementById("q-counter").innerText = savedQuizQuestions.length + 1;
-  document.getElementById("builder-preview").innerHTML = `Added <strong>${savedQuizQuestions.length}</strong> question(s).`;
+  document.getElementById("builder-preview").innerHTML = `Added <strong>${savedQuizQuestions.length}</strong> multiple-choice question(s).`;
   document.getElementById("save-quiz-btn").classList.remove("hidden");
 }
 
@@ -873,24 +876,29 @@ function startDerrickTestSession() {
 
 function loadDerrickQuestion() {
   if (currentDerrickIndex < savedQuizQuestions.length) {
+    const qData = savedQuizQuestions[currentDerrickIndex];
     document.getElementById("derrick-q-num").innerText = `Question ${currentDerrickIndex + 1} of ${savedQuizQuestions.length}`;
-    document.getElementById("derrick-q-text").innerText = savedQuizQuestions[currentDerrickIndex];
-    document.getElementById("derrick-answer-input").value = "";
+    document.getElementById("derrick-q-text").innerText = qData.question;
+    
+    let optHTML = "";
+    qData.options.forEach((opt, idx) => {
+      const letter = ['A', 'B', 'C', 'D'][idx];
+      optHTML += `<button onclick="submitMultipleChoice('${letter}: ${opt}')" class="w-full text-left p-2.5 rounded-xl bg-[#11211c] hover:bg-emerald-950/60 border border-emerald-900/40 text-xs text-slate-200 transition-all cursor-pointer"><strong>${letter}.</strong> ${opt}</button>`;
+    });
+    document.getElementById("derrick-options-container").innerHTML = optHTML;
   } else { showDerrickScorecard(); }
 }
 
-function submitDerrickQuizAnswer() {
-  const ansInput = document.getElementById("derrick-answer-input"); const ans = ansInput ? ansInput.value.trim() : "";
-  derrickSubmittedAnswers.push(ans || "(No answer given)"); currentDerrickIndex++; loadDerrickQuestion();
+function submitMultipleChoice(selectedAnswer) {
+  derrickSubmittedAnswers.push(selectedAnswer); currentDerrickIndex++; loadDerrickQuestion();
 }
 
 function showDerrickScorecard() {
   document.getElementById("quiz-taking-section").classList.add("hidden"); document.getElementById("quiz-final-scorecard").classList.remove("hidden");
   let listHTML = "";
-  savedQuizQuestions.forEach((q, idx) => {
-    const ans = derrickSubmittedAnswers[idx]; const isAnswered = ans !== "(No answer given)";
-    const badge = isAnswered ? "bg-emerald-950/80 border-emerald-500/40 text-emerald-300" : "bg-rose-950/80 border-rose-500/40 text-rose-300";
-    listHTML += `<div class="p-2.5 rounded-xl border ${badge} text-left space-y-0.5"><p class="font-bold text-[11px]">Q${idx + 1}: ${q}</p><p class="text-[10px]">Derrick's response: <strong>${ans}</strong></p></div>`;
+  savedQuizQuestions.forEach((qData, idx) => {
+    const ans = derrickSubmittedAnswers[idx];
+    listHTML += `<div class="p-2.5 rounded-xl border bg-emerald-950/80 border-emerald-500/40 text-emerald-300 text-left space-y-0.5"><p class="font-bold text-[11px]">Q${idx + 1}: ${qData.question}</p><p class="text-[10px]">Derrick chose: <strong>${ans}</strong></p></div>`;
   });
   document.getElementById("score-summary-text").innerText = `Quiz Finished! Total Questions: ${savedQuizQuestions.length}`;
   document.getElementById("scorecard-list").innerHTML = listHTML;

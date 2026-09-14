@@ -33,51 +33,38 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 </button>
 </div>
 
-<!-- MOOD CHECKER GATE -->
 <div id="mood-gate" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/60 text-center shadow-2xl max-w-sm w-full space-y-4">
-<span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">
-Before You Enter, Princess 🤍
-</span>
+<span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Before You Enter, Princess 🤍</span>
 <h2 class="text-lg font-bold text-white">How is your heart feeling right now?</h2>
-<p class="text-xs text-slate-300 leading-relaxed">
-Select your mood so I can hold you close in prayer and know how you're doing across the miles.
-</p>
+<p class="text-xs text-slate-300 leading-relaxed">Select your mood so Derrick can hold you close in prayer and know how you're doing across the miles.</p>
 <div class="grid grid-cols-2 gap-2.5 pt-1">
 <button onclick="selectMood('Happy')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">😊 Happy</button>
 <button onclick="selectMood('Sad')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">😢 Sad</button>
 <button onclick="selectMood('Tired')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">😴 Tired</button>
 <button onclick="selectMood('Mad')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">😤 Mad</button>
-<button onclick="selectMood('Missing Me')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">🥺 Missing Me</button>
+<button onclick="selectMood('Missing Me')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">🥺 Missing Derrick</button>
 <button onclick="selectMood('Wanting Love')" class="p-3 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-semibold text-white transition-all">💖 Wanting Love</button>
 </div>
-<button onclick="skipMoodGate()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold transition-all mt-1">
-Skip for now & go straight home 🌿
-</button>
+<button onclick="skipMoodGate()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold transition-all mt-1">Skip for now & go straight home 🌿</button>
 </div>
 </div>
-
 <div id="mood-response-modal" class="hidden fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/60 text-center shadow-2xl max-w-sm w-full space-y-4">
-<span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">
-My Heart to Yours 🌿
-</span>
+<span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">My Heart to Yours 🌿</span>
 <h3 id="mood-resp-title" class="text-base font-bold text-emerald-300"></h3>
 <p id="mood-resp-text" class="text-xs text-slate-300 leading-relaxed"></p>
-<button onclick="closeMoodModal()" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all">
-Enter Your Safe Haven 💖
-</button>
+<button onclick="closeMoodModal()" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all">Enter Your Safe Haven 💖</button>
 </div>
 </div>
 
 <div class="w-full max-w-sm space-y-4">
 <main>
-  <!-- SCREEN 1 -->
 <section id="screen-1" class="space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-3">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Hey Sweetheart 🌿</span>
-<h1 class="text-2xl font-bold text-white tracking-tight">Welcome, Princess</h1>
-<p class="text-xs text-slate-300 leading-relaxed pb-2">Your personal corner built with love. Tap anywhere to explore.</p>
+<h1 class="text-2xl font-bold text-white tracking-tight">Welcome, Princess Liza</h1>
+<p class="text-xs text-slate-300 leading-relaxed pb-2">Your personal corner built with love by Derrick. Tap anywhere to explore.</p>
 
 <div class="grid grid-cols-2 gap-2.5 text-center">
 <button onclick="goToScreen(2)" class="p-3.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 transition-all flex flex-col items-center"><span class="text-lg mb-1">📸</span><span class="text-xs font-bold text-white">Our Story</span><span class="text-[10px] text-slate-400">Us & First Photos</span></button>
@@ -94,24 +81,18 @@ Enter Your Safe Haven 💖
 <button onclick="goToScreen(14)" class="p-3.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 transition-all flex flex-col items-center"><span class="text-lg mb-1">🧩</span><span class="text-xs font-bold text-white">Mini-Quiz</span><span class="text-[10px] text-slate-400">Relationship Quiz</span></button>
 </div>
 
-<button onclick="goToScreen(2)" class="w-full mt-3 py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5">
-<span>Start Tour From Beginning</span> 🌿
-</button>
+<button onclick="goToScreen(2)" class="w-full mt-3 py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Start Tour From Beginning</span> 🌿</button>
 </div>
 </section>
-<!-- SCREEN 2 -->
 <section id="screen-2" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Our Beautiful Story 🌿</span>
 <h2 class="text-lg font-bold text-white">Mr. Derrick & Princess Liza 💖</h2>
-
 <div class="big-heart-container">
 <img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Princess Liza">
 <img src="20260715_084246.jpg" alt="Derrick">
 </div>
-
-<p class="text-xs text-slate-300 leading-relaxed px-1">Having you as my girlfriend is my greatest blessing. Can't wait for our first photo together side by side.</p>
-
+<p class="text-xs text-slate-300 leading-relaxed px-1">Having Princess Liza as Derrick's girlfriend is his greatest blessing. Can't wait for our first photo together side by side.</p>
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(12)" class="w-full py-3 rounded-2xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>🌸 View Photo Gallery</span></button>
 <button onclick="goToScreen(3)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Why You Make Me So Happy</span> 👑</button>
@@ -119,76 +100,88 @@ Enter Your Safe Haven 💖
 </div>
 </div>
 </section>
-<!-- SCREEN 3 -->
+
 <section id="screen-3" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-3">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Answered Prayer 🤍</span>
 <h2 class="text-lg font-bold text-white">Why I'm Blessed to Call You Mine</h2>
-<p class="text-[11px] text-emerald-400/90 -mt-1 font-medium">From my whole heart to yours, Princess</p>
-
-<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-left text-xs space-y-3 leading-relaxed text-slate-300">
+<p class="text-[11px] text-emerald-400/90 -mt-1 font-medium">From Derrick's whole heart to Princess Liza</p>
+<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-left text-xs space-y-3 leading-relaxed text-slate-300 max-h-[350px] overflow-y-auto pr-1">
 <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
 <p class="font-bold text-emerald-300 mb-1">To My Dearest Princess Liza,</p>
 <p>Having you as my girlfriend brings so much genuine peace to my life. You are my biggest supporter, my prayer partner, and without hesitation the sweetest part of my entire day.</p>
 </div>
 <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+<p class="font-bold text-emerald-300 mb-1">Our Journey in Spirit</p>
+<p>Seeing how deeply you love God, how humbly you carry yourself, and how sincerely you care for me makes Derrick thank Him every single morning when waking up. I love us, I love everything we are building together, and I love walking this journey with Princess Liza side by side in spirit every day.</p>
+</div>
+<div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
 <p class="font-bold text-emerald-300 mb-1">An Answered Prayer</p>
-<p>When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life. No matter how many miles stretch between the United States and the Philippines, you have completely captivated my heart with your grace, your dedication, and the pure love you show me every single day. Even across oceans, I feel your warmth right beside me, and thanking God for you is the first and last thing on my mind.</p>
+<p>I want to take a moment and step past all the rush of daily life to put down in words how much I truly, deeply love you. When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life.</p>
+<p class="mt-2">My feelings for you are not casual, surface-level emotions that change with time or mood—they are rooted in an intentional commitment to honor, cherish, and stand beside you. No matter how many miles, time zones, or oceans stretch between the United States and the Philippines, you have completely captivated my heart.</p>
+</div>
+<div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+<p class="font-bold text-emerald-300 mb-1">Emotional Safety & Venting</p>
+<p>One of the things I treasure most about you is the emotional safety we share. You never have to put on a mask with me, Liza. You never have to act strong when you are tired, pretend everything is fine when you are sad, and you never have to worry that you are bothering me.</p>
+<p class="mt-2">If you have a problem, let's talk about it. If you had a frustrating day, vent to me. If you are anxious about something, let's pray over it together. In this relationship, there is no judging, no impatience, and no walls. You have Derrick's full attention and an open ear whenever you need to let things out.</p>
 </div>
 <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
 <p class="font-bold text-emerald-300 mb-1">Your Strength & Rest</p>
-<p>You have a quiet power and resilience that inspires me. But remember you don't have to carry everything by yourself. Let me be your safe harbor, your peace, and your soft place to land whenever the world gets heavy.</p>
+<p>I admire you so much for the incredible strength, determination, and independence you carry. Watching how hard you push through long, tiring shifts, how disciplined you are, and how you carry your responsibilities with grace leaves me in awe of the woman you are.</p>
+<p class="mt-2">You have a quiet power and resilience that is nothing short of inspiring. But I want to remind you of something very important: even though you are strong, and even though you know how to stand on your own two feet, you do not have to carry the weight of everything by yourself anymore.</p>
+<p class="mt-2">You can lean on Derrick. You are allowed to take off the heavy armor when you talk to me. You don't always have to be the tough one, the dependable one, or the one who has all the answers. Let me be the person you can collapse into emotionally at the end of a hard day. Let me be your safe harbor, your peace, and your soft place to land.</p>
 </div>
-<p class="pt-2 text-right font-medium text-emerald-300">Forever loving you,<br><span class="font-bold">— Derrick 💍</span></p>
+<div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
+<p class="font-bold text-emerald-300 mb-1">Your Smile & Joy</p>
+<p>Your smile is one of my favorite things in this world. The sound of your laugh, especially when you are being silly or playful, completely changes the energy of my day. It brightens up anything going on around me. Your voice brings peace to my spirit, and I always love connecting with you in real time.</p>
 </div>
-
+<div class="p-4 rounded-xl bg-[#142620] border border-emerald-700/30 space-y-2 mt-2">
+<p class="font-bold text-emerald-300">My Promise to You 💍</p>
+<p class="text-[11px] leading-relaxed">Above everything else, Liza, please know in your bones: I am not here to break your heart, play games, or make you doubt yourself. I am here to protect your heart, support your growth, cherish your soul, and love you with real devotion. You have been hurt or cautious in life, but with Derrick, your heart is in gentle, loyal hands. I am here to walk through every chapter with you—the joyful sunny days, the exhausting midnight hours, and every stepping stone on our road toward forever. You are the one God chose for me, and I am choosing you every single day.</p>
+</div>
+<p class="pt-2 text-right font-medium text-emerald-300">Forever loving you, cheering for you, and holding you close in prayer,<br><span class="font-bold">— Derrick 💍</span></p>
+</div>
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(4)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Little things I adore</span> ✨</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </div>
 </section>
-
-<!-- SCREEN 4 -->
 <section id="screen-4" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Treasures in You ✨</span>
 <h2 class="text-lg font-bold text-white">Things That Make You Rare</h2>
-
 <div class="p-5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 min-h-[140px] flex flex-col items-center justify-center space-y-2">
 <div id="treasure-0" class="treasure-card space-y-2">
 <p class="font-bold text-emerald-300 text-xs">Your Gentle Spirit 🌿</p>
-<p class="text-xs text-slate-300 leading-relaxed">No matter how hectic things get, talking with you brings instant peace and calm to my heart.</p>
+<p class="text-xs text-slate-300 leading-relaxed">No matter how hectic things get, talking with Liza brings instant peace and calm to Derrick's heart.</p>
 </div>
 <div id="treasure-1" class="treasure-card hidden space-y-2">
 <p class="font-bold text-emerald-300 text-xs">Your Work Ethic & Strength 💪</p>
-<p class="text-xs text-slate-300 leading-relaxed">Pushing through demanding shifts with patience shows the incredible woman you are.</p>
+<p class="text-xs text-slate-300 leading-relaxed">Pushing through demanding shifts with patience shows the incredible woman Princess Liza is.</p>
 </div>
 <div id="treasure-2" class="treasure-card hidden space-y-2">
 <p class="font-bold text-emerald-300 text-xs">Your Thoughtfulness 🌸</p>
-<p class="text-xs text-slate-300 leading-relaxed">Even when your energy is drained, you always make time to send warmth and check on me.</p>
+<p class="text-xs text-slate-300 leading-relaxed">Even when energy is drained, Liza always makes time to send warmth and check on Derrick.</p>
 </div>
-
 <div class="flex justify-center gap-1.5 pt-3">
 <button onclick="setTreasure(0)" id="tdot-0" class="w-2.5 h-2.5 rounded-full bg-emerald-400"></button>
 <button onclick="setTreasure(1)" id="tdot-1" class="w-2.5 h-2.5 rounded-full bg-slate-700"></button>
 <button onclick="setTreasure(2)" id="tdot-2" class="w-2.5 h-2.5 rounded-full bg-slate-700"></button>
 </div>
 </div>
-
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(5)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>About Us: Liza & Derrick</span> ✈️</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </div>
 </section>
-<!-- SCREEN 5 -->
+
 <section id="screen-5" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Two Hearts, One Journey ✈️</span>
 <h2 class="text-lg font-bold text-white">About Liza & Derrick</h2>
 <p class="text-[11px] text-slate-400 -mt-2">What defines us across the miles.</p>
-
 <div class="grid grid-cols-2 gap-2.5">
 <div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-center">
 <p class="text-[10px] text-slate-400">My Time (US)</p>
@@ -199,7 +192,6 @@ Enter Your Safe Haven 💖
 <p id="clock-ph" class="text-sm font-bold text-emerald-400">--:-- --</p>
 </div>
 </div>
-
 <div class="grid grid-cols-1 gap-2.5">
 <div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-center space-y-1">
   <p class="text-[10px] uppercase text-slate-400 font-semibold">My Weather (US) 🌤️</p>
@@ -210,72 +202,88 @@ Enter Your Safe Haven 💖
   <div id="weather-ph" class="text-xs text-emerald-300 font-medium">Loading Minglanilla weather...</div>
 </div>
 </div>
-
 <div class="space-y-2.5 text-left text-xs">
 <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
 <p class="font-bold text-emerald-400 flex items-center gap-1.5"><span>🌸</span> Princess Liza</p>
-<p class="text-[11px] text-slate-300 leading-relaxed">Resilient, hardworking, and deeply caring. You face long shifts with patience, keep God at the center of your heart, and radiate genuine warmth.</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Resilient, hardworking, and deeply caring. Princess Liza faces long shifts with patience, keeps God at the center of her heart, and radiates genuine warmth.</p>
 </div>
 <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
 <p class="font-bold text-emerald-400 flex items-center gap-1.5"><span>🌿</span> Derrick</p>
-<p class="text-[11px] text-slate-300 leading-relaxed">Loyal, protective, and patient. Ready to listen without judgment, cover you in prayer, and be the steady rock you can always lean on.</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Loyal, protective, and patient. Derrick is ready to listen without judgment, cover Liza in prayer, and be the steady rock she can always lean on.</p>
 </div>
 </div>
-
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(6)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Visit Prayer Wall & Request Box</span> 🕊️</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </div>
 </section>
-
-<!-- SCREEN 6 -->
 <section id="screen-6" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Anchored in Christ 🙏</span>
 <h2 class="text-lg font-bold text-white">Our Prayer Wall</h2>
-<p class="text-[11px] text-slate-400 -mt-2">Lifting you up daily in Jesus' name.</p>
-
-<div class="space-y-2.5 text-left text-xs">
+<p class="text-[11px] text-slate-400 -mt-2">Lifting Princess Liza up daily in Jesus' name.</p>
+<div class="space-y-2.5 text-left text-xs max-h-[300px] overflow-y-auto pr-1">
 <div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
 <p class="font-bold text-emerald-400 text-[11px]">1. REST & RENEWED STRENGTH</p>
-<p class="text-[11px] text-slate-300 leading-relaxed italic">"Lord, wrap Liza in Your supernatural peace after her long shifts."</p>
+<p class="text-[11px] text-slate-300 leading-relaxed italic">"Lord, wrap Princess Liza in Your supernatural peace after her long shifts. Calm her thoughts, replenish her physical energy while she sleeps, and let her wake up refreshed and reminded of how deeply loved she is."</p>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
+<p class="font-bold text-emerald-400 text-[11px]">2. MORNING PEACE & SAFE TRAVEL</p>
+<p class="text-[11px] text-slate-300 leading-relaxed italic">"Heavenly Father, place Your angels around Liza during her commute and through every moment. Grant her clarity of mind, patient coworkers, and guard her steps wherever she goes today."</p>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
+<p class="font-bold text-emerald-400 text-[11px]">3. COMFORT ACROSS THE DISTANCE</p>
+<p class="text-[11px] text-slate-300 leading-relaxed italic">"Lord, whisper Your comfort to her when the distance feels heavy. Remind her she is never alone. Turn our longing into gratitude and give us patience as You prepare our path toward closing the gap."</p>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
+<p class="font-bold text-emerald-400 text-[11px]">4. SPIRITUAL GROWTH & WISDOM</p>
+<p class="text-[11px] text-slate-300 leading-relaxed italic">"God, draw Liza ever closer to Your heart. Fill her with wisdom, anchor her spirit in Your Word, and let her feel Your gentle presence assuring her through every season of life."</p>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
+<p class="font-bold text-emerald-400 text-[11px]">5. OUR FUTURE HOME & MARRIAGE</p>
+<p class="text-[11px] text-slate-300 leading-relaxed italic">"Lord, guide our steps toward marriage. Shape our character, bless our communication, and build our relationship upon the rock of Christ so our future home brings honor to Your name. Amen."</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#142620] border border-emerald-700/30 text-center space-y-0.5">
+<p class="text-[11px] text-emerald-300 italic">"The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you."</p>
+<p class="text-[10px] text-slate-400">Numbers 6:24-25</p>
 </div>
 <form onsubmit="handlePrayerSubmit(event)" class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2.5 mt-2">
 <p class="font-bold text-emerald-400 text-xs flex items-center gap-1"><span>Have a prayer request?</span> 🕊️</p>
+<p class="text-[10px] text-slate-400 leading-normal">Type whatever is heavy on your heart. It goes straight to Derrick's email so he can pray over you.</p>
 <textarea id="prayer-text" rows="3" required placeholder="Lord, please help me with..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
 <button type="submit" class="w-full py-2.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all">Send Prayer Request to Derrick</button>
 <p id="prayer-sent-msg" class="text-[10px] text-emerald-400 text-center font-semibold hidden">Sent to Derrick's inbox! Lifting you in prayer. 🕊️</p>
 </form>
 </div>
-
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(7)" class="w-full py-3 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-center gap-1.5"><span>Liza's Comfort Kit & Vent Box</span> 🌿</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </div>
 </section>
-<!-- SCREEN 7 -->
 <section id="screen-7" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Safe Haven 🌿</span>
 <h2 class="text-lg font-bold text-white">Liza's Comfort Kit</h2>
-<p class="text-[11px] text-slate-400 -mt-2">Take off your armor. You are safe and cared for here.</p>
-
+<p class="text-[11px] text-slate-400 -mt-2">Take off your armor. You are safe and cared for here by Derrick.</p>
 <div class="space-y-2.5 text-left text-xs">
 <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1.5">
 <p class="font-bold text-rose-300 flex items-center gap-1.5"><span>🫁</span> 4-4-4 Box Breathing</p>
-<p class="text-[11px] text-slate-300 leading-relaxed">Inhale slowly for 4 seconds... gently hold for 4 seconds... exhale calmly for 4 seconds.</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Inhale slowly for 4 seconds... gently hold for 4 seconds... exhale calmly for 4 seconds. Repeat three times to reset your nervous system.</p>
 </div>
-
+<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1.5">
+<p class="font-bold text-indigo-300 flex items-center gap-1.5"><span>🛡️</span> Gentle Shift Reminders</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Did you drink cool water today? Have you eaten a warm meal? Remember you are human, and rest is not earned—it is necessary.</p>
+</div>
 <form onsubmit="handleVentSubmit(event)" class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 mt-2">
 <p class="font-bold text-rose-300 flex items-center gap-1.5"><span>📦</span> Emergency Vent Box</p>
+<p class="text-[10px] text-slate-400 leading-relaxed">No advice, no lectures, just an open ear. Type whatever made you mad, tired, or overwhelmed today. It goes right to Derrick's email so you can let it go.</p>
 <textarea id="vent-text" rows="3" required placeholder="Let it all out here..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-rose-400"></textarea>
-<button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-700 to-pink-700 text-white font-bold text-xs shadow transition-all">Unload & Send to Derrick</button>
+<button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-700 to-pink-700 hover:from-rose-600 hover:to-pink-600 text-white font-bold text-xs shadow transition-all">Unload & Send to Derrick</button>
 <p id="vent-sent-msg" class="text-[10px] text-emerald-400 text-center font-semibold hidden">Unloaded and sent to Derrick. Rest easy tonight. 🤍</p>
 </form>
 </div>
-
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(8)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Reasons You Make Me Proud</span> 👑</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
@@ -283,48 +291,64 @@ Enter Your Safe Haven 💖
 </div>
 </section>
 
-<!-- SCREEN 8 -->
 <section id="screen-8" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Recognizing You 👑</span>
 <h2 class="text-lg font-bold text-white">Reasons You Make Me Proud</h2>
-
+<p class="text-[11px] text-slate-400 -mt-2">In case you ever forget how exceptional you are.</p>
 <div class="space-y-2.5 text-left text-xs">
 <div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
 <p class="font-bold text-emerald-400 text-[11px]">1. YOUR FIERCE WORK ETHIC</p>
-<p class="text-[11px] text-slate-300 leading-relaxed">Even when shifts are brutal and exhausting, you show up, handle business, and give your best.</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Even when shifts are brutal and exhausting, Princess Liza shows up, handles business, and gives her best without complaining.</p>
 </div>
 <div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
 <p class="font-bold text-emerald-400 text-[11px]">2. YOUR GENTLE RESILIENCE</p>
-<p class="text-[11px] text-slate-300 leading-relaxed">You stay sweet, pure-hearted, and anchored in faith no matter what.</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">You have faced hard things in life, but you haven't let the world make you bitter or cold. You stay sweet and pure-hearted.</p>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
+<p class="font-bold text-emerald-400 text-[11px]">3. YOUR FAITH UNDER PRESSURE</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">The way you look to God and trust Him with your steps inspires Derrick to be a better man and spiritual leader for us.</p>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1">
+<p class="font-bold text-emerald-400 text-[11px]">4. THE WAY YOU LOVE ME</p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Taking time to check on Derrick, opening your heart more each day, and making me laugh across thousands of miles.</p>
 </div>
 </div>
-
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(9)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Plan A Call Or Chat</span> 📅</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </div>
 </section>
-<!-- SCREEN 9 -->
 <section id="screen-9" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Direct Line to My Heart 📞</span>
 <h2 class="text-lg font-bold text-white">Let's Plan A Call</h2>
-
-<form onsubmit="handleCallSubmit(event)" class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3 text-left text-xs">
+<p class="text-[11px] text-slate-400 -mt-2">Pick a date and time that works for you. Hearing your voice is always the highlight of Derrick's day!</p>
+<form onsubmit="handleCallSubmit(event)" class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3 text-left text-xs max-h-[300px] overflow-y-auto pr-1">
 <div>
 <label class="block font-semibold text-slate-300 mb-1">Select A Date</label>
-<input type="date" id="call-date" required class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white">
+<input type="date" id="call-date" required class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white focus:outline-none focus:border-emerald-500">
 </div>
 <div>
 <label class="block font-semibold text-slate-300 mb-1">What Time Works For You?</label>
-<input type="text" id="call-time" required placeholder="e.g. 9:00 PM your time" class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white">
+<input type="text" id="call-time" required placeholder="e.g. 9:00 PM your time / after my shift" class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white focus:outline-none focus:border-emerald-500">
+</div>
+<div>
+<label class="block font-semibold text-slate-300 mb-1">What Kind of Call or Chat?</label>
+<input type="text" id="call-type" required placeholder="e.g. FaceTime video call, regular phone call, voice notes" class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white focus:outline-none focus:border-emerald-500">
+</div>
+<div>
+<label class="block font-semibold text-slate-300 mb-1">What Would You Like to Do?</label>
+<input type="text" id="call-activity" required placeholder="e.g. Talk about our day, late-night prayer, just relax..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white focus:outline-none focus:border-emerald-500">
+</div>
+<div>
+<label class="block font-semibold text-slate-300 mb-1">Anything Else on Your Mind?</label>
+<textarea id="call-notes" rows="2" placeholder="Write whatever you want here..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-white focus:outline-none focus:border-emerald-500"></textarea>
 </div>
 <button type="submit" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold shadow-lg transition-all">Send Call Request to Derrick 💌</button>
 <p id="call-sent-msg" class="text-[10px] text-emerald-400 text-center font-semibold hidden">Call request sent to Derrick! Can't wait! 💖</p>
 </form>
-
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(10)" class="w-full py-3 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-200 font-bold text-xs shadow transition-all flex items-center justify-center gap-1.5"><span>Questions of the Day</span> 💬</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
@@ -332,70 +356,140 @@ Enter Your Safe Haven 💖
 </div>
 </section>
 
-<!-- SCREEN 10 -->
 <section id="screen-10" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Memories & Milestones 💬</span>
 <h2 class="text-lg font-bold text-white">Questions of the Day</h2>
-
+<p class="text-[11px] text-slate-400 -mt-2">10 prompts per tier — tap Next to shuffle!</p>
 <div class="space-y-3 text-left">
 <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
 <div class="flex items-center justify-between">
 <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Tier 1: Sweet & Easy</span>
+<div class="flex items-center gap-2">
+<button type="button" onclick="copyPrompt('prompt-t1')" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-md border border-emerald-500/20 hover:bg-emerald-900">Tap to copy 📋</button>
 <button type="button" onclick="nextPrompt(1)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
 </div>
-<p id="prompt-t1" class="text-xs text-slate-200 leading-relaxed font-medium">If we could pick one dessert to bake together from scratch, what are we making?</p>
+</div>
+<p id="prompt-t1" class="text-xs text-slate-200 leading-relaxed font-medium">If Derrick and Liza could pick one dessert to bake together from scratch, what are we making?</p>
+</div>
+<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">Tier 2: About Us</span>
+<div class="flex items-center gap-2">
+<button type="button" onclick="copyPrompt('prompt-t2')" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-md border border-emerald-500/20 hover:bg-emerald-900">Tap to copy 📋</button>
+<button type="button" onclick="nextPrompt(2)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
 </div>
 </div>
-
+<p id="prompt-t2" class="text-xs text-slate-200 leading-relaxed font-medium">Do you love me, and what is your favorite reason why? 💍</p>
+</div>
+<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Tier 3: Deep & Real</span>
+<div class="flex items-center gap-2">
+<button type="button" onclick="copyPrompt('prompt-t3')" class="text-[10px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-md border border-emerald-500/20 hover:bg-emerald-900">Tap to copy 📋</button>
+<button type="button" onclick="nextPrompt(3)" class="text-[11px] font-semibold text-emerald-400 hover:underline cursor-pointer">Next ➡️</button>
+</div>
+</div>
+<p id="prompt-t3" class="text-xs text-slate-200 leading-relaxed font-medium">When do you feel you would want to get married? 💍</p>
+</div>
+</div>
 <div class="space-y-2 pt-2">
 <button onclick="goToScreen(11)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5"><span>Reasons to Smile & Surprise</span> ✨</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </div>
 </section>
-<!-- SCREEN 11 -->
 <section id="screen-11" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
+<div class="flex justify-center gap-2 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-rose-950/80 text-rose-300 text-[10px] border border-rose-500/20">Sweet & Flirty 🌸</span>
+<span class="px-2.5 py-0.5 rounded-full bg-indigo-950/80 text-indigo-300 text-[10px] border border-indigo-500/20">Future Wife Rules 💍</span>
+</div>
 <h2 class="text-lg font-bold text-white">A Little Chuckle</h2>
 <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3">
-<p id="joke-text" class="text-xs text-slate-200 leading-relaxed font-medium">"Do you have a map? Because I keep getting lost in our conversations every day. 🥰"</p>
+<p id="joke-text" class="text-xs text-slate-200 leading-relaxed font-medium">"Do you have a map? Because Derrick keeps getting lost in our conversations every day. 🥰"</p>
 <button onclick="nextJoke()" class="px-3.5 py-2 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all">Next chuckle 🔄</button>
 </div>
-<button onclick="triggerConfetti()" class="w-full py-3 rounded-xl bg-gradient-to-r from-rose-700 to-pink-700 text-white font-bold text-xs shadow transition-all">Send a Warm Hug 🎉</button>
-<button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
+<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-left">
+<p class="text-xs font-bold text-rose-300 flex items-center gap-1.5"><span>ALWAYS IN YOUR CORNER 💖</span></p>
+<p class="text-[11px] text-slate-300 leading-relaxed">Whenever you are having a rough or tiring day, come back to this page and remember how deeply cared for you are. Derrick is so blessed to call you his girlfriend, and one day his wife! 💍</p>
+<div class="grid grid-cols-2 gap-2 pt-1">
+  <button onclick="triggerConfetti()" class="py-2.5 rounded-xl bg-gradient-to-r from-rose-700 to-pink-700 text-white font-bold text-xs shadow transition-all">Send Warm Hug 🎉</button>
+  <button onclick="goToScreen(13)" class="py-2.5 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/40 text-xs font-bold text-emerald-300 transition-all">Scratch Page 🎰</button>
+</div>
+</div>
+<div class="pt-2">
+<button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Back to Home Menu</button>
+</div>
 </div>
 </section>
 
-<!-- SCREEN 12: 4-PHOTO GALLERY GRID -->
 <section id="screen-12" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/20">A Glimpse of Us 🌸</span>
 <h2 class="text-lg font-bold text-white">Moments I Adore</h2>
-<div class="space-y-4 text-left max-h-[380px] overflow-y-auto pr-1">
-<div class="grid grid-cols-2 gap-2">
-<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
-<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40"><img src="att.46ztYa_T7FulnAIxlT5fV4GzwDWIrgcqkQhj7Wm58yg.jpg.jpeg" alt="Photo 1" class="w-full h-full object-cover"></div>
-<p class="text-[10px] text-rose-300 font-semibold">Precious You 🤍</p>
+<p class="text-[11px] text-slate-300 -mt-2">Every picture of you brings the biggest smile to Derrick's face. Here are some of our favorite photos, princess.</p>
+<div class="space-y-4 text-left max-h-[360px] overflow-y-auto pr-1">
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.46ztYa_T7FulnAIxlT5fV4GzwDWIrgcqkQhj7Wm58yg.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">My sweetest blessing 🤍</p>
 </div>
-<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
-<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40"><img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Photo 2" class="w-full h-full object-cover"></div>
-<p class="text-[10px] text-rose-300 font-semibold">My Love 💖</p>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.5CfMA6JbZnPaiVPbxgSXOiiIWmqaDT0eTZXi4UCWc0o.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">Princess Liza 💖</p>
 </div>
-<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
-<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40"><img src="20260715_084246.jpg" alt="Photo 3" class="w-full h-full object-cover"></div>
-<p class="text-[10px] text-rose-300 font-semibold">Us Together ✨</p>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.6ARzmyJRVnPwWTHeQaZTkmibytTxKCDOMMd8WfvPRC8.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">My favorite sight every single day ✨</p>
 </div>
-<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
-<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40 bg-gradient-to-br from-emerald-950 to-slate-900 flex items-center justify-center text-slate-500 text-xs"><span>More soon 📸</span></div>
-<p class="text-[10px] text-rose-300 font-semibold">Future Memories ✈️</p>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.FfsVJbDAresCNaIvnj6GzLKih3pqF6WLARHKyWoJW4o.png.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">That pure, gorgeous smile 🌸</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.P30-KzD9eF-dHV2C6OoKMfPbf8naLAVIRQDAslTdkgo.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">Glowing with grace ✨</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.QxY0as-J4jP2R8hun-XnrQ69ya9X86L_69PX3Ywxg-g.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">Thinking of you across the miles 🤍</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.W-ZnUOsKqA1a558bRKQwYw7Tzsa6eYjDx569eb1erGs.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">My gorgeous Asawa 🌸</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.gKJwb-q3q0d5wbzXaX-us7cdYEzC6vsWjjd-lRO2gMo.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">Such a radiant heart 💖</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.ngu5G3ecbbTrCuqIW_v2xJNfm0usjTjPHBKWz3McpTo.png.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">Always in my heart ✨</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
+<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.yt9BuScXAu6yyKgCidJZoC8T62OAfeDB73teHMizsTw.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
+<p class="text-xs text-rose-300 font-semibold">My love, my princess 🤍</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-xs space-y-1.5">
+<p class="font-bold text-emerald-300">A Love Note to Derrick 💌</p>
+<p class="text-slate-300 italic">"Thank you for always loving me, covering me in prayers, and making me feel like the luckiest woman in the world even across oceans. I love you endlessly, my Asawa."</p>
+<p class="text-right text-[10px] font-semibold text-emerald-400">— Liza</p>
+</div>
+<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-xs space-y-2">
+<p class="font-bold text-emerald-300">Photo Requests 📸</p>
+<div class="flex gap-2">
+<button onclick="requestPhoto('Liza')" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-[11px] font-bold text-emerald-300">Request Pic From Liza</button>
+<button onclick="requestPhoto('Derrick')" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-[11px] font-bold text-emerald-300">Send Pic To Liza</button>
+</div>
+<p id="photo-req-msg" class="text-[10px] text-emerald-400 text-center hidden font-semibold">Photo request sent to Derrick's inbox! 📸</p>
 </div>
 </div>
-</div>
+<div class="space-y-2 pt-2">
+<button onclick="goToScreen(2)" class="w-full py-3 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow-lg transition-all">← Back to Story</button>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
+</div>
 </section>
-<!-- SCREEN 13: DAILY SCRATCH-OFF WITH SCRATCHABLE CANVAS & ODDS MODAL -->
 <section id="screen-13" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/25">Daily Games 🎰</span>
@@ -404,8 +498,6 @@ Enter Your Safe Haven 💖
 <span>Plays Remaining:</span>
 <span id="scratch-plays-count" class="font-bold text-rose-400">3 / 3</span>
 </div>
-
-<!-- Scratchable Card Area -->
 <div id="scratch-container" class="relative p-6 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 min-h-[140px] flex flex-col items-center justify-center select-none overflow-hidden">
   <div id="scratch-prize-content" class="text-center space-y-1 z-0">
     <p class="text-xs text-slate-400">Your Prize Revealed:</p>
@@ -413,17 +505,14 @@ Enter Your Safe Haven 💖
   </div>
   <canvas id="scratch-canvas"></canvas>
 </div>
-
 <div class="grid grid-cols-2 gap-2">
   <button onclick="initNewCard()" class="w-full py-2.5 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all">New Card ✨</button>
   <button onclick="openOddsModal()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all">📊 View Odds & Prizes</button>
 </div>
-
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </section>
 
-<!-- ODDS & PRIZES POPUP MODAL -->
 <div id="odds-modal" class="hidden fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/60 text-left shadow-2xl max-w-sm w-full space-y-3 max-h-[80vh] overflow-y-auto">
 <div class="flex justify-between items-center">
@@ -431,19 +520,15 @@ Enter Your Safe Haven 💖
   <button onclick="closeOddsModal()" class="text-slate-400 hover:text-white text-base font-bold px-2">✕</button>
 </div>
 <p class="text-[11px] text-slate-300 leading-relaxed">Here is every prize you can scratch off and your exact probability of winning each one:</p>
-<div id="odds-list" class="space-y-2 text-xs pt-1">
-  <!-- Populated dynamically via JS -->
-</div>
+<div id="odds-list" class="space-y-2 text-xs pt-1"></div>
 <button onclick="closeOddsModal()" class="w-full py-2.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs transition-all mt-2">Got It 💖</button>
 </div>
 </div>
 
-<!-- SCREEN 14: PERMANENT CUSTOM QUIZ MAKER & GRADING -->
 <section id="screen-14" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/25">Custom Quiz Maker 🧩</span>
 <h2 class="text-lg font-bold text-white">Create Your Quiz</h2>
-
 <div id="quiz-builder-section" class="space-y-3 text-left">
   <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
     <label class="block text-xs font-bold text-emerald-400">Question <span id="q-counter">1</span> (Up to 20):</label>
@@ -453,10 +538,9 @@ Enter Your Safe Haven 💖
   <div id="builder-preview" class="text-xs text-slate-400 italic">No questions added yet.</div>
   <button onclick="showSavePrompt()" id="save-quiz-btn" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all hidden">Save Quiz 💾</button>
 </div>
-
 <div id="quiz-save-modal" class="hidden space-y-3 text-left p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30">
   <h3 class="text-sm font-bold text-emerald-300 text-center">Save Your Quiz 🌿</h3>
-  <p class="text-xs text-slate-300">Do you want to be sent his answers once he is done with the test?</p>
+  <p class="text-xs text-slate-300">Do you want to be sent Derrick's answers once he is done with the test?</p>
   <div class="flex gap-2">
     <button type="button" onclick="handleNotificationChoice(true)" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-xs font-bold text-emerald-300 cursor-pointer">Yes ✉️</button>
     <button type="button" onclick="handleNotificationChoice(false)" class="flex-1 py-2 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-slate-300 cursor-pointer">No thanks</button>
@@ -467,12 +551,10 @@ Enter Your Safe Haven 💖
   </div>
   <button type="button" onclick="finalizeQuizSave()" class="w-full py-3 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all mt-2 cursor-pointer">Finish & Save Quiz 🎉</button>
 </div>
-
 <div id="quiz-ready-section" class="hidden space-y-3 text-center">
   <p class="text-xs text-emerald-300 font-semibold">Quiz Saved Successfully! ✨</p>
   <button onclick="startDerrickTestSession()" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all">Start Derrick's Test 🚀</button>
 </div>
-
 <div id="quiz-taking-section" class="hidden space-y-3 text-left">
   <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3">
     <p id="derrick-q-num" class="text-[10px] text-emerald-400 font-bold">Question 1</p>
@@ -481,7 +563,6 @@ Enter Your Safe Haven 💖
     <button onclick="submitDerrickQuizAnswer()" class="w-full py-2.5 rounded-xl bg-rose-700 text-white font-bold text-xs transition-all">Next Answer ✍️</button>
   </div>
 </div>
-
 <div id="quiz-final-scorecard" class="hidden space-y-3 text-left">
   <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3 text-center">
     <h3 class="text-base font-bold text-emerald-300">Test Complete! 📊</h3>
@@ -490,7 +571,6 @@ Enter Your Safe Haven 💖
     <button onclick="resetEntireQuiz()" class="w-full py-2.5 rounded-xl bg-[#162a24] text-xs font-bold text-emerald-300 transition-all">Reset & Create New Quiz 🔄</button>
   </div>
 </div>
-
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </section>
@@ -501,11 +581,16 @@ function toggleAudio() {
 const audio = document.getElementById('bg-audio');
 const btn = document.getElementById('audio-btn');
 if (audio.paused) {
-audio.play().then(() => { btn.innerText = "⏸ Pause Music"; }).catch(err => console.log("Audio blocked"));
+audio.play().then(() => { btn.innerText = "⏸ Pause Music"; }).catch(err => console.log("Audio play blocked"));
 } else {
 audio.pause();
 btn.innerText = "▶ Play Music";
 }
+}
+
+function copyPrompt(elementId) {
+const text = document.getElementById(elementId).innerText;
+navigator.clipboard.writeText(text).then(() => { alert("Copied question to clipboard! 📋"); });
 }
 
 function goToScreen(num) {
@@ -521,12 +606,12 @@ if (num === 13) initNewCard();
 }
 
 const moodMessages = {
-'Happy': { title: "Your Joy Brightens My Day ✨", text: "Seeing you happy brings so much peace to my life. Thank God for your bright smile today!" },
-'Sad': { title: "Lean On Me, Princess 🫂", text: "Take a deep breath and look towards God's comfort. I am right here holding you in prayer." },
-'Tired': { title: "Rest Your Mind & Body 🌙", text: "You've worked so hard. It's okay to rest and let God restore your energy." },
-'Mad': { title: "Let It Go Into His Hands 🌿", text: "Whatever is frustrating you today, give it to God in prayer. I've got your back always." },
-'Missing Me': { title: "I'm Right Here Across The Miles 🤍", text: "We are getting closer to closing the gap every single day." },
-'Wanting Love': { title: "All My Love Belongs To You 💖", text: "You are deeply cherished, protected, and chosen by me forever. You are my Asawa." }
+'Happy': { title: "Your Joy Brightens My Day ✨", text: "Seeing Princess Liza happy brings so much peace to Derrick's life. Thank God for your bright smile today, my love!" },
+'Sad': { title: "Lean On Me, Princess 🫂", text: "Take a deep breath and look towards God's comfort. Derrick is right here holding you in prayer across the miles." },
+'Tired': { title: "Rest Your Mind & Body 🌙", text: "You've worked so hard. Remember that your worth isn't earned—it's okay to rest and let God restore your energy." },
+'Mad': { title: "Let It Go Into His Hands 🌿", text: "Whatever is frustrating you today, give it to God in prayer. Take a slow breath, Derrick's got your back always." },
+'Missing Me': { title: "I'm Right Here Across The Miles 🤍", text: "Think of Derrick running through your thoughts across 8,000 miles. We are getting closer to closing the gap every single day." },
+'Wanting Love': { title: "All My Love Belongs To You 💖", text: "Above everything else, know that you are deeply cherished, protected, and chosen by Derrick forever. You are his Asawa." }
 };
 
 function selectMood(mood) {
@@ -537,11 +622,11 @@ document.getElementById('mood-response-modal').style.display = 'flex';
 fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
 method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
 body: JSON.stringify({ _subject: `Liza's Mood Update: ${mood} 🌸`, Mood: mood, Timestamp: new Date().toLocaleString() })
-}).catch(err => console.log('Mood sent'));
+}).catch(err => console.log('Mood notification sent'));
 }
 
-function skipMoodGate() { document.getElementById('mood-gate').style.display = 'none'; }
 function closeMoodModal() { document.getElementById('mood-response-modal').style.display = 'none'; }
+function skipMoodGate() { document.getElementById('mood-gate').style.display = 'none'; }
 
 const canvas = document.getElementById('heart-canvas');
 const ctx = canvas.getContext('2d');
@@ -553,11 +638,12 @@ window.addEventListener('resize', resizeCanvas); resizeCanvas();
 for (let i = 0; i < 30; i++) {
 hearts.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, size: Math.random() * 8 + 6, speed: Math.random() * 0.7 + 0.3, opacity: Math.random() * 0.5 + 0.2, emoji: romanceEmojis[Math.floor(Math.random() * romanceEmojis.length)] });
 }
+
 function drawFallingHearts() {
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 hearts.forEach(h => {
 ctx.globalAlpha = h.opacity; ctx.font = `${h.size * 2}px sans-serif`; ctx.fillText(h.emoji, h.x, h.y);
-h.y += h.speed; if (h.y > canvas.height + 20) { h.y = -20; h.x = Math.random() * canvas.width; }
+h.y += h.speed; if (h.y > canvas.height + 20) { h.y = -20; h.x = Math.random() * canvas.width; h.emoji = romanceEmojis[Math.floor(Math.random() * romanceEmojis.length)]; }
 });
 requestAnimationFrame(drawFallingHearts);
 }
@@ -575,29 +661,15 @@ setInterval(updateClocks, 1000); updateClocks();
 function fetchDualWeather() {
   const usUrl = `https://api.open-meteo.com/v1/forecast?latitude=30.4515&longitude=-91.1871&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit`;
   const phUrl = `https://api.open-meteo.com/v1/forecast?latitude=10.2447&longitude=123.8039&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit`;
-
   fetch(usUrl).then(res => res.json()).then(data => {
-    const tempF = Math.round(data.current.temperature_2m);
-    const tempC = Math.round((tempF - 32) * 5 / 9);
-    const humidity = data.current.relative_humidity_2m;
-    let condition = "Clear skies ☀️";
-    if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅";
-    else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
-    if (document.getElementById("weather-us")) {
-      document.getElementById("weather-us").innerHTML = `${tempF}°F (${tempC}°C) | ${condition} (Humidity: ${humidity}%)`;
-    }
+    const tempF = Math.round(data.current.temperature_2m); const tempC = Math.round((tempF - 32) * 5 / 9); const humidity = data.current.relative_humidity_2m;
+    let condition = "Clear skies ☀️"; if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅"; else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
+    if (document.getElementById("weather-us")) document.getElementById("weather-us").innerHTML = `${tempF}°F (${tempC}°C) | ${condition} (Humidity: ${humidity}%)`;
   }).catch(err => { if (document.getElementById("weather-us")) document.getElementById("weather-us").innerHTML = "United States 🇺🇸"; });
-
   fetch(phUrl).then(res => res.json()).then(data => {
-    const tempF = Math.round(data.current.temperature_2m);
-    const tempC = Math.round((tempF - 32) * 5 / 9);
-    const humidity = data.current.relative_humidity_2m;
-    let condition = "Clear skies ☀️";
-    if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅";
-    else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
-    if (document.getElementById("weather-ph")) {
-      document.getElementById("weather-ph").innerHTML = `${tempF}°F (${tempC}°C) | ${condition} (Humidity: ${humidity}%)`;
-    }
+    const tempF = Math.round(data.current.temperature_2m); const tempC = Math.round((tempF - 32) * 5 / 9); const humidity = data.current.relative_humidity_2m;
+    let condition = "Clear skies ☀️"; if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅"; else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
+    if (document.getElementById("weather-ph")) document.getElementById("weather-ph").innerHTML = `${tempF}°F (${tempC}°C) | ${condition} (Humidity: ${humidity}%)`;
   }).catch(err => { if (document.getElementById("weather-ph")) document.getElementById("weather-ph").innerHTML = "Minglanilla, Cebu 🇵🇭"; });
 }
 fetchDualWeather();
@@ -605,64 +677,103 @@ fetchDualWeather();
 function setTreasure(idx) {
 for (let i = 0; i <= 2; i++) {
 const card = document.getElementById(`treasure-${i}`); const dot = document.getElementById(`tdot-${i}`);
-if (card) card.classList.add("hidden"); if (dot) dot.className = "w-2.5 h-2.5 rounded-full bg-slate-700";
-}
-if (document.getElementById(`treasure-${idx}`)) document.getElementById(`treasure-${idx}`).classList.remove("hidden");
-if (document.getElementById(`tdot-${idx}`)) document.getElementById(`tdot-${idx}`).className = "w-2.5 h-2.5 rounded-full bg-emerald-400";
+if (card) card.classList.add("hidden"); if (dot) dot.className = "w-2.5 h-2.5 rounded-full bg-slate-700"; }
+const activeCard = document.getElementById(`treasure-${idx}`); const activeDot = document.getElementById(`tdot-${idx}`);
+if (activeCard) activeCard.classList.remove("hidden"); if (activeDot) activeDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-400";
 }
 
 function handlePrayerSubmit(e) {
-e.preventDefault();
-const text = document.getElementById("prayer-text").value;
-fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-body: JSON.stringify({ _subject: "Liza's Prayer Request 🕊️", Prayer: text, Timestamp: new Date().toLocaleString() })
-}).then(() => {
-const msg = document.getElementById("prayer-sent-msg");
-if (msg) msg.classList.remove("hidden"); document.getElementById("prayer-text").value = "";
-setTimeout(() => msg.classList.add("hidden"), 4000);
-});
+e.preventDefault(); const text = document.getElementById("prayer-text").value;
+fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: "Liza's Prayer Request 🕊️", Prayer: text, Timestamp: new Date().toLocaleString() }) }).then(() => {
+const msg = document.getElementById("prayer-sent-msg"); if (msg) msg.classList.remove("hidden"); document.getElementById("prayer-text").value = ""; setTimeout(() => msg.classList.add("hidden"), 4000);
+}).catch(err => console.log(err));
 }
 
 function handleVentSubmit(e) {
-e.preventDefault();
-const text = document.getElementById("vent-text").value;
-fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-body: JSON.stringify({ _subject: "Liza's Comfort Vent 📦", Vent: text, Timestamp: new Date().toLocaleString() })
-}).then(() => {
-const msg = document.getElementById("vent-sent-msg");
-if (msg) msg.classList.remove("hidden"); document.getElementById("vent-text").value = "";
-setTimeout(() => msg.classList.add("hidden"), 4000);
-});
+e.preventDefault(); const text = document.getElementById("vent-text").value;
+fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: "Liza's Comfort Vent 📦", Vent: text, Timestamp: new Date().toLocaleString() }) }).then(() => {
+const msg = document.getElementById("vent-sent-msg"); if (msg) msg.classList.remove("hidden"); document.getElementById("vent-text").value = ""; setTimeout(() => msg.classList.add("hidden"), 4000);
+}).catch(err => console.log(err));
 }
 
 function handleCallSubmit(e) {
 e.preventDefault();
-fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", {
-method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-body: JSON.stringify({ _subject: "Call Request from Liza 📞", Date: document.getElementById("call-date").value, Time: document.getElementById("call-time").value, Timestamp: new Date().toLocaleString() })
-}).then(() => {
-const msg = document.getElementById("call-sent-msg");
-if (msg) msg.classList.remove("hidden"); document.getElementById("call-date").value = ""; document.getElementById("call-time").value = "";
-setTimeout(() => msg.classList.add("hidden"), 4000);
-});
+fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: "Call Request from Liza 📞", Date: document.getElementById("call-date").value, Time: document.getElementById("call-time").value, Type: document.getElementById("call-type").value, Activity: document.getElementById("call-activity").value, Notes: document.getElementById("call-notes").value || "None", Timestamp: new Date().toLocaleString() }) }).then(() => {
+const msg = document.getElementById("call-sent-msg"); if (msg) msg.classList.remove("hidden"); document.getElementById("call-date").value = ""; document.getElementById("call-time").value = ""; document.getElementById("call-type").value = ""; document.getElementById("call-activity").value = ""; document.getElementById("call-notes").value = ""; setTimeout(() => msg.classList.add("hidden"), 4000);
+}).catch(err => console.log(err));
 }
+
+function requestPhoto(sender) {
+  fetch("https://formsubmit.co/ajax/jazzymusic28@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: `Photo Request from ${sender} 📸`, Request: `${sender} requested a photo update across the miles.`, Timestamp: new Date().toLocaleString() }) }).then(() => {
+    const msg = document.getElementById("photo-req-msg"); if (msg) { msg.classList.remove("hidden"); setTimeout(() => msg.classList.add("hidden"), 4000); }
+  });
+}
+  const t1Prompts = [
+"If Derrick and Liza could pick one dessert to bake together from scratch, what are we making?",
+"What is your absolute favorite comfort food after a long, exhausting shift?",
+"If we had a completely free Sunday together, what would our morning look like?",
+"What is a song that always makes you think of me when it plays?",
+"If we could teleport to anywhere in the world right now for coffee, where are we going?",
+"What was your first impression of me when we started talking?",
+"What is a small, silly thing that instantly puts a smile on your face?",
+"If we opened a little cafe together one day, what would we serve?",
+"What is your favorite memory of us laughing together so far?",
+"If you could design our dream cozy living room, what color would the walls be?"
+];
+const t2Prompts = [
+"Do you love me, and what is your favorite reason why? 💍",
+"What was the moment you realized you felt completely safe and at home with me?",
+"What is something small I do that makes you feel deeply cherished?",
+"How has our relationship changed the way you view the future?",
+"What is a prayer you have been whispering for us lately?",
+"What do you love most about how we communicate across the distance?",
+"When do you feel the most loved and appreciated by me?",
+"What is a quality in me that balances out your personality?",
+"If you could write a headline for our love story today, what would it say?",
+"What makes you feel most proud of what we share together?"
+];
+const t3Prompts = [
+"When do you feel you would want to get married? 💍",
+"What kind of atmosphere and peace do you want to cultivate most in our future home?",
+"What is one big dream you have for us once we close the distance for good?",
+"How can I better support you during your hardest, most stressful work weeks?",
+"What does true partnership mean to you in marriage?",
+"How do you envision our first morning waking up in the same home?",
+"What values do you want to pass down in our future family?",
+"How has trusting God with our relationship strengthened your faith?",
+"What is a fear about the future you want to give to God together?",
+"What does forever look like in your heart when you think about us?"
+];
+
+let p1Idx = 0, p2Idx = 0, p3Idx = 0;
+function nextPrompt(tier) {
+if (tier === 1) { p1Idx = (p1Idx + 1) % t1Prompts.length; document.getElementById("prompt-t1").innerText = t1Prompts[p1Idx]; }
+else if (tier === 2) { p2Idx = (p2Idx + 1) % t2Prompts.length; document.getElementById("prompt-t2").innerText = t2Prompts[p2Idx]; }
+else if (tier === 3) { p3Idx = (p3Idx + 1) % t3Prompts.length; document.getElementById("prompt-t3").innerText = t3Prompts[p3Idx]; }
+}
+
+const jokes = [
+"Do you have a map? Because Derrick keeps getting lost in our conversations every day. 🥰",
+"Are you tired? Because you've been running through my thoughts across 8,000 miles all day! 🏃‍♀️💨",
+"If loving you was a job, I'd gladly work overtime with zero complaints. 📋🤍"
+];
+let jIdx = 0;
+function nextJoke() { jIdx = (jIdx + 1) % jokes.length; document.getElementById("joke-text").innerText = jokes[jIdx]; }
 
 const PRIZE_POOL = [
   { id: 'loss', name: 'Blank Card (3 plays a day!) 🌿', weight: 580, secret: false },
   { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 170, secret: false },
   { id: 'photo_req', name: 'Photo Request 📸 (Send your view!)', weight: 77, secret: false },
-  { id: 'deep_truth_her', name: 'Deep Truth: She Asks You 🧠', weight: 29, secret: false },
-  { id: 'deep_truth_him', name: 'Deep Truth: You Ask Her 🧠', weight: 29, secret: false },
-  { id: 'command_her', name: '5-Minute Command: She Controls You 👑', weight: 19, secret: false },
-  { id: 'command_him', name: '5-Minute Command: You Control Her 👑', weight: 19, secret: false },
-  { id: 'outfit_her', name: 'Outfit Challenge: She Picks Yours 👗', weight: 15.5, secret: false },
-  { id: 'outfit_him', name: 'Outfit Challenge: You Pick Hers 👔', weight: 15.5, secret: false },
-  { id: 'audio_her', name: 'Voice Impression: She Sends One 🎤', weight: 9.5, secret: false },
-  { id: 'audio_him', name: 'Voice Impression: You Send One 🎤', weight: 9.5, secret: false },
-  { id: 'poem_her', name: 'Poem Challenge: She Writes One ✍️', weight: 7.5, secret: false },
-  { id: 'poem_him', name: 'Poem Challenge: You Write One ✍️', weight: 7.5, secret: false },
+  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 29, secret: false },
+  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 29, secret: false },
+  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 19, secret: false },
+  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 19, secret: false },
+  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 15.5, secret: false },
+  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 15.5, secret: false },
+  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 9.5, secret: false },
+  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 9.5, secret: false },
+  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 7.5, secret: false },
+  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 7.5, secret: false },
   { id: 'cash_jackpot', name: '💵 Cash Jackpot ($20 / ₱1,256)', weight: 4, secret: true },
   { id: 'promise_ring', name: '🏆 LEGENDARY: Promise Ring ($50 / ₱3,140)', weight: 1, secret: true }
 ];
@@ -672,89 +783,57 @@ function initNewCard() {
   const lastDate = localStorage.getItem('scratch_date');
   const today = new Date().toDateString();
   if (lastDate !== today) { plays = 3; localStorage.setItem('scratch_date', today); }
-  
-  if (plays <= 0) {
-    alert("You've used all 3 plays for today! Come back fresh tomorrow.");
-    document.getElementById('scratch-result-desc').innerText = "No plays remaining today!";
-    return;
-  }
-  
+  if (plays <= 0) { alert("You've used all 3 plays for today! Come back fresh tomorrow."); document.getElementById('scratch-result-desc').innerText = "No plays remaining today!"; return; }
   plays--; localStorage.setItem('scratch_plays', plays);
   document.getElementById('scratch-plays-count').innerText = `${plays} / 3`;
 
   const totalWeight = PRIZE_POOL.reduce((sum, p) => sum + p.weight, 0);
-  let rand = Math.random() * totalWeight;
-  let selected = PRIZE_POOL[0];
-  for (const prize of PRIZE_POOL) {
-    if (rand < prize.weight) { selected = prize; break; }
-    rand -= prize.weight;
-  }
+  let rand = Math.random() * totalWeight; let selected = PRIZE_POOL[0];
+  for (const prize of PRIZE_POOL) { if (rand < prize.weight) { selected = prize; break; } rand -= prize.weight; }
   document.getElementById('scratch-result-desc').innerText = selected.name;
   if (selected.secret) alert("✨ SECRET WIN! Take a screenshot and show Derrick immediately to claim your prize!");
-
   setupScratchCanvas();
 }
 
 function setupScratchCanvas() {
-  const sc = document.getElementById('scratch-canvas');
-  if (!sc) return;
-  const sCtx = sc.getContext('2d');
-  sc.width = sc.parentElement.clientWidth;
-  sc.height = sc.parentElement.clientHeight;
-
-  sCtx.fillStyle = '#1e3a2f';
-  sCtx.fillRect(0, 0, sc.width, sc.height);
-  sCtx.fillStyle = '#10b981';
-  sCtx.font = 'bold 13px sans-serif';
-  sCtx.textAlign = 'center';
+  const sc = document.getElementById('scratch-canvas'); if (!sc) return;
+  const sCtx = sc.getContext('2d'); sc.width = sc.parentElement.clientWidth; sc.height = sc.parentElement.clientHeight;
+  sCtx.fillStyle = '#1e3a2f'; sCtx.fillRect(0, 0, sc.width, sc.height);
+  sCtx.fillStyle = '#10b981'; sCtx.font = 'bold 13px sans-serif'; sCtx.textAlign = 'center';
   sCtx.fillText('✨ Scratch Here With Your Finger ✨', sc.width / 2, sc.height / 2 + 4);
-
   let isDrawing = false;
-
   function scratch(e) {
     if (!isDrawing) return;
     const rect = sc.getBoundingClientRect();
     const x = (e.clientX || e.touches[0].clientX) - rect.left;
     const y = (e.clientY || e.touches[0].clientY) - rect.top;
     sCtx.globalCompositeOperation = 'destination-out';
-    sCtx.beginPath();
-    sCtx.arc(x, y, 22, 0, Math.PI * 2, false);
-    sCtx.fill();
+    sCtx.beginPath(); sCtx.arc(x, y, 22, 0, Math.PI * 2, false); sCtx.fill();
   }
-
-  sc.onmousedown = () => { isDrawing = true; };
-  window.onmouseup = () => { isDrawing = false; };
-  sc.onmousemove = scratch;
-
-  sc.ontouchstart = () => { isDrawing = true; };
-  window.ontouchend = () => { isDrawing = false; };
-  sc.ontouchmove = scratch;
+  sc.onmousedown = () => { isDrawing = true; }; window.onmouseup = () => { isDrawing = false; }; sc.onmousemove = scratch;
+  sc.ontouchstart = () => { isDrawing = true; }; window.ontouchend = () => { isDrawing = false; }; sc.ontouchmove = scratch;
 }
 
 function openOddsModal() {
-  const totalWeight = PRIZE_POOL.reduce((sum, p) => sum + p.weight, 0);
-  let listHtml = "";
+  const totalWeight = PRIZE_POOL.reduce((sum, p) => sum + p.weight, 0); let listHtml = "";
   PRIZE_POOL.forEach(p => {
     const percentage = ((p.weight / totalWeight) * 100).toFixed(2);
     listHtml += `<div class="flex justify-between items-center p-2 rounded-lg bg-[#11211c] border border-emerald-900/30"><span>${p.name}</span><span class="font-bold text-emerald-400">${percentage}%</span></div>`;
   });
-  document.getElementById('odds-list').innerHTML = listHtml;
-  document.getElementById('odds-modal').classList.remove('hidden');
+  document.getElementById('odds-list').innerHTML = listHtml; document.getElementById('odds-modal').classList.remove('hidden');
 }
 
-function closeOddsModal() {
-  document.getElementById('odds-modal').classList.add('hidden');
-}
-  let savedQuizQuestions = JSON.parse(localStorage.getItem('saved_quiz_q') || '[]');
+function closeOddsModal() { document.getElementById('odds-modal').classList.add('hidden'); }
+
+let savedQuizQuestions = JSON.parse(localStorage.getItem('saved_quiz_q') || '[]');
 let wantNotification = localStorage.getItem('quiz_notify') === 'true';
 let userContact = localStorage.getItem('quiz_contact') || "";
-let currentDerrickIndex = 0;
-let derrickSubmittedAnswers = [];
+let currentDerrickIndex = 0; let derrickSubmittedAnswers = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   if (savedQuizQuestions.length > 0) {
-    document.getElementById("quiz-builder-section").classList.add("hidden");
-    document.getElementById("quiz-ready-section").classList.remove("hidden");
+    const builderSec = document.getElementById("quiz-builder-section"); const readySec = document.getElementById("quiz-ready-section");
+    if (builderSec) builderSec.classList.add("hidden"); if (readySec) readySec.classList.remove("hidden");
   }
 });
 
@@ -762,8 +841,7 @@ function addCustomQuestion() {
   const text = document.getElementById("builder-q-text").value.trim();
   if (!text) { alert("Please type a question!"); return; }
   if (savedQuizQuestions.length >= 20) { alert("Maximum limit of 20 questions reached!"); return; }
-  savedQuizQuestions.push(text);
-  document.getElementById("builder-q-text").value = "";
+  savedQuizQuestions.push(text); document.getElementById("builder-q-text").value = "";
   document.getElementById("q-counter").innerText = savedQuizQuestions.length + 1;
   document.getElementById("builder-preview").innerHTML = `Added <strong>${savedQuizQuestions.length}</strong> question(s).`;
   document.getElementById("save-quiz-btn").classList.remove("hidden");
@@ -776,33 +854,20 @@ function showSavePrompt() {
 }
 
 function handleNotificationChoice(choice) {
-  wantNotification = choice;
-  const contactBox = document.getElementById("contact-input-box");
-  if (choice) {
-    contactBox.classList.remove("hidden");
-  } else {
-    contactBox.classList.add("hidden");
-    document.getElementById("user-contact-info").value = "";
-  }
+  wantNotification = choice; const contactBox = document.getElementById("contact-input-box");
+  if (choice) { contactBox.classList.remove("hidden"); } else { contactBox.classList.add("hidden"); document.getElementById("user-contact-info").value = ""; }
 }
 
 function finalizeQuizSave() {
-  if (wantNotification) {
-    userContact = document.getElementById("user-contact-info").value.trim();
-    if (!userContact) { alert("Please enter your email or phone number!"); return; }
-  }
+  if (wantNotification) { userContact = document.getElementById("user-contact-info").value.trim(); if (!userContact) { alert("Please enter your email or phone number!"); return; } }
   localStorage.setItem('saved_quiz_q', JSON.stringify(savedQuizQuestions));
-  localStorage.setItem('quiz_notify', wantNotification);
-  localStorage.setItem('quiz_contact', userContact);
-  document.getElementById("quiz-save-modal").classList.add("hidden");
-  document.getElementById("quiz-ready-section").classList.remove("hidden");
+  localStorage.setItem('quiz_notify', wantNotification); localStorage.setItem('quiz_contact', userContact);
+  document.getElementById("quiz-save-modal").classList.add("hidden"); document.getElementById("quiz-ready-section").classList.remove("hidden");
 }
 
 function startDerrickTestSession() {
-  if (savedQuizQuestions.length === 0) return;
-  currentDerrickIndex = 0; derrickSubmittedAnswers = [];
-  document.getElementById("quiz-ready-section").classList.add("hidden");
-  document.getElementById("quiz-taking-section").classList.remove("hidden");
+  if (savedQuizQuestions.length === 0) return; currentDerrickIndex = 0; derrickSubmittedAnswers = [];
+  document.getElementById("quiz-ready-section").classList.add("hidden"); document.getElementById("quiz-taking-section").classList.remove("hidden");
   loadDerrickQuestion();
 }
 
@@ -811,52 +876,38 @@ function loadDerrickQuestion() {
     document.getElementById("derrick-q-num").innerText = `Question ${currentDerrickIndex + 1} of ${savedQuizQuestions.length}`;
     document.getElementById("derrick-q-text").innerText = savedQuizQuestions[currentDerrickIndex];
     document.getElementById("derrick-answer-input").value = "";
-  } else {
-    showDerrickScorecard();
-  }
+  } else { showDerrickScorecard(); }
 }
 
 function submitDerrickQuizAnswer() {
-  const ansInput = document.getElementById("derrick-answer-input");
-  const ans = ansInput ? ansInput.value.trim() : "";
-  derrickSubmittedAnswers.push(ans || "(No answer given)");
-  currentDerrickIndex++;
-  loadDerrickQuestion();
+  const ansInput = document.getElementById("derrick-answer-input"); const ans = ansInput ? ansInput.value.trim() : "";
+  derrickSubmittedAnswers.push(ans || "(No answer given)"); currentDerrickIndex++; loadDerrickQuestion();
 }
 
 function showDerrickScorecard() {
-  document.getElementById("quiz-taking-section").classList.add("hidden");
-  document.getElementById("quiz-final-scorecard").classList.remove("hidden");
+  document.getElementById("quiz-taking-section").classList.add("hidden"); document.getElementById("quiz-final-scorecard").classList.remove("hidden");
   let listHTML = "";
   savedQuizQuestions.forEach((q, idx) => {
-    const ans = derrickSubmittedAnswers[idx];
-    const isAnswered = ans !== "(No answer given)";
+    const ans = derrickSubmittedAnswers[idx]; const isAnswered = ans !== "(No answer given)";
     const badge = isAnswered ? "bg-emerald-950/80 border-emerald-500/40 text-emerald-300" : "bg-rose-950/80 border-rose-500/40 text-rose-300";
     listHTML += `<div class="p-2.5 rounded-xl border ${badge} text-left space-y-0.5"><p class="font-bold text-[11px]">Q${idx + 1}: ${q}</p><p class="text-[10px]">Derrick's response: <strong>${ans}</strong></p></div>`;
   });
   document.getElementById("score-summary-text").innerText = `Quiz Finished! Total Questions: ${savedQuizQuestions.length}`;
   document.getElementById("scorecard-list").innerHTML = listHTML;
   if (wantNotification && userContact && userContact.includes("@")) {
-    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(userContact), {
-      method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({ _subject: "Derrick Finished Your Custom Quiz! 🧩", Answers: JSON.stringify(derrickSubmittedAnswers) })
-    }).catch(err => console.log("Sent"));
+    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(userContact), { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: "Derrick Finished Your Custom Quiz! 🧩", Answers: JSON.stringify(derrickSubmittedAnswers) }) }).catch(err => console.log("Sent"));
   }
 }
 
 function resetEntireQuiz() {
   localStorage.removeItem('saved_quiz_q'); localStorage.removeItem('quiz_notify'); localStorage.removeItem('quiz_contact');
   savedQuizQuestions = []; wantNotification = false; userContact = "";
-  document.getElementById("quiz-final-scorecard").classList.add("hidden");
-  document.getElementById("quiz-builder-section").classList.remove("hidden");
-  document.getElementById("builder-preview").innerText = "No questions added yet.";
-  document.getElementById("q-counter").innerText = "1";
+  document.getElementById("quiz-final-scorecard").classList.add("hidden"); document.getElementById("quiz-builder-section").classList.remove("hidden");
+  document.getElementById("builder-preview").innerText = "No questions added yet."; document.getElementById("q-counter").innerText = "1";
   document.getElementById("save-quiz-btn").classList.add("hidden");
 }
 
-function triggerConfetti() {
-  if (typeof confetti === 'function') confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
-}
+function triggerConfetti() { if (typeof confetti === 'function') { confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } }); } }
 </script>
 </body>
 </html>

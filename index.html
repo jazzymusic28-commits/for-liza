@@ -483,7 +483,7 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 <h2 class="text-lg font-bold text-white">Daily Scratch-Off</h2>
 <div class="flex justify-between items-center text-xs px-2 text-slate-300">
 <span>Plays Remaining:</span>
-<span id="scratch-plays-count" class="font-bold text-rose-400">3 / 3</span>
+<span id="scratch-plays-count" class="font-bold text-rose-400">5 / 5</span>
 </div>
 <div id="scratch-container" class="relative p-6 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 min-h-[140px] flex flex-col items-center justify-center select-none overflow-hidden">
   <div id="scratch-prize-content" class="text-center space-y-1 z-0">
@@ -592,8 +592,7 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 </div>
 </section>
 </main>
-</div>
-<script>
+</div><script>
 function toggleAudio() {
 const audio = document.getElementById('bg-audio');
 const btn = document.getElementById('audio-btn');
@@ -772,32 +771,33 @@ let jIdx = 0;
 function nextJoke() { jIdx = (jIdx + 1) % jokes.length; document.getElementById("joke-text").innerText = jokes[jIdx]; }
 
 const PRIZE_POOL = [
-  { id: 'loss', name: 'Blank Card (3 plays a day!) 🌿', weight: 560, secret: false },
-  { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 150, secret: false },
-  { id: 'photo_req_liza', name: 'Photo Request: Derrick sends a pic! 📸', weight: 40, secret: false },
-  { id: 'photo_req_derrick', name: 'Photo Request: Liza sends a pic! 📸', weight: 40, secret: false },
-  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 28, secret: false },
-  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 28, secret: false },
-  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 18, secret: false },
-  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 18, secret: false },
-  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 15, secret: false },
-  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 15, secret: false },
-  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 9, secret: false },
-  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 9, secret: false },
-  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 7, secret: false },
-  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 7, secret: false },
-  { id: 'cash_20', name: '💵 Derrick sends $20 / ₱1,256', weight: 5, secret: true },
-  { id: 'promise_ring', name: '🏆 LEGENDARY: Derrick sends $50 / ₱3,140 for a promise ring', weight: 1, secret: true }
+  { id: 'loss', name: 'Blank Card (5 plays a day!) 🌿', weight: 640, secret: false },
+  { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 130, secret: false },
+  { id: 'love_note_liza', name: 'Love Note from Liza 💌', weight: 130, secret: false },
+  { id: 'photo_req_liza', name: 'Photo Request: Derrick sends a pic! 📸', weight: 30, secret: false },
+  { id: 'photo_req_derrick', name: 'Photo Request: Liza sends a pic! 📸', weight: 30, secret: false },
+  { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 16, secret: false },
+  { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 16, secret: false },
+  { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 10, secret: false },
+  { id: 'command_him', name: '5-Minute Command: Derrick Controls Liza 👑', weight: 10, secret: false },
+  { id: 'outfit_her', name: 'Outfit Challenge: Liza Picks Derrick\'s 👗', weight: 8, secret: false },
+  { id: 'outfit_him', name: 'Outfit Challenge: Derrick Picks Liza\'s 👔', weight: 8, secret: false },
+  { id: 'audio_her', name: 'Voice Impression: Liza Sends One 🎤', weight: 5, secret: false },
+  { id: 'audio_him', name: 'Voice Impression: Derrick Sends One 🎤', weight: 5, secret: false },
+  { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 4, secret: false },
+  { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 4, secret: false },
+  { id: 'cash_20', name: '💵 Derrick sends $20 / ₱1,256', weight: 2, secret: true },
+  { id: 'promise_ring', name: '🏆 LEGENDARY: Derrick sends $50 / ₱3,140 for a promise ring', weight: 0.5, secret: true }
 ];
 
 function initNewCard() {
-  let plays = parseInt(localStorage.getItem('scratch_plays') || '3');
+  let plays = parseInt(localStorage.getItem('scratch_plays') || '5');
   const lastDate = localStorage.getItem('scratch_date');
   const today = new Date().toDateString();
-  if (lastDate !== today) { plays = 3; localStorage.setItem('scratch_date', today); }
-  if (plays <= 0) { alert("You've used all 3 plays for today! Come back fresh tomorrow."); document.getElementById('scratch-result-desc').innerText = "No plays remaining today!"; return; }
+  if (lastDate !== today) { plays = 5; localStorage.setItem('scratch_date', today); }
+  if (plays <= 0) { alert("You've used all 5 plays for today! Come back fresh tomorrow."); document.getElementById('scratch-result-desc').innerText = "No plays remaining today!"; return; }
   plays--; localStorage.setItem('scratch_plays', plays);
-  document.getElementById('scratch-plays-count').innerText = `${plays} / 3`;
+  document.getElementById('scratch-plays-count').innerText = `${plays} / 5`;
 
   const totalWeight = PRIZE_POOL.reduce((sum, p) => sum + p.weight, 0);
   let rand = Math.random() * totalWeight; let selected = PRIZE_POOL[0];
@@ -996,3 +996,4 @@ function triggerConfetti() { if (typeof confetti === 'function') { confetti({ pa
 </script>
 </body>
 </html>
+

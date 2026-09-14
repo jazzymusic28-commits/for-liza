@@ -517,7 +517,17 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/25">Custom Quiz Maker 🧩</span>
 <h2 class="text-lg font-bold text-white">Create Your Quiz</h2>
-<div id="quiz-builder-section" class="space-y-3 text-left">
+
+<div id="quiz-role-select" class="space-y-3 text-left">
+  <p class="text-xs text-slate-300 text-center">Who is creating this quiz right now?</p>
+  <div class="grid grid-cols-2 gap-2">
+    <button onclick="setQuizCreator('Liza')" class="py-3 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/40 text-xs font-bold text-emerald-300 cursor-pointer">Liza 🌸</button>
+    <button onclick="setQuizCreator('Derrick')" class="py-3 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/40 text-xs font-bold text-emerald-300 cursor-pointer">Derrick 🌿</button>
+  </div>
+</div>
+
+<div id="quiz-builder-section" class="hidden space-y-3 text-left">
+  <p id="creator-tag" class="text-xs text-emerald-300 font-semibold text-center"></p>
   <div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2">
     <label class="block text-xs font-bold text-emerald-400">Question <span id="q-counter">1</span> (Up to 20):</label>
     <input type="text" id="builder-q-text" placeholder="Type your question here..." class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-xs text-white">
@@ -527,14 +537,24 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
       <input type="text" id="ans-c" placeholder="Option C" class="w-full bg-[#11211c] border border-emerald-900/30 rounded-lg p-2 text-xs text-white">
       <input type="text" id="ans-d" placeholder="Option D" class="w-full bg-[#11211c] border border-emerald-900/30 rounded-lg p-2 text-xs text-white">
     </div>
-    <button onclick="addCustomQuestion()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all mt-2">+ Add Answer & Question</button>
+    <div class="pt-1">
+      <label class="block text-[11px] font-bold text-emerald-300 mb-1">Select the Correct Answer:</label>
+      <select id="correct-ans-select" class="w-full bg-[#11211c] border border-emerald-900/40 rounded-lg p-2 text-xs text-white">
+        <option value="A">Option A</option>
+        <option value="B">Option B</option>
+        <option value="C">Option C</option>
+        <option value="D">Option D</option>
+      </select>
+    </div>
+    <button onclick="addCustomQuestion()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all mt-2 cursor-pointer">+ Add Answer & Question</button>
   </div>
   <div id="builder-preview" class="text-xs text-slate-400 italic">No questions added yet.</div>
-  <button onclick="showSavePrompt()" id="save-quiz-btn" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all hidden">Save Quiz 💾</button>
+  <button onclick="showSavePrompt()" id="save-quiz-btn" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all hidden cursor-pointer">Save Quiz 💾</button>
 </div>
+
 <div id="quiz-save-modal" class="hidden space-y-3 text-left p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30">
   <h3 class="text-sm font-bold text-emerald-300 text-center">Save Your Quiz 🌿</h3>
-  <p class="text-xs text-slate-300">Do you want to be sent Derrick's answers once he is done with the test?</p>
+  <p id="notification-prompt-text" class="text-xs text-slate-300">Do you want to be sent the answers once the test is finished?</p>
   <div class="flex gap-2">
     <button type="button" onclick="handleNotificationChoice(true)" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-xs font-bold text-emerald-300 cursor-pointer">Yes ✉️</button>
     <button type="button" onclick="handleNotificationChoice(false)" class="flex-1 py-2 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-slate-300 cursor-pointer">No thanks</button>
@@ -545,26 +565,30 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
   </div>
   <button type="button" onclick="finalizeQuizSave()" class="w-full py-3 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all mt-2 cursor-pointer">Finish & Save Quiz 🎉</button>
 </div>
+
 <div id="quiz-ready-section" class="hidden space-y-3 text-center">
-  <p class="text-xs text-emerald-300 font-semibold">Quiz Saved Successfully! ✨</p>
-  <button onclick="startDerrickTestSession()" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all">Start Derrick's Test 🚀</button>
+  <p id="ready-status-text" class="text-xs text-emerald-300 font-semibold">Quiz Saved Successfully! ✨</p>
+  <button onclick="startTestSession()" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs shadow transition-all cursor-pointer">Start The Test 🚀</button>
 </div>
+
 <div id="quiz-taking-section" class="hidden space-y-3 text-left">
   <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3">
-    <p id="derrick-q-num" class="text-[10px] text-emerald-400 font-bold">Question 1</p>
-    <p id="derrick-q-text" class="text-xs font-medium text-white"></p>
-    <div id="derrick-options-container" class="space-y-2 pt-1"></div>
+    <p id="test-q-num" class="text-[10px] text-emerald-400 font-bold">Question 1</p>
+    <p id="test-q-text" class="text-xs font-medium text-white"></p>
+    <div id="test-options-container" class="space-y-2 pt-1"></div>
   </div>
 </div>
+
 <div id="quiz-final-scorecard" class="hidden space-y-3 text-left">
   <div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-3 text-center">
     <h3 class="text-base font-bold text-emerald-300">Test Complete! 📊</h3>
     <p id="score-summary-text" class="text-sm font-bold text-white"></p>
     <div id="scorecard-list" class="space-y-2 max-h-48 overflow-y-auto text-xs pr-1"></div>
-    <button onclick="resetEntireQuiz()" class="w-full py-2.5 rounded-xl bg-[#162a24] text-xs font-bold text-emerald-300 transition-all">Reset & Create New Quiz 🔄</button>
+    <button onclick="resetEntireQuiz()" class="w-full py-2.5 rounded-xl bg-[#162a24] text-xs font-bold text-emerald-300 transition-all cursor-pointer">Reset & Create New Quiz 🔄</button>
   </div>
 </div>
-<button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
+
+<button onclick="goToScreen(1)" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold cursor-pointer">⌂ Home Menu</button>
 </div>
 </section>
 </main>
@@ -750,7 +774,8 @@ function nextJoke() { jIdx = (jIdx + 1) % jokes.length; document.getElementById(
 const PRIZE_POOL = [
   { id: 'loss', name: 'Blank Card (3 plays a day!) 🌿', weight: 560, secret: false },
   { id: 'love_note', name: 'Love Note from Derrick 💌', weight: 150, secret: false },
-  { id: 'photo_req', name: 'Photo Request 📸 (Send your view!)', weight: 70, secret: false },
+  { id: 'photo_req_liza', name: 'Photo Request: Derrick sends a pic! 📸', weight: 40, secret: false },
+  { id: 'photo_req_derrick', name: 'Photo Request: Liza sends a pic! 📸', weight: 40, secret: false },
   { id: 'deep_truth_her', name: 'Deep Truth: Liza Asks Derrick 🧠', weight: 28, secret: false },
   { id: 'deep_truth_him', name: 'Deep Truth: Derrick Asks Liza 🧠', weight: 28, secret: false },
   { id: 'command_her', name: '5-Minute Command: Liza Controls Derrick 👑', weight: 18, secret: false },
@@ -762,9 +787,7 @@ const PRIZE_POOL = [
   { id: 'poem_her', name: 'Poem Challenge: Liza Writes One ✍️', weight: 7, secret: false },
   { id: 'poem_him', name: 'Poem Challenge: Derrick Writes One ✍️', weight: 7, secret: false },
   { id: 'cash_20', name: '💵 Derrick sends $20 / ₱1,256', weight: 5, secret: true },
-  { id: 'cash_jackpot', name: '💵 Cash Jackpot ($20 / ₱1,256)', weight: 3, secret: true },
-  { id: 'ring_50', name: '💍 Derrick sends $50 for a ring / ₱3,140', weight: 2, secret: true },
-  { id: 'promise_ring', name: '🏆 LEGENDARY: Promise Ring ($50 / ₱3,140)', weight: 1, secret: true }
+  { id: 'promise_ring', name: '🏆 LEGENDARY: Derrick sends $50 / ₱3,140 for a promise ring', weight: 1, secret: true }
 ];
 
 function initNewCard() {
@@ -814,15 +837,29 @@ function openOddsModal() {
 
 function closeOddsModal() { document.getElementById('odds-modal').classList.add('hidden'); }
 
+let quizCreator = "";
+let quizTaker = "";
 let savedQuizQuestions = JSON.parse(localStorage.getItem('saved_quiz_q') || '[]');
 let wantNotification = localStorage.getItem('quiz_notify') === 'true';
 let userContact = localStorage.getItem('quiz_contact') || "";
-let currentDerrickIndex = 0; let derrickSubmittedAnswers = [];
+let currentTestIndex = 0;
+let testScore = 0;
+let testSubmittedAnswers = [];
+
+function setQuizCreator(name) {
+  quizCreator = name;
+  quizTaker = (name === 'Liza') ? 'Derrick' : 'Liza';
+  document.getElementById("quiz-role-select").classList.add("hidden");
+  document.getElementById("quiz-builder-section").classList.remove("hidden");
+  document.getElementById("creator-tag").innerText = `Creating quiz as ${quizCreator} (For ${quizTaker} to take)`;
+  document.getElementById("notification-prompt-text").innerText = `Do you want to be sent ${quizTaker}'s answers once the test is finished?`;
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   if (savedQuizQuestions.length > 0) {
-    const builderSec = document.getElementById("quiz-builder-section"); const readySec = document.getElementById("quiz-ready-section");
-    if (builderSec) builderSec.classList.add("hidden"); if (readySec) readySec.classList.remove("hidden");
+    document.getElementById("quiz-role-select").classList.add("hidden");
+    document.getElementById("quiz-ready-section").classList.remove("hidden");
+    document.getElementById("ready-status-text").innerText = `Quiz Ready to Take! ✨`;
   }
 });
 
@@ -832,12 +869,13 @@ function addCustomQuestion() {
   const optB = document.getElementById("ans-b").value.trim();
   const optC = document.getElementById("ans-c").value.trim();
   const optD = document.getElementById("ans-d").value.trim();
+  const correctOpt = document.getElementById("correct-ans-select").value;
 
   if (!text) { alert("Please type a question!"); return; }
   if (!optA || !optB || !optC || !optD) { alert("Please provide all 4 options (A, B, C, D)!"); return; }
   if (savedQuizQuestions.length >= 20) { alert("Maximum limit of 20 questions reached!"); return; }
 
-  savedQuizQuestions.push({ question: text, options: [optA, optB, optC, optD] });
+  savedQuizQuestions.push({ question: text, options: [optA, optB, optC, optD], correct: correctOpt });
   
   document.getElementById("builder-q-text").value = "";
   document.getElementById("ans-a").value = "";
@@ -857,61 +895,100 @@ function showSavePrompt() {
 }
 
 function handleNotificationChoice(choice) {
-  wantNotification = choice; const contactBox = document.getElementById("contact-input-box");
+  wantNotification = choice;
+  const contactBox = document.getElementById("contact-input-box");
   if (choice) { contactBox.classList.remove("hidden"); } else { contactBox.classList.add("hidden"); document.getElementById("user-contact-info").value = ""; }
 }
 
 function finalizeQuizSave() {
-  if (wantNotification) { userContact = document.getElementById("user-contact-info").value.trim(); if (!userContact) { alert("Please enter your email or phone number!"); return; } }
+  if (wantNotification) {
+    userContact = document.getElementById("user-contact-info").value.trim();
+    if (!userContact) { alert("Please enter your email or phone number!"); return; }
+  }
   localStorage.setItem('saved_quiz_q', JSON.stringify(savedQuizQuestions));
-  localStorage.setItem('quiz_notify', wantNotification); localStorage.setItem('quiz_contact', userContact);
-  document.getElementById("quiz-save-modal").classList.add("hidden"); document.getElementById("quiz-ready-section").classList.remove("hidden");
+  localStorage.setItem('quiz_notify', wantNotification);
+  localStorage.setItem('quiz_contact', userContact);
+  document.getElementById("quiz-save-modal").classList.add("hidden");
+  document.getElementById("quiz-ready-section").classList.remove("hidden");
+  document.getElementById("ready-status-text").innerText = `Quiz Saved Successfully! ✨`;
 }
 
-function startDerrickTestSession() {
-  if (savedQuizQuestions.length === 0) return; currentDerrickIndex = 0; derrickSubmittedAnswers = [];
-  document.getElementById("quiz-ready-section").classList.add("hidden"); document.getElementById("quiz-taking-section").classList.remove("hidden");
-  loadDerrickQuestion();
+function startTestSession() {
+  if (savedQuizQuestions.length === 0) return;
+  currentTestIndex = 0; testScore = 0; testSubmittedAnswers = [];
+  document.getElementById("quiz-ready-section").classList.add("hidden");
+  document.getElementById("quiz-taking-section").classList.remove("hidden");
+  loadTestQuestion();
 }
 
-function loadDerrickQuestion() {
-  if (currentDerrickIndex < savedQuizQuestions.length) {
-    const qData = savedQuizQuestions[currentDerrickIndex];
-    document.getElementById("derrick-q-num").innerText = `Question ${currentDerrickIndex + 1} of ${savedQuizQuestions.length}`;
-    document.getElementById("derrick-q-text").innerText = qData.question;
+function loadTestQuestion() {
+  if (currentTestIndex < savedQuizQuestions.length) {
+    const qData = savedQuizQuestions[currentTestIndex];
+    document.getElementById("test-q-num").innerText = `Question ${currentTestIndex + 1} of ${savedQuizQuestions.length}`;
+    document.getElementById("test-q-text").innerText = qData.question;
     
     let optHTML = "";
     qData.options.forEach((opt, idx) => {
       const letter = ['A', 'B', 'C', 'D'][idx];
-      optHTML += `<button onclick="submitMultipleChoice('${letter}: ${opt}')" class="w-full text-left p-2.5 rounded-xl bg-[#11211c] hover:bg-emerald-950/60 border border-emerald-900/40 text-xs text-slate-200 transition-all cursor-pointer"><strong>${letter}.</strong> ${opt}</button>`;
+      optHTML += `<button onclick="checkTestAnswer('${letter}', this)" data-letter="${letter}" class="w-full text-left p-2.5 rounded-xl bg-[#11211c] hover:bg-emerald-950/60 border border-emerald-900/40 text-xs text-slate-200 transition-all cursor-pointer"><strong>${letter}.</strong> ${opt}</button>`;
     });
-    document.getElementById("derrick-options-container").innerHTML = optHTML;
-  } else { showDerrickScorecard(); }
+    document.getElementById("test-options-container").innerHTML = optHTML;
+  } else { showTestScorecard(); }
 }
 
-function submitMultipleChoice(selectedAnswer) {
-  derrickSubmittedAnswers.push(selectedAnswer); currentDerrickIndex++; loadDerrickQuestion();
+function checkTestAnswer(selectedLetter, btnElement) {
+  const qData = savedQuizQuestions[currentTestIndex];
+  const isCorrect = (selectedLetter === qData.correct);
+
+  const allBtns = document.querySelectorAll("#test-options-container button");
+  allBtns.forEach(b => b.disabled = true);
+
+  if (isCorrect) {
+    btnElement.className = "w-full text-left p-2.5 rounded-xl bg-emerald-700 border border-emerald-400 text-xs text-white font-bold transition-all";
+    testScore++;
+  } else {
+    btnElement.className = "w-full text-left p-2.5 rounded-xl bg-rose-800 border border-rose-400 text-xs text-white font-bold transition-all";
+    allBtns.forEach(b => {
+      if (b.getAttribute("data-letter") === qData.correct) {
+        b.className = "w-full text-left p-2.5 rounded-xl bg-emerald-700 border border-emerald-400 text-xs text-white font-bold transition-all";
+      }
+    });
+  }
+
+  testSubmittedAnswers.push({ question: qData.question, chosen: selectedLetter, correct: qData.correct, passed: isCorrect });
+
+  setTimeout(() => {
+    currentTestIndex++;
+    loadTestQuestion();
+  }, 1200);
 }
 
-function showDerrickScorecard() {
-  document.getElementById("quiz-taking-section").classList.add("hidden"); document.getElementById("quiz-final-scorecard").classList.remove("hidden");
+function showTestScorecard() {
+  document.getElementById("quiz-taking-section").classList.add("hidden");
+  document.getElementById("quiz-final-scorecard").classList.remove("hidden");
   let listHTML = "";
-  savedQuizQuestions.forEach((qData, idx) => {
-    const ans = derrickSubmittedAnswers[idx];
-    listHTML += `<div class="p-2.5 rounded-xl border bg-emerald-950/80 border-emerald-500/40 text-emerald-300 text-left space-y-0.5"><p class="font-bold text-[11px]">Q${idx + 1}: ${qData.question}</p><p class="text-[10px]">Derrick chose: <strong>${ans}</strong></p></div>`;
+  testSubmittedAnswers.forEach((item, idx) => {
+    const badge = item.passed ? "bg-emerald-950/80 border-emerald-500/40 text-emerald-300" : "bg-rose-950/80 border-rose-500/40 text-rose-300";
+    const statusText = item.passed ? "Correct! 🟢" : `Incorrect! 🔴 (Correct was ${item.correct})`;
+    listHTML += `<div class="p-2.5 rounded-xl border ${badge} text-left space-y-0.5"><p class="font-bold text-[11px]">Q${idx + 1}: ${item.question}</p><p class="text-[10px]">Chose: <strong>${item.chosen}</strong> | ${statusText}</p></div>`;
   });
-  document.getElementById("score-summary-text").innerText = `Quiz Finished! Total Questions: ${savedQuizQuestions.length}`;
+  document.getElementById("score-summary-text").innerText = `Test Complete! Score: ${testScore} / ${savedQuizQuestions.length}`;
   document.getElementById("scorecard-list").innerHTML = listHTML;
   if (wantNotification && userContact && userContact.includes("@")) {
-    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(userContact), { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ _subject: "Derrick Finished Your Custom Quiz! 🧩", Answers: JSON.stringify(derrickSubmittedAnswers) }) }).catch(err => console.log("Sent"));
+    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(userContact), {
+      method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ _subject: `Custom Quiz Completed! 🧩`, Score: `${testScore} / ${savedQuizQuestions.length}`, Answers: JSON.stringify(testSubmittedAnswers) })
+    }).catch(err => console.log("Sent"));
   }
 }
 
 function resetEntireQuiz() {
   localStorage.removeItem('saved_quiz_q'); localStorage.removeItem('quiz_notify'); localStorage.removeItem('quiz_contact');
-  savedQuizQuestions = []; wantNotification = false; userContact = "";
-  document.getElementById("quiz-final-scorecard").classList.add("hidden"); document.getElementById("quiz-builder-section").classList.remove("hidden");
-  document.getElementById("builder-preview").innerText = "No questions added yet."; document.getElementById("q-counter").innerText = "1";
+  savedQuizQuestions = []; wantNotification = false; userContact = ""; quizCreator = ""; quizTaker = "";
+  document.getElementById("quiz-final-scorecard").classList.add("hidden");
+  document.getElementById("quiz-role-select").classList.remove("hidden");
+  document.getElementById("builder-preview").innerText = "No questions added yet.";
+  document.getElementById("q-counter").innerText = "1";
   document.getElementById("save-quiz-btn").classList.add("hidden");
 }
 

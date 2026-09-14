@@ -15,6 +15,7 @@ body.page-gallery { background: radial-gradient(circle at center, #1c1226 0%, #0
 .w-full.max-w-sm { position: relative; z-index: 10; }
 .big-heart-container { width: 220px; height: 190px; margin: 0 auto; clip-path: polygon(50% 15%, 80% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%, 20% 0%); border: 4px solid #ffb6c1; box-shadow: 0 0 25px rgba(255, 182, 193, 0.6); display: flex; background: #000; }
 .big-heart-container img { width: 50%; height: 100%; object-fit: cover; }
+#scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; touch-action: none; border-radius: 1rem; }
 </style>
 </head>
 <body class="bg-[#0b1311] text-slate-100 min-h-screen flex flex-col items-center p-4 page-home relative pb-16">
@@ -71,7 +72,7 @@ Enter Your Safe Haven 💖
 
 <div class="w-full max-w-sm space-y-4">
 <main>
-<!-- SCREEN 1 -->
+  <!-- SCREEN 1 -->
 <section id="screen-1" class="space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-3">
 <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 text-[11px] font-medium border border-emerald-500/20">Hey Sweetheart 🌿</span>
@@ -132,11 +133,11 @@ Enter Your Safe Haven 💖
 </div>
 <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
 <p class="font-bold text-emerald-300 mb-1">An Answered Prayer</p>
-<p>When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life. No matter how many miles stretch between the United States and the Philippines, you have completely captivated my heart.</p>
+<p>When I look at you and think about the person you are, I see an answered prayer that God personally shaped for my life. No matter how many miles stretch between the United States and the Philippines, you have completely captivated my heart with your grace, your dedication, and the pure love you show me every single day. Even across oceans, I feel your warmth right beside me, and thanking God for you is the first and last thing on my mind.</p>
 </div>
 <div class="p-3 rounded-xl bg-[#11211c] border border-emerald-900/20">
 <p class="font-bold text-emerald-300 mb-1">Your Strength & Rest</p>
-<p>You have a quiet power and resilience that inspires me. But remember you don't have to carry everything by yourself. Let me be your safe harbor, your peace, and your soft place to land.</p>
+<p>You have a quiet power and resilience that inspires me. But remember you don't have to carry everything by yourself. Let me be your safe harbor, your peace, and your soft place to land whenever the world gets heavy.</p>
 </div>
 <p class="pt-2 text-right font-medium text-emerald-300">Forever loving you,<br><span class="font-bold">— Derrick 💍</span></p>
 </div>
@@ -199,9 +200,15 @@ Enter Your Safe Haven 💖
 </div>
 </div>
 
-<div class="p-4 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-center space-y-1">
-  <p class="text-[10px] uppercase text-slate-400 font-semibold">Minglanilla Weather ☀️</p>
-  <div id="weather-info" class="text-xs text-emerald-300 font-medium">Loading weather for Cebu...</div>
+<div class="grid grid-cols-1 gap-2.5">
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-center space-y-1">
+  <p class="text-[10px] uppercase text-slate-400 font-semibold">My Weather (US) 🌤️</p>
+  <div id="weather-us" class="text-xs text-emerald-300 font-medium">Loading US weather...</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 text-center space-y-1">
+  <p class="text-[10px] uppercase text-slate-400 font-semibold">Minglanilla Weather (PH) 🇵🇭</p>
+  <div id="weather-ph" class="text-xs text-emerald-300 font-medium">Loading Minglanilla weather...</div>
+</div>
 </div>
 
 <div class="space-y-2.5 text-left text-xs">
@@ -360,21 +367,35 @@ Enter Your Safe Haven 💖
 </div>
 </section>
 
-<!-- SCREEN 12 -->
+<!-- SCREEN 12: 4-PHOTO GALLERY GRID -->
 <section id="screen-12" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/20">A Glimpse of Us 🌸</span>
 <h2 class="text-lg font-bold text-white">Moments I Adore</h2>
 <div class="space-y-4 text-left max-h-[380px] overflow-y-auto pr-1">
-<div class="p-3 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-2 text-center">
-<div class="w-full h-56 rounded-xl overflow-hidden bg-black/40"><img src="att.46ztYa_T7FulnAIxlT5fV4GzwDWIrgcqkQhj7Wm58yg.jpg.jpeg" alt="Liza" class="w-full h-full object-cover"></div>
-<p class="text-xs text-rose-300 font-semibold">My sweetest blessing 🤍</p>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40"><img src="att.46ztYa_T7FulnAIxlT5fV4GzwDWIrgcqkQhj7Wm58yg.jpg.jpeg" alt="Photo 1" class="w-full h-full object-cover"></div>
+<p class="text-[10px] text-rose-300 font-semibold">Precious You 🤍</p>
+</div>
+<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40"><img src="att.XdZ-6fL3bTiXgxmO_lwRBCFOVDO9I9GPvaCqQ0y3HBI.jpg.jpeg" alt="Photo 2" class="w-full h-full object-cover"></div>
+<p class="text-[10px] text-rose-300 font-semibold">My Love 💖</p>
+</div>
+<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40"><img src="20260715_084246.jpg" alt="Photo 3" class="w-full h-full object-cover"></div>
+<p class="text-[10px] text-rose-300 font-semibold">Us Together ✨</p>
+</div>
+<div class="p-2 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 space-y-1 text-center">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-black/40 bg-gradient-to-br from-emerald-950 to-slate-900 flex items-center justify-center text-slate-500 text-xs"><span>More soon 📸</span></div>
+<p class="text-[10px] text-rose-300 font-semibold">Future Memories ✈️</p>
+</div>
 </div>
 </div>
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </section>
-<!-- SCREEN 13: DAILY SCRATCH-OFF -->
+<!-- SCREEN 13: DAILY SCRATCH-OFF WITH SCRATCHABLE CANVAS & ODDS MODAL -->
 <section id="screen-13" class="hidden space-y-4">
 <div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/40 text-center shadow-2xl space-y-4">
 <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 text-[11px] font-medium border border-rose-500/25">Daily Games 🎰</span>
@@ -384,15 +405,38 @@ Enter Your Safe Haven 💖
 <span id="scratch-plays-count" class="font-bold text-rose-400">3 / 3</span>
 </div>
 
-<div onclick="playScratchCard()" id="scratch-box" class="p-6 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 min-h-[140px] flex flex-col items-center justify-center cursor-pointer transition hover:border-emerald-500/50">
-<p id="scratch-result-title" class="text-xs text-slate-400">Tap here to scratch your daily card! ✨</p>
-<p id="scratch-result-desc" class="text-sm font-bold text-emerald-300 mt-1"></p>
+<!-- Scratchable Card Area -->
+<div id="scratch-container" class="relative p-6 rounded-2xl bg-[#0e1b17] border border-emerald-900/30 min-h-[140px] flex flex-col items-center justify-center select-none overflow-hidden">
+  <div id="scratch-prize-content" class="text-center space-y-1 z-0">
+    <p class="text-xs text-slate-400">Your Prize Revealed:</p>
+    <p id="scratch-result-desc" class="text-sm font-bold text-emerald-300 mt-1">Scratch above to play!</p>
+  </div>
+  <canvas id="scratch-canvas"></canvas>
 </div>
 
-<button onclick="playScratchCard()" class="w-full py-3 rounded-2xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all">Scratch Today's Card ✨</button>
+<div class="grid grid-cols-2 gap-2">
+  <button onclick="initNewCard()" class="w-full py-2.5 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all">New Card ✨</button>
+  <button onclick="openOddsModal()" class="w-full py-2.5 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-emerald-300 transition-all">📊 View Odds & Prizes</button>
+</div>
+
 <button onclick="goToScreen(1)" class="w-full py-2.5 rounded-2xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-slate-300 text-xs font-semibold">⌂ Home Menu</button>
 </div>
 </section>
+
+<!-- ODDS & PRIZES POPUP MODAL -->
+<div id="odds-modal" class="hidden fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4">
+<div class="p-6 rounded-3xl bg-[#11211c] border border-emerald-900/60 text-left shadow-2xl max-w-sm w-full space-y-3 max-h-[80vh] overflow-y-auto">
+<div class="flex justify-between items-center">
+  <h3 class="text-sm font-bold text-emerald-300">🎁 Prize Pool & Winning Odds</h3>
+  <button onclick="closeOddsModal()" class="text-slate-400 hover:text-white text-base font-bold px-2">✕</button>
+</div>
+<p class="text-[11px] text-slate-300 leading-relaxed">Here is every prize you can scratch off and your exact probability of winning each one:</p>
+<div id="odds-list" class="space-y-2 text-xs pt-1">
+  <!-- Populated dynamically via JS -->
+</div>
+<button onclick="closeOddsModal()" class="w-full py-2.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-xs transition-all mt-2">Got It 💖</button>
+</div>
+</div>
 
 <!-- SCREEN 14: PERMANENT CUSTOM QUIZ MAKER & GRADING -->
 <section id="screen-14" class="hidden space-y-4">
@@ -414,14 +458,14 @@ Enter Your Safe Haven 💖
   <h3 class="text-sm font-bold text-emerald-300 text-center">Save Your Quiz 🌿</h3>
   <p class="text-xs text-slate-300">Do you want to be sent his answers once he is done with the test?</p>
   <div class="flex gap-2">
-    <button onclick="handleNotificationChoice(true)" class="flex-1 py-2 rounded-xl bg-emerald-950 text-xs font-bold text-emerald-300">Yes ✉️</button>
-    <button onclick="handleNotificationChoice(false)" class="flex-1 py-2 rounded-xl bg-[#162a24] text-xs font-bold text-slate-300">No thanks</button>
+    <button type="button" onclick="handleNotificationChoice(true)" class="flex-1 py-2 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-xs font-bold text-emerald-300 cursor-pointer">Yes ✉️</button>
+    <button type="button" onclick="handleNotificationChoice(false)" class="flex-1 py-2 rounded-xl bg-[#162a24] hover:bg-[#1c352d] border border-emerald-900/40 text-xs font-bold text-slate-300 cursor-pointer">No thanks</button>
   </div>
   <div id="contact-input-box" class="hidden space-y-2 pt-2">
     <label class="block text-xs font-semibold text-slate-300">Enter your email or phone number:</label>
     <input type="text" id="user-contact-info" placeholder="Email or phone" class="w-full bg-[#11211c] border border-emerald-900/40 rounded-xl p-2.5 text-xs text-white">
   </div>
-  <button onclick="finalizeQuizSave()" class="w-full py-3 rounded-xl bg-rose-700 text-white font-bold text-xs shadow transition-all mt-2">Finish & Save Quiz 🎉</button>
+  <button type="button" onclick="finalizeQuizSave()" class="w-full py-3 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs shadow transition-all mt-2 cursor-pointer">Finish & Save Quiz 🎉</button>
 </div>
 
 <div id="quiz-ready-section" class="hidden space-y-3 text-center">
@@ -473,6 +517,7 @@ if (num === 2) document.body.classList.add("page-story");
 else if (num === 7) document.body.classList.add("page-comfort");
 else if (num === 12) document.body.classList.add("page-gallery");
 else document.body.classList.add("page-home");
+if (num === 13) initNewCard();
 }
 
 const moodMessages = {
@@ -527,18 +572,35 @@ if (document.getElementById("clock-ph")) document.getElementById("clock-ph").inn
 }
 setInterval(updateClocks, 1000); updateClocks();
 
-function fetchMinglanillaWeather() {
-const url = `https://api.open-meteo.com/v1/forecast?latitude=10.2447&longitude=123.8039&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit`;
-fetch(url).then(res => res.json()).then(data => {
-const temp = Math.round(data.current.temperature_2m);
-const humidity = data.current.relative_humidity_2m;
-let condition = "Clear skies ☀️";
-if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅";
-else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
-if (document.getElementById("weather-info")) document.getElementById("weather-info").innerHTML = `${temp}°F | ${condition} (Humidity: ${humidity}%)`;
-}).catch(err => { if (document.getElementById("weather-info")) document.getElementById("weather-info").innerHTML = "Minglanilla, Cebu 🇵🇭"; });
+function fetchDualWeather() {
+  const usUrl = `https://api.open-meteo.com/v1/forecast?latitude=30.4515&longitude=-91.1871&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit`;
+  const phUrl = `https://api.open-meteo.com/v1/forecast?latitude=10.2447&longitude=123.8039&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit`;
+
+  fetch(usUrl).then(res => res.json()).then(data => {
+    const tempF = Math.round(data.current.temperature_2m);
+    const tempC = Math.round((tempF - 32) * 5 / 9);
+    const humidity = data.current.relative_humidity_2m;
+    let condition = "Clear skies ☀️";
+    if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅";
+    else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
+    if (document.getElementById("weather-us")) {
+      document.getElementById("weather-us").innerHTML = `${tempF}°F (${tempC}°C) | ${condition} (Humidity: ${humidity}%)`;
+    }
+  }).catch(err => { if (document.getElementById("weather-us")) document.getElementById("weather-us").innerHTML = "United States 🇺🇸"; });
+
+  fetch(phUrl).then(res => res.json()).then(data => {
+    const tempF = Math.round(data.current.temperature_2m);
+    const tempC = Math.round((tempF - 32) * 5 / 9);
+    const humidity = data.current.relative_humidity_2m;
+    let condition = "Clear skies ☀️";
+    if (data.current.weather_code > 0 && data.current.weather_code < 4) condition = "Partly cloudy ⛅";
+    else if (data.current.weather_code >= 50) condition = "Rain showers 🌧️";
+    if (document.getElementById("weather-ph")) {
+      document.getElementById("weather-ph").innerHTML = `${tempF}°F (${tempC}°C) | ${condition} (Humidity: ${humidity}%)`;
+    }
+  }).catch(err => { if (document.getElementById("weather-ph")) document.getElementById("weather-ph").innerHTML = "Minglanilla, Cebu 🇵🇭"; });
 }
-fetchMinglanillaWeather();
+fetchDualWeather();
 
 function setTreasure(idx) {
 for (let i = 0; i <= 2; i++) {
@@ -605,12 +667,18 @@ const PRIZE_POOL = [
   { id: 'promise_ring', name: '🏆 LEGENDARY: Promise Ring ($50 / ₱3,140)', weight: 1, secret: true }
 ];
 
-function playScratchCard() {
+function initNewCard() {
   let plays = parseInt(localStorage.getItem('scratch_plays') || '3');
   const lastDate = localStorage.getItem('scratch_date');
   const today = new Date().toDateString();
   if (lastDate !== today) { plays = 3; localStorage.setItem('scratch_date', today); }
-  if (plays <= 0) { alert("You've used all 3 plays for today! Come back fresh tomorrow."); return; }
+  
+  if (plays <= 0) {
+    alert("You've used all 3 plays for today! Come back fresh tomorrow.");
+    document.getElementById('scratch-result-desc').innerText = "No plays remaining today!";
+    return;
+  }
+  
   plays--; localStorage.setItem('scratch_plays', plays);
   document.getElementById('scratch-plays-count').innerText = `${plays} / 3`;
 
@@ -621,12 +689,63 @@ function playScratchCard() {
     if (rand < prize.weight) { selected = prize; break; }
     rand -= prize.weight;
   }
-  document.getElementById('scratch-result-title').innerText = "You Scratched:";
   document.getElementById('scratch-result-desc').innerText = selected.name;
   if (selected.secret) alert("✨ SECRET WIN! Take a screenshot and show Derrick immediately to claim your prize!");
+
+  setupScratchCanvas();
 }
 
-let savedQuizQuestions = JSON.parse(localStorage.getItem('saved_quiz_q') || '[]');
+function setupScratchCanvas() {
+  const sc = document.getElementById('scratch-canvas');
+  if (!sc) return;
+  const sCtx = sc.getContext('2d');
+  sc.width = sc.parentElement.clientWidth;
+  sc.height = sc.parentElement.clientHeight;
+
+  sCtx.fillStyle = '#1e3a2f';
+  sCtx.fillRect(0, 0, sc.width, sc.height);
+  sCtx.fillStyle = '#10b981';
+  sCtx.font = 'bold 13px sans-serif';
+  sCtx.textAlign = 'center';
+  sCtx.fillText('✨ Scratch Here With Your Finger ✨', sc.width / 2, sc.height / 2 + 4);
+
+  let isDrawing = false;
+
+  function scratch(e) {
+    if (!isDrawing) return;
+    const rect = sc.getBoundingClientRect();
+    const x = (e.clientX || e.touches[0].clientX) - rect.left;
+    const y = (e.clientY || e.touches[0].clientY) - rect.top;
+    sCtx.globalCompositeOperation = 'destination-out';
+    sCtx.beginPath();
+    sCtx.arc(x, y, 22, 0, Math.PI * 2, false);
+    sCtx.fill();
+  }
+
+  sc.onmousedown = () => { isDrawing = true; };
+  window.onmouseup = () => { isDrawing = false; };
+  sc.onmousemove = scratch;
+
+  sc.ontouchstart = () => { isDrawing = true; };
+  window.ontouchend = () => { isDrawing = false; };
+  sc.ontouchmove = scratch;
+}
+
+function openOddsModal() {
+  const totalWeight = PRIZE_POOL.reduce((sum, p) => sum + p.weight, 0);
+  let listHtml = "";
+  PRIZE_POOL.forEach(p => {
+    const percentage = ((p.weight / totalWeight) * 100).toFixed(2);
+    listHtml += `<div class="flex justify-between items-center p-2 rounded-lg bg-[#11211c] border border-emerald-900/30"><span>${p.name}</span><span class="font-bold text-emerald-400">${percentage}%</span></div>`;
+  });
+  document.getElementById('odds-list').innerHTML = listHtml;
+  document.getElementById('odds-modal').classList.remove('hidden');
+}
+
+function closeOddsModal() {
+  document.getElementById('odds-modal').classList.add('hidden');
+}
+  let savedQuizQuestions = JSON.parse(localStorage.getItem('saved_quiz_q') || '[]');
 let wantNotification = localStorage.getItem('quiz_notify') === 'true';
 let userContact = localStorage.getItem('quiz_contact') || "";
 let currentDerrickIndex = 0;
@@ -659,8 +778,12 @@ function showSavePrompt() {
 function handleNotificationChoice(choice) {
   wantNotification = choice;
   const contactBox = document.getElementById("contact-input-box");
-  if (choice) contactBox.classList.remove("hidden");
-  else contactBox.classList.add("hidden");
+  if (choice) {
+    contactBox.classList.remove("hidden");
+  } else {
+    contactBox.classList.add("hidden");
+    document.getElementById("user-contact-info").value = "";
+  }
 }
 
 function finalizeQuizSave() {
@@ -694,7 +817,8 @@ function loadDerrickQuestion() {
 }
 
 function submitDerrickQuizAnswer() {
-  const ans = document.getElementById("derrick-answer-input").value.trim();
+  const ansInput = document.getElementById("derrick-answer-input");
+  const ans = ansInput ? ansInput.value.trim() : "";
   derrickSubmittedAnswers.push(ans || "(No answer given)");
   currentDerrickIndex++;
   loadDerrickQuestion();
